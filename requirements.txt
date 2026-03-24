@@ -1,0 +1,25 @@
+# Data Manipulation & Math
+numpy
+pandas
+scipy
+
+# Financial Data
+yfinance
+
+# Machine Learning & Deep Learning
+scikit-learn
+keras
+tensorflow  # Usually required as the backend for Keras
+
+# Statistical Modeling
+statsmodels
+
+# Plotting & Visualization
+matplotlib
+
+# Progress Bars
+tqdm
+
+# Table Exporting Utilities (added for the styled dataframes)
+openpyxl  # Required for pandas to export to .xlsx
+jinja2    # Required for pandas Styler (.style) formatting
