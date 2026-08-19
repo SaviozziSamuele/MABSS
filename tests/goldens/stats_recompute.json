@@ -1,0 +1,3872 @@
+{
+  "BTC-USD__softmax__hetero": {
+    "bandit_dir": "experiments_cluster/BANDIT_EMBEDDING-15_EPISODES-100_METRIC-l1_N_ARMS-60_POLICY-softmax_START_DATE-2000-01-01_TICKER-BTC-USD_WINDOW_SIZE-252",
+    "best_seed": "seed_8",
+    "bit_exact": true,
+    "max_abs_diff": 9.150666335777657e-17,
+    "metrics": {
+      "annualized_return": {
+        "average_ensemble": {
+          "abs_diff": 3.469446951953614e-17,
+          "recomputed": 0.04686765501626433,
+          "stored": 0.0468676550162643
+        },
+        "greedy (mean)": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": 0.18554347867566492,
+          "stored": 0.1855434786756649
+        },
+        "greedy (stddev)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.029416912241339455,
+          "stored": 0.0294169122413394
+        }
+      },
+      "calmar_ratio": {
+        "average_ensemble": {
+          "abs_diff": 8.326672684688674e-17,
+          "recomputed": 0.06970126475265258,
+          "stored": 0.0697012647526525
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.3409541369236935,
+          "stored": 0.3409541369236935
+        },
+        "greedy (stddev)": {
+          "abs_diff": 9.020562075079397e-17,
+          "recomputed": 0.05992823092598419,
+          "stored": 0.0599282309259841
+        }
+      },
+      "hit_ratio": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.18820861678004536,
+          "stored": 0.1882086167800453
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.32045351473922906,
+          "stored": 0.320453514739229
+        },
+        "greedy (stddev)": {
+          "abs_diff": 9.150666335777657e-17,
+          "recomputed": 0.0036193203995879917,
+          "stored": 0.0036193203995879
+        }
+      },
+      "max_drawdown": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": -0.6724075263566966,
+          "stored": -0.6724075263566966
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": -0.54615105554029,
+          "stored": -0.54615105554029
+        },
+        "greedy (stddev)": {
+          "abs_diff": 6.938893903907228e-17,
+          "recomputed": 0.01927905277221087,
+          "stored": 0.0192790527722108
+        }
+      },
+      "sharpe_ratio": {
+        "average_ensemble": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": 0.15573281634676683,
+          "stored": 0.1557328163467668
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.4814057191466749,
+          "stored": 0.4814057191466749
+        },
+        "greedy (stddev)": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": 0.07346398572808882,
+          "stored": 0.0734639857280888
+        }
+      },
+      "total_return": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.3779785953177486,
+          "stored": 0.3779785953177486
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 2.3344072297922525,
+          "stored": 2.3344072297922525
+        },
+        "greedy (stddev)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.5792852867706475,
+          "stored": 0.5792852867706475
+        }
+      },
+      "volatility": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.3009491263029955,
+          "stored": 0.3009491263029955
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.385067024069958,
+          "stored": 0.385067024069958
+        },
+        "greedy (stddev)": {
+          "abs_diff": 4.336808689942018e-18,
+          "recomputed": 0.003858121301538004,
+          "stored": 0.003858121301538
+        }
+      }
+    },
+    "n_seeds": 25,
+    "pred_dir": "experiments_cluster/CNN-true_EPOCHS-10_MLP-true_MODEL_EMBEDDING-15_N_SEEDS_PER_ARCH-20_RNN-true_START_DATE-2000-01-01_TICKER-BTC-USD_WINDOW_SIZE-252"
+  },
+  "BTC-USD__softmax__homo": {
+    "bandit_dir": "experiments_cluster/BANDIT_EMBEDDING-15_EPISODES-100_METRIC-l1_N_ARMS-50_POLICY-softmax_START_DATE-2000-01-01_TICKER-BTC-USD_WINDOW_SIZE-252",
+    "best_seed": "seed_9",
+    "bit_exact": true,
+    "max_abs_diff": 8.326672684688674e-17,
+    "metrics": {
+      "annualized_return": {
+        "average_ensemble": {
+          "abs_diff": 8.326672684688674e-17,
+          "recomputed": 0.07188037556590099,
+          "stored": 0.0718803755659009
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.15006374799794917,
+          "stored": 0.1500637479979491
+        },
+        "greedy (stddev)": {
+          "abs_diff": 4.163336342344337e-17,
+          "recomputed": 0.04320236075760954,
+          "stored": 0.0432023607576095
+        }
+      },
+      "calmar_ratio": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.1441195468839865,
+          "stored": 0.1441195468839865
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.28600599045355457,
+          "stored": 0.2860059904535545
+        },
+        "greedy (stddev)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.0931193837193153,
+          "stored": 0.0931193837193153
+        }
+      },
+      "hit_ratio": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.29308390022675734,
+          "stored": 0.2930839002267573
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.3050113378684807,
+          "stored": 0.3050113378684807
+        },
+        "greedy (stddev)": {
+          "abs_diff": 6.591949208711867e-17,
+          "recomputed": 0.016847691068520965,
+          "stored": 0.0168476910685209
+        }
+      },
+      "max_drawdown": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": -0.4987552148201196,
+          "stored": -0.4987552148201196
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": -0.531632475549135,
+          "stored": -0.531632475549135
+        },
+        "greedy (stddev)": {
+          "abs_diff": 8.326672684688674e-17,
+          "recomputed": 0.04570128014764269,
+          "stored": 0.0457012801476426
+        }
+      },
+      "sharpe_ratio": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.1893313380976878,
+          "stored": 0.1893313380976878
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.3955666488348072,
+          "stored": 0.3955666488348072
+        },
+        "greedy (stddev)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.114873676154867,
+          "stored": 0.114873676154867
+        }
+      },
+      "total_return": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.6256394811854211,
+          "stored": 0.6256394811854211
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 1.7421679530451657,
+          "stored": 1.7421679530451657
+        },
+        "greedy (stddev)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.7466128223593416,
+          "stored": 0.7466128223593416
+        }
+      },
+      "volatility": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.3796538718213328,
+          "stored": 0.3796538718213328
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.3795910513899884,
+          "stored": 0.3795910513899884
+        },
+        "greedy (stddev)": {
+          "abs_diff": 7.806255641895632e-17,
+          "recomputed": 0.014434934677483179,
+          "stored": 0.0144349346774831
+        }
+      }
+    },
+    "n_seeds": 25,
+    "pred_dir": "experiments_cluster/CNN-false_EPOCHS-10_MLP-true_MODEL_EMBEDDING-15_N_SEEDS_PER_ARCH-50_RNN-false_START_DATE-2000-01-01_TICKER-BTC-USD_WINDOW_SIZE-252"
+  },
+  "BTC-USD__thompson__hetero": {
+    "bandit_dir": "experiments_cluster/BANDIT_EMBEDDING-15_EPISODES-100_METRIC-l1_N_ARMS-60_POLICY-thompson_START_DATE-2000-01-01_TICKER-BTC-USD_WINDOW_SIZE-252",
+    "best_seed": "seed_2",
+    "bit_exact": true,
+    "max_abs_diff": 9.71445146547012e-17,
+    "metrics": {
+      "annualized_return": {
+        "average_ensemble": {
+          "abs_diff": 3.469446951953614e-17,
+          "recomputed": 0.04686765501626433,
+          "stored": 0.0468676550162643
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.14877263153344975,
+          "stored": 0.1487726315334497
+        },
+        "greedy (stddev)": {
+          "abs_diff": 9.71445146547012e-17,
+          "recomputed": 0.06716187162008079,
+          "stored": 0.0671618716200807
+        }
+      },
+      "calmar_ratio": {
+        "average_ensemble": {
+          "abs_diff": 8.326672684688674e-17,
+          "recomputed": 0.06970126475265258,
+          "stored": 0.0697012647526525
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.20920607314408757,
+          "stored": 0.2092060731440875
+        },
+        "greedy (stddev)": {
+          "abs_diff": 8.326672684688674e-17,
+          "recomputed": 0.09699630663245179,
+          "stored": 0.0969963066324517
+        }
+      },
+      "hit_ratio": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.18820861678004536,
+          "stored": 0.1882086167800453
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.27696145124716554,
+          "stored": 0.2769614512471655
+        },
+        "greedy (stddev)": {
+          "abs_diff": 6.852157730108388e-17,
+          "recomputed": 0.005741217175176069,
+          "stored": 0.005741217175176
+        }
+      },
+      "max_drawdown": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": -0.6724075263566966,
+          "stored": -0.6724075263566966
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": -0.721387221463579,
+          "stored": -0.721387221463579
+        },
+        "greedy (stddev)": {
+          "abs_diff": 9.020562075079397e-17,
+          "recomputed": 0.05354134910895369,
+          "stored": 0.0535413491089536
+        }
+      },
+      "sharpe_ratio": {
+        "average_ensemble": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": 0.15573281634676683,
+          "stored": 0.1557328163467668
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.3930029904291007,
+          "stored": 0.3930029904291007
+        },
+        "greedy (stddev)": {
+          "abs_diff": 8.326672684688674e-17,
+          "recomputed": 0.17767091476024668,
+          "stored": 0.1776709147602466
+        }
+      },
+      "total_return": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.3779785953177486,
+          "stored": 0.3779785953177486
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 1.830814135041594,
+          "stored": 1.830814135041594
+        },
+        "greedy (stddev)": {
+          "abs_diff": 0.0,
+          "recomputed": 1.1288725770382593,
+          "stored": 1.1288725770382593
+        }
+      },
+      "volatility": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.3009491263029955,
+          "stored": 0.3009491263029955
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.37879228115813063,
+          "stored": 0.3787922811581306
+        },
+        "greedy (stddev)": {
+          "abs_diff": 9.540979117872439e-17,
+          "recomputed": 0.0055776970306706955,
+          "stored": 0.0055776970306706
+        }
+      }
+    },
+    "n_seeds": 25,
+    "pred_dir": "experiments_cluster/CNN-true_EPOCHS-10_MLP-true_MODEL_EMBEDDING-15_N_SEEDS_PER_ARCH-20_RNN-true_START_DATE-2000-01-01_TICKER-BTC-USD_WINDOW_SIZE-252"
+  },
+  "BTC-USD__thompson__homo": {
+    "bandit_dir": "experiments_cluster/BANDIT_EMBEDDING-15_EPISODES-100_METRIC-l1_N_ARMS-50_POLICY-thompson_START_DATE-2000-01-01_TICKER-BTC-USD_WINDOW_SIZE-252",
+    "best_seed": "seed_2",
+    "bit_exact": true,
+    "max_abs_diff": 8.881784197001252e-16,
+    "metrics": {
+      "annualized_return": {
+        "average_ensemble": {
+          "abs_diff": 8.326672684688674e-17,
+          "recomputed": 0.07188037556590099,
+          "stored": 0.0718803755659009
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.2535589874519868,
+          "stored": 0.2535589874519868
+        },
+        "greedy (stddev)": {
+          "abs_diff": 1.3877787807814457e-17,
+          "recomputed": 0.06499949507894451,
+          "stored": 0.0649994950789445
+        }
+      },
+      "calmar_ratio": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.1441195468839865,
+          "stored": 0.1441195468839865
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.479349076562397,
+          "stored": 0.479349076562397
+        },
+        "greedy (stddev)": {
+          "abs_diff": 8.326672684688674e-17,
+          "recomputed": 0.17963339628548528,
+          "stored": 0.1796333962854852
+        }
+      },
+      "hit_ratio": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.29308390022675734,
+          "stored": 0.2930839002267573
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.28156462585034014,
+          "stored": 0.2815646258503401
+        },
+        "greedy (stddev)": {
+          "abs_diff": 8.933825901280557e-17,
+          "recomputed": 0.004886397709422289,
+          "stored": 0.0048863977094222
+        }
+      },
+      "max_drawdown": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": -0.4987552148201196,
+          "stored": -0.4987552148201196
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": -0.5566618990161125,
+          "stored": -0.5566618990161125
+        },
+        "greedy (stddev)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.08744554382376765,
+          "stored": 0.0874455438237676
+        }
+      },
+      "sharpe_ratio": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.1893313380976878,
+          "stored": 0.1893313380976878
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.6903391658596142,
+          "stored": 0.6903391658596142
+        },
+        "greedy (stddev)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.17816234328995237,
+          "stored": 0.1781623432899523
+        }
+      },
+      "total_return": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.6256394811854211,
+          "stored": 0.6256394811854211
+        },
+        "greedy (mean)": {
+          "abs_diff": 8.881784197001252e-16,
+          "recomputed": 4.1357159073803915,
+          "stored": 4.135715907380392
+        },
+        "greedy (stddev)": {
+          "abs_diff": 0.0,
+          "recomputed": 1.7884425381709277,
+          "stored": 1.7884425381709277
+        }
+      },
+      "volatility": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.3796538718213328,
+          "stored": 0.3796538718213328
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.36750519052245534,
+          "stored": 0.3675051905224553
+        },
+        "greedy (stddev)": {
+          "abs_diff": 9.194034422677078e-17,
+          "recomputed": 0.005603040360844692,
+          "stored": 0.0056030403608446
+        }
+      }
+    },
+    "n_seeds": 25,
+    "pred_dir": "experiments_cluster/CNN-false_EPOCHS-10_MLP-true_MODEL_EMBEDDING-15_N_SEEDS_PER_ARCH-50_RNN-false_START_DATE-2000-01-01_TICKER-BTC-USD_WINDOW_SIZE-252"
+  },
+  "BTC-USD__ucb__hetero": {
+    "bandit_dir": "experiments_cluster/BANDIT_EMBEDDING-15_EPISODES-100_METRIC-l1_N_ARMS-60_POLICY-ucb_START_DATE-2000-01-01_TICKER-BTC-USD_WINDOW_SIZE-252",
+    "best_seed": "seed_24",
+    "bit_exact": true,
+    "max_abs_diff": 8.326672684688674e-17,
+    "metrics": {
+      "annualized_return": {
+        "average_ensemble": {
+          "abs_diff": 3.469446951953614e-17,
+          "recomputed": 0.04686765501626433,
+          "stored": 0.0468676550162643
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.2929369377068847,
+          "stored": 0.2929369377068847
+        },
+        "greedy (stddev)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.0288543684643858,
+          "stored": 0.0288543684643858
+        }
+      },
+      "calmar_ratio": {
+        "average_ensemble": {
+          "abs_diff": 8.326672684688674e-17,
+          "recomputed": 0.06970126475265258,
+          "stored": 0.0697012647526525
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.49400313043390154,
+          "stored": 0.4940031304339015
+        },
+        "greedy (stddev)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.0769972242113988,
+          "stored": 0.0769972242113988
+        }
+      },
+      "hit_ratio": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.18820861678004536,
+          "stored": 0.1882086167800453
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.26276643990929704,
+          "stored": 0.262766439909297
+        },
+        "greedy (stddev)": {
+          "abs_diff": 4.9439619065339e-17,
+          "recomputed": 0.0018149090978470494,
+          "stored": 0.001814909097847
+        }
+      },
+      "max_drawdown": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": -0.6724075263566966,
+          "stored": -0.6724075263566966
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": -0.5987045275032249,
+          "stored": -0.5987045275032249
+        },
+        "greedy (stddev)": {
+          "abs_diff": 2.0816681711721685e-17,
+          "recomputed": 0.04160894735379512,
+          "stored": 0.0416089473537951
+        }
+      },
+      "sharpe_ratio": {
+        "average_ensemble": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": 0.15573281634676683,
+          "stored": 0.1557328163467668
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.7965627150972437,
+          "stored": 0.7965627150972437
+        },
+        "greedy (stddev)": {
+          "abs_diff": 8.326672684688674e-17,
+          "recomputed": 0.08066419258779328,
+          "stored": 0.0806641925877932
+        }
+      },
+      "total_return": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.3779785953177486,
+          "stored": 0.3779785953177486
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 5.103613932188481,
+          "stored": 5.103613932188481
+        },
+        "greedy (stddev)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.9586969640729218,
+          "stored": 0.9586969640729218
+        }
+      },
+      "volatility": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.3009491263029955,
+          "stored": 0.3009491263029955
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.36786169548103914,
+          "stored": 0.3678616954810391
+        },
+        "greedy (stddev)": {
+          "abs_diff": 1.691355389077387e-17,
+          "recomputed": 0.002388916245286117,
+          "stored": 0.0023889162452861
+        }
+      }
+    },
+    "n_seeds": 25,
+    "pred_dir": "experiments_cluster/CNN-true_EPOCHS-10_MLP-true_MODEL_EMBEDDING-15_N_SEEDS_PER_ARCH-20_RNN-true_START_DATE-2000-01-01_TICKER-BTC-USD_WINDOW_SIZE-252"
+  },
+  "BTC-USD__ucb__homo": {
+    "bandit_dir": "experiments_cluster/BANDIT_EMBEDDING-15_EPISODES-100_METRIC-l1_N_ARMS-50_POLICY-ucb_START_DATE-2000-01-01_TICKER-BTC-USD_WINDOW_SIZE-252",
+    "best_seed": "seed_13",
+    "bit_exact": true,
+    "max_abs_diff": 1.1102230246251565e-16,
+    "metrics": {
+      "annualized_return": {
+        "average_ensemble": {
+          "abs_diff": 8.326672684688674e-17,
+          "recomputed": 0.07188037556590099,
+          "stored": 0.0718803755659009
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.3012468189955366,
+          "stored": 0.3012468189955366
+        },
+        "greedy (stddev)": {
+          "abs_diff": 7.979727989493313e-17,
+          "recomputed": 0.02682576106635548,
+          "stored": 0.0268257610663554
+        }
+      },
+      "calmar_ratio": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.1441195468839865,
+          "stored": 0.1441195468839865
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.6469453194813168,
+          "stored": 0.6469453194813168
+        },
+        "greedy (stddev)": {
+          "abs_diff": 6.938893903907228e-17,
+          "recomputed": 0.07789714835155487,
+          "stored": 0.0778971483515548
+        }
+      },
+      "hit_ratio": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.29308390022675734,
+          "stored": 0.2930839002267573
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.2871655328798186,
+          "stored": 0.2871655328798186
+        },
+        "greedy (stddev)": {
+          "abs_diff": 3.729655473350135e-17,
+          "recomputed": 0.0021216057398124374,
+          "stored": 0.0021216057398124
+        }
+      },
+      "max_drawdown": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": -0.4987552148201196,
+          "stored": -0.4987552148201196
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": -0.4677193453030891,
+          "stored": -0.4677193453030891
+        },
+        "greedy (stddev)": {
+          "abs_diff": 7.979727989493313e-17,
+          "recomputed": 0.02167562905681298,
+          "stored": 0.0216756290568129
+        }
+      },
+      "sharpe_ratio": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.1893313380976878,
+          "stored": 0.1893313380976878
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.8143961126403186,
+          "stored": 0.8143961126403186
+        },
+        "greedy (stddev)": {
+          "abs_diff": 1.3877787807814457e-17,
+          "recomputed": 0.07185793768735271,
+          "stored": 0.0718579376873527
+        }
+      },
+      "total_return": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.6256394811854211,
+          "stored": 0.6256394811854211
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 5.373427489981715,
+          "stored": 5.373427489981715
+        },
+        "greedy (stddev)": {
+          "abs_diff": 1.1102230246251565e-16,
+          "recomputed": 0.9130601149308871,
+          "stored": 0.9130601149308872
+        }
+      },
+      "volatility": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.3796538718213328,
+          "stored": 0.3796538718213328
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.3698835047912041,
+          "stored": 0.3698835047912041
+        },
+        "greedy (stddev)": {
+          "abs_diff": 8.413408858487514e-17,
+          "recomputed": 0.002633853656091984,
+          "stored": 0.0026338536560919
+        }
+      }
+    },
+    "n_seeds": 25,
+    "pred_dir": "experiments_cluster/CNN-false_EPOCHS-10_MLP-true_MODEL_EMBEDDING-15_N_SEEDS_PER_ARCH-50_RNN-false_START_DATE-2000-01-01_TICKER-BTC-USD_WINDOW_SIZE-252"
+  },
+  "EURUSD=X__softmax__hetero": {
+    "bandit_dir": "experiments_cluster/BANDIT_EMBEDDING-15_EPISODES-100_METRIC-l1_N_ARMS-60_POLICY-softmax_START_DATE-2000-01-01_TICKER-EURUSD=X_WINDOW_SIZE-252",
+    "best_seed": "seed_13",
+    "bit_exact": true,
+    "max_abs_diff": 9.020562075079397e-17,
+    "metrics": {
+      "annualized_return": {
+        "average_ensemble": {
+          "abs_diff": 6.938893903907228e-17,
+          "recomputed": 0.005213437454597569,
+          "stored": 0.0052134374545975
+        },
+        "greedy (mean)": {
+          "abs_diff": 7.632783294297951e-17,
+          "recomputed": 0.0049725169166881765,
+          "stored": 0.0049725169166881
+        },
+        "greedy (stddev)": {
+          "abs_diff": 1.3010426069826053e-17,
+          "recomputed": 0.003797664981758713,
+          "stored": 0.0037976649817587
+        }
+      },
+      "calmar_ratio": {
+        "average_ensemble": {
+          "abs_diff": 3.8163916471489756e-17,
+          "recomputed": 0.02949294590255874,
+          "stored": 0.0294929459025587
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.0251705484778134,
+          "stored": 0.0251705484778134
+        },
+        "greedy (stddev)": {
+          "abs_diff": 9.020562075079397e-17,
+          "recomputed": 0.02012431969198279,
+          "stored": 0.0201243196919827
+        }
+      },
+      "hit_ratio": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.26282051282051283,
+          "stored": 0.2628205128205128
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.2703296703296703,
+          "stored": 0.2703296703296703
+        },
+        "greedy (stddev)": {
+          "abs_diff": 6.852157730108388e-17,
+          "recomputed": 0.0044167514646363685,
+          "stored": 0.0044167514646363
+        }
+      },
+      "max_drawdown": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": -0.17676896271475084,
+          "stored": -0.1767689627147508
+        },
+        "greedy (mean)": {
+          "abs_diff": 8.326672684688674e-17,
+          "recomputed": -0.20197525509214428,
+          "stored": -0.2019752550921442
+        },
+        "greedy (stddev)": {
+          "abs_diff": 6.591949208711867e-17,
+          "recomputed": 0.013166436233020965,
+          "stored": 0.0131664362330209
+        }
+      },
+      "sharpe_ratio": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.08668450683683745,
+          "stored": 0.0866845068368374
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.0812152550105212,
+          "stored": 0.0812152550105212
+        },
+        "greedy (stddev)": {
+          "abs_diff": 4.85722573273506e-17,
+          "recomputed": 0.061892234111583545,
+          "stored": 0.0618922341115835
+        }
+      },
+      "total_return": {
+        "average_ensemble": {
+          "abs_diff": 6.938893903907228e-17,
+          "recomputed": 0.06993578110123377,
+          "stored": 0.0699357811012337
+        },
+        "greedy (mean)": {
+          "abs_diff": 4.163336342344337e-17,
+          "recomputed": 0.06779815601937224,
+          "stored": 0.0677981560193722
+        },
+        "greedy (stddev)": {
+          "abs_diff": 6.938893903907228e-18,
+          "recomputed": 0.052669680976702604,
+          "stored": 0.0526696809767026
+        }
+      },
+      "volatility": {
+        "average_ensemble": {
+          "abs_diff": 1.3877787807814457e-17,
+          "recomputed": 0.06014266729821281,
+          "stored": 0.0601426672982128
+        },
+        "greedy (mean)": {
+          "abs_diff": 6.938893903907228e-17,
+          "recomputed": 0.06123110292316037,
+          "stored": 0.0612311029231603
+        },
+        "greedy (stddev)": {
+          "abs_diff": 7.014788055981214e-17,
+          "recomputed": 0.0005254199560681701,
+          "stored": 0.0005254199560681
+        }
+      }
+    },
+    "n_seeds": 25,
+    "pred_dir": "experiments_cluster/CNN-true_EPOCHS-10_MLP-true_MODEL_EMBEDDING-15_N_SEEDS_PER_ARCH-20_RNN-true_START_DATE-2000-01-01_TICKER-EURUSD=X_WINDOW_SIZE-252"
+  },
+  "EURUSD=X__softmax__homo": {
+    "bandit_dir": "experiments_cluster/BANDIT_EMBEDDING-15_EPISODES-100_METRIC-l1_N_ARMS-50_POLICY-softmax_START_DATE-2000-01-01_TICKER-EURUSD=X_WINDOW_SIZE-252",
+    "best_seed": "seed_9",
+    "bit_exact": true,
+    "max_abs_diff": 8.326672684688674e-17,
+    "metrics": {
+      "annualized_return": {
+        "average_ensemble": {
+          "abs_diff": 2.42861286636753e-17,
+          "recomputed": -0.009076760921809424,
+          "stored": -0.0090767609218094
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.0043449980477298,
+          "stored": 0.0043449980477298
+        },
+        "greedy (stddev)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.006201466867475155,
+          "stored": 0.0062014668674751
+        }
+      },
+      "calmar_ratio": {
+        "average_ensemble": {
+          "abs_diff": 4.163336342344337e-17,
+          "recomputed": -0.03516336320326724,
+          "stored": -0.0351633632032672
+        },
+        "greedy (mean)": {
+          "abs_diff": 3.122502256758253e-17,
+          "recomputed": 0.021788768632868133,
+          "stored": 0.0217887686328681
+        },
+        "greedy (stddev)": {
+          "abs_diff": 5.204170427930421e-17,
+          "recomputed": 0.031135270252673854,
+          "stored": 0.0311352702526738
+        }
+      },
+      "hit_ratio": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.25427350427350426,
+          "stored": 0.2542735042735042
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.2517826617826618,
+          "stored": 0.2517826617826618
+        },
+        "greedy (stddev)": {
+          "abs_diff": 3.469446951953614e-17,
+          "recomputed": 0.011934211094163134,
+          "stored": 0.0119342110941631
+        }
+      },
+      "max_drawdown": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": -0.2581311938036134,
+          "stored": -0.2581311938036134
+        },
+        "greedy (mean)": {
+          "abs_diff": 8.326672684688674e-17,
+          "recomputed": -0.20899574037349888,
+          "stored": -0.2089957403734988
+        },
+        "greedy (stddev)": {
+          "abs_diff": 3.469446951953614e-18,
+          "recomputed": 0.020332458485906604,
+          "stored": 0.0203324584859066
+        }
+      },
+      "sharpe_ratio": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": -0.1614243941797166,
+          "stored": -0.1614243941797166
+        },
+        "greedy (mean)": {
+          "abs_diff": 4.163336342344337e-17,
+          "recomputed": 0.07617019969167205,
+          "stored": 0.076170199691672
+        },
+        "greedy (stddev)": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": 0.10849848503670943,
+          "stored": 0.1084984850367094
+        }
+      },
+      "total_return": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": -0.11178075954003486,
+          "stored": -0.1117807595400348
+        },
+        "greedy (mean)": {
+          "abs_diff": 3.469446951953614e-17,
+          "recomputed": 0.06115609666763554,
+          "stored": 0.0611560966676355
+        },
+        "greedy (stddev)": {
+          "abs_diff": 1.3877787807814457e-17,
+          "recomputed": 0.08631774509152401,
+          "stored": 0.086317745091524
+        }
+      },
+      "volatility": {
+        "average_ensemble": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": 0.05622917755357413,
+          "stored": 0.0562291775535741
+        },
+        "greedy (mean)": {
+          "abs_diff": 8.326672684688674e-17,
+          "recomputed": 0.05757856023539668,
+          "stored": 0.0575785602353966
+        },
+        "greedy (stddev)": {
+          "abs_diff": 6.852157730108388e-17,
+          "recomputed": 0.0015562697686556685,
+          "stored": 0.0015562697686556
+        }
+      }
+    },
+    "n_seeds": 25,
+    "pred_dir": "experiments_cluster/CNN-false_EPOCHS-10_MLP-true_MODEL_EMBEDDING-15_N_SEEDS_PER_ARCH-50_RNN-false_START_DATE-2000-01-01_TICKER-EURUSD=X_WINDOW_SIZE-252"
+  },
+  "EURUSD=X__thompson__hetero": {
+    "bandit_dir": "experiments_cluster/BANDIT_EMBEDDING-15_EPISODES-100_METRIC-l1_N_ARMS-60_POLICY-thompson_START_DATE-2000-01-01_TICKER-EURUSD=X_WINDOW_SIZE-252",
+    "best_seed": "seed_5",
+    "bit_exact": true,
+    "max_abs_diff": 6.938893903907228e-17,
+    "metrics": {
+      "annualized_return": {
+        "average_ensemble": {
+          "abs_diff": 6.938893903907228e-17,
+          "recomputed": 0.005213437454597569,
+          "stored": 0.0052134374545975
+        },
+        "greedy (mean)": {
+          "abs_diff": 3.903127820947816e-17,
+          "recomputed": 0.003971964054244239,
+          "stored": 0.0039719640542442
+        },
+        "greedy (stddev)": {
+          "abs_diff": 3.382710778154774e-17,
+          "recomputed": 0.007227328340729434,
+          "stored": 0.0072273283407294
+        }
+      },
+      "calmar_ratio": {
+        "average_ensemble": {
+          "abs_diff": 3.8163916471489756e-17,
+          "recomputed": 0.02949294590255874,
+          "stored": 0.0294929459025587
+        },
+        "greedy (mean)": {
+          "abs_diff": 6.245004513516506e-17,
+          "recomputed": 0.025848308617719463,
+          "stored": 0.0258483086177194
+        },
+        "greedy (stddev)": {
+          "abs_diff": 4.163336342344337e-17,
+          "recomputed": 0.04004880689374944,
+          "stored": 0.0400488068937494
+        }
+      },
+      "hit_ratio": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.26282051282051283,
+          "stored": 0.2628205128205128
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.2488766788766789,
+          "stored": 0.2488766788766789
+        },
+        "greedy (stddev)": {
+          "abs_diff": 9.540979117872439e-18,
+          "recomputed": 0.00433130284417401,
+          "stored": 0.004331302844174
+        }
+      },
+      "max_drawdown": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": -0.17676896271475084,
+          "stored": -0.1767689627147508
+        },
+        "greedy (mean)": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": -0.19757108492852724,
+          "stored": -0.1975710849285272
+        },
+        "greedy (stddev)": {
+          "abs_diff": 6.245004513516506e-17,
+          "recomputed": 0.040362653732540665,
+          "stored": 0.0403626537325406
+        }
+      },
+      "sharpe_ratio": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.08668450683683745,
+          "stored": 0.0866845068368374
+        },
+        "greedy (mean)": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": 0.07299754630427142,
+          "stored": 0.0729975463042714
+        },
+        "greedy (stddev)": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": 0.13304954672964414,
+          "stored": 0.1330495467296441
+        }
+      },
+      "total_return": {
+        "average_ensemble": {
+          "abs_diff": 6.938893903907228e-17,
+          "recomputed": 0.06993578110123377,
+          "stored": 0.0699357811012337
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.0571399119367042,
+          "stored": 0.0571399119367042
+        },
+        "greedy (stddev)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.09876258162718606,
+          "stored": 0.098762581627186
+        }
+      },
+      "volatility": {
+        "average_ensemble": {
+          "abs_diff": 1.3877787807814457e-17,
+          "recomputed": 0.06014266729821281,
+          "stored": 0.0601426672982128
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.0545139096919903,
+          "stored": 0.0545139096919903
+        },
+        "greedy (stddev)": {
+          "abs_diff": 3.122502256758253e-17,
+          "recomputed": 0.0007329571929347312,
+          "stored": 0.0007329571929347
+        }
+      }
+    },
+    "n_seeds": 25,
+    "pred_dir": "experiments_cluster/CNN-true_EPOCHS-10_MLP-true_MODEL_EMBEDDING-15_N_SEEDS_PER_ARCH-20_RNN-true_START_DATE-2000-01-01_TICKER-EURUSD=X_WINDOW_SIZE-252"
+  },
+  "EURUSD=X__thompson__homo": {
+    "bandit_dir": "experiments_cluster/BANDIT_EMBEDDING-15_EPISODES-100_METRIC-l1_N_ARMS-50_POLICY-thompson_START_DATE-2000-01-01_TICKER-EURUSD=X_WINDOW_SIZE-252",
+    "best_seed": "seed_10",
+    "bit_exact": true,
+    "max_abs_diff": 9.71445146547012e-17,
+    "metrics": {
+      "annualized_return": {
+        "average_ensemble": {
+          "abs_diff": 2.42861286636753e-17,
+          "recomputed": -0.009076760921809424,
+          "stored": -0.0090767609218094
+        },
+        "greedy (mean)": {
+          "abs_diff": 4.85722573273506e-17,
+          "recomputed": -0.004109851280860149,
+          "stored": -0.0041098512808601
+        },
+        "greedy (stddev)": {
+          "abs_diff": 5.898059818321144e-17,
+          "recomputed": 0.008525395901038058,
+          "stored": 0.008525395901038
+        }
+      },
+      "calmar_ratio": {
+        "average_ensemble": {
+          "abs_diff": 4.163336342344337e-17,
+          "recomputed": -0.03516336320326724,
+          "stored": -0.0351633632032672
+        },
+        "greedy (mean)": {
+          "abs_diff": 8.847089727481716e-17,
+          "recomputed": -0.010653370085968289,
+          "stored": -0.0106533700859682
+        },
+        "greedy (stddev)": {
+          "abs_diff": 9.71445146547012e-17,
+          "recomputed": 0.034331291309609095,
+          "stored": 0.034331291309609
+        }
+      },
+      "hit_ratio": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.25427350427350426,
+          "stored": 0.2542735042735042
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.2512210012210012,
+          "stored": 0.2512210012210012
+        },
+        "greedy (stddev)": {
+          "abs_diff": 6.331740687315346e-17,
+          "recomputed": 0.004424339665932463,
+          "stored": 0.0044243396659324
+        }
+      },
+      "max_drawdown": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": -0.2581311938036134,
+          "stored": -0.2581311938036134
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": -0.25066418328401746,
+          "stored": -0.2506641832840174
+        },
+        "greedy (stddev)": {
+          "abs_diff": 8.326672684688674e-17,
+          "recomputed": 0.052510125287619086,
+          "stored": 0.052510125287619
+        }
+      },
+      "sharpe_ratio": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": -0.1614243941797166,
+          "stored": -0.1614243941797166
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": -0.0751359584958199,
+          "stored": -0.0751359584958199
+        },
+        "greedy (stddev)": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": 0.15579139203871573,
+          "stored": 0.1557913920387157
+        }
+      },
+      "total_return": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": -0.11178075954003486,
+          "stored": -0.1117807595400348
+        },
+        "greedy (mean)": {
+          "abs_diff": 3.469446951953614e-17,
+          "recomputed": -0.046751397814988736,
+          "stored": -0.0467513978149887
+        },
+        "greedy (stddev)": {
+          "abs_diff": 1.3877787807814457e-17,
+          "recomputed": 0.10483654942394402,
+          "stored": 0.104836549423944
+        }
+      },
+      "volatility": {
+        "average_ensemble": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": 0.05622917755357413,
+          "stored": 0.0562291775535741
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.055060175222442255,
+          "stored": 0.0550601752224422
+        },
+        "greedy (stddev)": {
+          "abs_diff": 3.144186300207963e-18,
+          "recomputed": 0.0007957832954533031,
+          "stored": 0.0007957832954533
+        }
+      }
+    },
+    "n_seeds": 25,
+    "pred_dir": "experiments_cluster/CNN-false_EPOCHS-10_MLP-true_MODEL_EMBEDDING-15_N_SEEDS_PER_ARCH-50_RNN-false_START_DATE-2000-01-01_TICKER-EURUSD=X_WINDOW_SIZE-252"
+  },
+  "EURUSD=X__ucb__hetero": {
+    "bandit_dir": "experiments_cluster/BANDIT_EMBEDDING-15_EPISODES-100_METRIC-l1_N_ARMS-60_POLICY-ucb_START_DATE-2000-01-01_TICKER-EURUSD=X_WINDOW_SIZE-252",
+    "best_seed": "seed_4",
+    "bit_exact": true,
+    "max_abs_diff": 9.020562075079397e-17,
+    "metrics": {
+      "annualized_return": {
+        "average_ensemble": {
+          "abs_diff": 6.938893903907228e-17,
+          "recomputed": 0.005213437454597569,
+          "stored": 0.0052134374545975
+        },
+        "greedy (mean)": {
+          "abs_diff": 1.0408340855860843e-17,
+          "recomputed": 0.00963467010226581,
+          "stored": 0.0096346701022658
+        },
+        "greedy (stddev)": {
+          "abs_diff": 4.174178364069192e-17,
+          "recomputed": 0.0006501856573495417,
+          "stored": 0.0006501856573495
+        }
+      },
+      "calmar_ratio": {
+        "average_ensemble": {
+          "abs_diff": 3.8163916471489756e-17,
+          "recomputed": 0.02949294590255874,
+          "stored": 0.0294929459025587
+        },
+        "greedy (mean)": {
+          "abs_diff": 9.020562075079397e-17,
+          "recomputed": 0.05061622408173009,
+          "stored": 0.05061622408173
+        },
+        "greedy (stddev)": {
+          "abs_diff": 8.543513119185775e-17,
+          "recomputed": 0.0035338972613225854,
+          "stored": 0.0035338972613225
+        }
+      },
+      "hit_ratio": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.26282051282051283,
+          "stored": 0.2628205128205128
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.26135531135531137,
+          "stored": 0.2613553113553113
+        },
+        "greedy (stddev)": {
+          "abs_diff": 7.318364664277155e-18,
+          "recomputed": 0.00043168912160350734,
+          "stored": 0.0004316891216035
+        }
+      },
+      "max_drawdown": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": -0.17676896271475084,
+          "stored": -0.1767689627147508
+        },
+        "greedy (mean)": {
+          "abs_diff": 8.326672684688674e-17,
+          "recomputed": -0.19038297610200378,
+          "stored": -0.1903829761020037
+        },
+        "greedy (stddev)": {
+          "abs_diff": 7.155734338404329e-17,
+          "recomputed": 0.0014669524043661715,
+          "stored": 0.0014669524043661
+        }
+      },
+      "sharpe_ratio": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.08668450683683745,
+          "stored": 0.0866845068368374
+        },
+        "greedy (mean)": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": 0.15832845079509023,
+          "stored": 0.1583284507950902
+        },
+        "greedy (stddev)": {
+          "abs_diff": 3.469446951953614e-17,
+          "recomputed": 0.010766128392620035,
+          "stored": 0.01076612839262
+        }
+      },
+      "total_return": {
+        "average_ensemble": {
+          "abs_diff": 6.938893903907228e-17,
+          "recomputed": 0.06993578110123377,
+          "stored": 0.0699357811012337
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.13278988918749046,
+          "stored": 0.1327898891874904
+        },
+        "greedy (stddev)": {
+          "abs_diff": 1.9081958235744878e-17,
+          "recomputed": 0.009476985172186819,
+          "stored": 0.0094769851721868
+        }
+      },
+      "volatility": {
+        "average_ensemble": {
+          "abs_diff": 1.3877787807814457e-17,
+          "recomputed": 0.06014266729821281,
+          "stored": 0.0601426672982128
+        },
+        "greedy (mean)": {
+          "abs_diff": 3.469446951953614e-17,
+          "recomputed": 0.060854681295156636,
+          "stored": 0.0608546812951566
+        },
+        "greedy (stddev)": {
+          "abs_diff": 0.0,
+          "recomputed": 5.0512285979782905e-05,
+          "stored": 5.0512285979782905e-05
+        }
+      }
+    },
+    "n_seeds": 25,
+    "pred_dir": "experiments_cluster/CNN-true_EPOCHS-10_MLP-true_MODEL_EMBEDDING-15_N_SEEDS_PER_ARCH-20_RNN-true_START_DATE-2000-01-01_TICKER-EURUSD=X_WINDOW_SIZE-252"
+  },
+  "EURUSD=X__ucb__homo": {
+    "bandit_dir": "experiments_cluster/BANDIT_EMBEDDING-15_EPISODES-100_METRIC-l1_N_ARMS-50_POLICY-ucb_START_DATE-2000-01-01_TICKER-EURUSD=X_WINDOW_SIZE-252",
+    "best_seed": "seed_17",
+    "bit_exact": true,
+    "max_abs_diff": 9.71445146547012e-17,
+    "metrics": {
+      "annualized_return": {
+        "average_ensemble": {
+          "abs_diff": 2.42861286636753e-17,
+          "recomputed": -0.009076760921809424,
+          "stored": -0.0090767609218094
+        },
+        "greedy (mean)": {
+          "abs_diff": 9.71445146547012e-17,
+          "recomputed": -0.0014441193780360972,
+          "stored": -0.001444119378036
+        },
+        "greedy (stddev)": {
+          "abs_diff": 4.586175189613684e-17,
+          "recomputed": 0.0002559758198278459,
+          "stored": 0.0002559758198278
+        }
+      },
+      "calmar_ratio": {
+        "average_ensemble": {
+          "abs_diff": 4.163336342344337e-17,
+          "recomputed": -0.03516336320326724,
+          "stored": -0.0351633632032672
+        },
+        "greedy (mean)": {
+          "abs_diff": 2.862293735361732e-17,
+          "recomputed": -0.006782248097425028,
+          "stored": -0.006782248097425
+        },
+        "greedy (stddev)": {
+          "abs_diff": 6.418476861114186e-17,
+          "recomputed": 0.0012021800575622642,
+          "stored": 0.0012021800575622
+        }
+      },
+      "hit_ratio": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.25427350427350426,
+          "stored": 0.2542735042735042
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.2569352869352869,
+          "stored": 0.2569352869352869
+        },
+        "greedy (stddev)": {
+          "abs_diff": 7.613809756279455e-17,
+          "recomputed": 0.00013705704713457613,
+          "stored": 0.0001370570471345
+        }
+      },
+      "max_drawdown": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": -0.2581311938036134,
+          "stored": -0.2581311938036134
+        },
+        "greedy (mean)": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": -0.21292635676131874,
+          "stored": -0.2129263567613187
+        },
+        "greedy (stddev)": {
+          "abs_diff": 0.0,
+          "recomputed": 4.621115798523736e-16,
+          "stored": 4.621115798523736e-16
+        }
+      },
+      "sharpe_ratio": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": -0.1614243941797166,
+          "stored": -0.1614243941797166
+        },
+        "greedy (mean)": {
+          "abs_diff": 8.326672684688674e-17,
+          "recomputed": -0.025047376452456284,
+          "stored": -0.0250473764524562
+        },
+        "greedy (stddev)": {
+          "abs_diff": 5.4643789493269423e-17,
+          "recomputed": 0.004433708817910454,
+          "stored": 0.0044337088179104
+        }
+      },
+      "total_return": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": -0.11178075954003486,
+          "stored": -0.1117807595400348
+        },
+        "greedy (mean)": {
+          "abs_diff": 8.673617379884035e-17,
+          "recomputed": -0.018606712230111188,
+          "stored": -0.0186067122301111
+        },
+        "greedy (stddev)": {
+          "abs_diff": 3.9898639947466563e-17,
+          "recomputed": 0.00327068530782654,
+          "stored": 0.0032706853078265
+        }
+      },
+      "volatility": {
+        "average_ensemble": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": 0.05622917755357413,
+          "stored": 0.0562291775535741
+        },
+        "greedy (mean)": {
+          "abs_diff": 6.245004513516506e-17,
+          "recomputed": 0.05765304466922186,
+          "stored": 0.0576530446692218
+        },
+        "greedy (stddev)": {
+          "abs_diff": 0.0,
+          "recomputed": 1.7481642439378802e-05,
+          "stored": 1.7481642439378802e-05
+        }
+      }
+    },
+    "n_seeds": 25,
+    "pred_dir": "experiments_cluster/CNN-false_EPOCHS-10_MLP-true_MODEL_EMBEDDING-15_N_SEEDS_PER_ARCH-50_RNN-false_START_DATE-2000-01-01_TICKER-EURUSD=X_WINDOW_SIZE-252"
+  },
+  "GC=F__softmax__hetero": {
+    "bandit_dir": "experiments_cluster/BANDIT_EMBEDDING-15_EPISODES-100_METRIC-l1_N_ARMS-60_POLICY-softmax_START_DATE-2000-01-01_TICKER-GC=F_WINDOW_SIZE-252",
+    "best_seed": "seed_23",
+    "bit_exact": true,
+    "max_abs_diff": 9.042246118529107e-17,
+    "metrics": {
+      "annualized_return": {
+        "average_ensemble": {
+          "abs_diff": 1.734723475976807e-17,
+          "recomputed": 0.025386813281476517,
+          "stored": 0.0253868132814765
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.0271115467849011,
+          "stored": 0.0271115467849011
+        },
+        "greedy (stddev)": {
+          "abs_diff": 1.9081958235744878e-17,
+          "recomputed": 0.004827095583273319,
+          "stored": 0.0048270955832733
+        }
+      },
+      "calmar_ratio": {
+        "average_ensemble": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": 0.08088453782322973,
+          "stored": 0.0808845378232297
+        },
+        "greedy (mean)": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": 0.07661051646663813,
+          "stored": 0.0766105164666381
+        },
+        "greedy (stddev)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.017325395571172356,
+          "stored": 0.0173253955711723
+        }
+      },
+      "hit_ratio": {
+        "average_ensemble": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": 0.20932539682539683,
+          "stored": 0.2093253968253968
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.248015873015873,
+          "stored": 0.248015873015873
+        },
+        "greedy (stddev)": {
+          "abs_diff": 2.5153490401663703e-17,
+          "recomputed": 0.003434460193078125,
+          "stored": 0.0034344601930781
+        }
+      },
+      "max_drawdown": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": -0.31386484938516296,
+          "stored": -0.3138648493851629
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": -0.35822734539613355,
+          "stored": -0.3582273453961335
+        },
+        "greedy (stddev)": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": 0.022214120275699727,
+          "stored": 0.0222141202756997
+        }
+      },
+      "sharpe_ratio": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.2404446206275744,
+          "stored": 0.2404446206275744
+        },
+        "greedy (mean)": {
+          "abs_diff": 8.326672684688674e-17,
+          "recomputed": 0.23839198156777278,
+          "stored": 0.2383919815677727
+        },
+        "greedy (stddev)": {
+          "abs_diff": 1.3877787807814457e-17,
+          "recomputed": 0.04276141847094681,
+          "stored": 0.0427614184709468
+        }
+      },
+      "total_return": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.4934945707184146,
+          "stored": 0.4934945707184146
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.5382508806099093,
+          "stored": 0.5382508806099093
+        },
+        "greedy (stddev)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.1148490561064521,
+          "stored": 0.1148490561064521
+        }
+      },
+      "volatility": {
+        "average_ensemble": {
+          "abs_diff": 1.3877787807814457e-17,
+          "recomputed": 0.10558278748435071,
+          "stored": 0.1055827874843507
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.11375451474080206,
+          "stored": 0.113754514740802
+        },
+        "greedy (stddev)": {
+          "abs_diff": 9.042246118529107e-17,
+          "recomputed": 0.0006933031763039904,
+          "stored": 0.0006933031763039
+        }
+      }
+    },
+    "n_seeds": 25,
+    "pred_dir": "experiments_cluster/CNN-true_EPOCHS-10_MLP-true_MODEL_EMBEDDING-15_N_SEEDS_PER_ARCH-20_RNN-true_START_DATE-2000-01-01_TICKER-GC=F_WINDOW_SIZE-252"
+  },
+  "GC=F__softmax__homo": {
+    "bandit_dir": "experiments_cluster/BANDIT_EMBEDDING-15_EPISODES-100_METRIC-l1_N_ARMS-50_POLICY-softmax_START_DATE-2000-01-01_TICKER-GC=F_WINDOW_SIZE-252",
+    "best_seed": "seed_14",
+    "bit_exact": true,
+    "max_abs_diff": 2.220446049250313e-16,
+    "metrics": {
+      "annualized_return": {
+        "average_ensemble": {
+          "abs_diff": 2.0816681711721685e-17,
+          "recomputed": 0.04046003840890622,
+          "stored": 0.0404600384089062
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.0476718287160045,
+          "stored": 0.0476718287160045
+        },
+        "greedy (stddev)": {
+          "abs_diff": 6.418476861114186e-17,
+          "recomputed": 0.009864565761305564,
+          "stored": 0.0098645657613055
+        }
+      },
+      "calmar_ratio": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.16913988453817036,
+          "stored": 0.1691398845381703
+        },
+        "greedy (mean)": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": 0.18586959792420432,
+          "stored": 0.1858695979242043
+        },
+        "greedy (stddev)": {
+          "abs_diff": 6.938893903907228e-18,
+          "recomputed": 0.060739859037180606,
+          "stored": 0.0607398590371806
+        }
+      },
+      "hit_ratio": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.26884920634920634,
+          "stored": 0.2688492063492063
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.27674603174603174,
+          "stored": 0.2767460317460317
+        },
+        "greedy (stddev)": {
+          "abs_diff": 4.163336342344337e-17,
+          "recomputed": 0.01649313835162414,
+          "stored": 0.0164931383516241
+        }
+      },
+      "max_drawdown": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": -0.23921051217092126,
+          "stored": -0.2392105121709212
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": -0.26971164993411006,
+          "stored": -0.26971164993411
+        },
+        "greedy (stddev)": {
+          "abs_diff": 1.3877787807814457e-17,
+          "recomputed": 0.045048207233321313,
+          "stored": 0.0450482072333213
+        }
+      },
+      "sharpe_ratio": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.3378673034938252,
+          "stored": 0.3378673034938252
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.39426008721229294,
+          "stored": 0.3942600872122929
+        },
+        "greedy (stddev)": {
+          "abs_diff": 4.163336342344337e-17,
+          "recomputed": 0.07628521510943984,
+          "stored": 0.0762852151094398
+        }
+      },
+      "total_return": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.8862813656690898,
+          "stored": 0.8862813656690898
+        },
+        "greedy (mean)": {
+          "abs_diff": 2.220446049250313e-16,
+          "recomputed": 1.1288224766995199,
+          "stored": 1.12882247669952
+        },
+        "greedy (stddev)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.3124746653169425,
+          "stored": 0.3124746653169425
+        }
+      },
+      "volatility": {
+        "average_ensemble": {
+          "abs_diff": 6.938893903907228e-17,
+          "recomputed": 0.11975126918324507,
+          "stored": 0.119751269183245
+        },
+        "greedy (mean)": {
+          "abs_diff": 8.326672684688674e-17,
+          "recomputed": 0.12059207881822978,
+          "stored": 0.1205920788182297
+        },
+        "greedy (stddev)": {
+          "abs_diff": 3.469446951953614e-17,
+          "recomputed": 0.0031504048736779346,
+          "stored": 0.0031504048736779
+        }
+      }
+    },
+    "n_seeds": 25,
+    "pred_dir": "experiments_cluster/CNN-false_EPOCHS-10_MLP-true_MODEL_EMBEDDING-15_N_SEEDS_PER_ARCH-50_RNN-false_START_DATE-2000-01-01_TICKER-GC=F_WINDOW_SIZE-252"
+  },
+  "GC=F__thompson__hetero": {
+    "bandit_dir": "experiments_cluster/BANDIT_EMBEDDING-15_EPISODES-100_METRIC-l1_N_ARMS-60_POLICY-thompson_START_DATE-2000-01-01_TICKER-GC=F_WINDOW_SIZE-252",
+    "best_seed": "seed_20",
+    "bit_exact": true,
+    "max_abs_diff": 4.440892098500626e-16,
+    "metrics": {
+      "annualized_return": {
+        "average_ensemble": {
+          "abs_diff": 1.734723475976807e-17,
+          "recomputed": 0.025386813281476517,
+          "stored": 0.0253868132814765
+        },
+        "greedy (mean)": {
+          "abs_diff": 1.3877787807814457e-17,
+          "recomputed": 0.07259408827505572,
+          "stored": 0.0725940882750557
+        },
+        "greedy (stddev)": {
+          "abs_diff": 3.122502256758253e-17,
+          "recomputed": 0.01633666817570913,
+          "stored": 0.0163366681757091
+        }
+      },
+      "calmar_ratio": {
+        "average_ensemble": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": 0.08088453782322973,
+          "stored": 0.0808845378232297
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.33572317030266313,
+          "stored": 0.3357231703026631
+        },
+        "greedy (stddev)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.0995880782810683,
+          "stored": 0.0995880782810683
+        }
+      },
+      "hit_ratio": {
+        "average_ensemble": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": 0.20932539682539683,
+          "stored": 0.2093253968253968
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.28517857142857145,
+          "stored": 0.2851785714285714
+        },
+        "greedy (stddev)": {
+          "abs_diff": 3.122502256758253e-17,
+          "recomputed": 0.004319567937950731,
+          "stored": 0.0043195679379507
+        }
+      },
+      "max_drawdown": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": -0.31386484938516296,
+          "stored": -0.3138648493851629
+        },
+        "greedy (mean)": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": -0.22416472867753512,
+          "stored": -0.2241647286775351
+        },
+        "greedy (stddev)": {
+          "abs_diff": 2.0816681711721685e-17,
+          "recomputed": 0.03778803643799662,
+          "stored": 0.0377880364379966
+        }
+      },
+      "sharpe_ratio": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.2404446206275744,
+          "stored": 0.2404446206275744
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.6086059792840348,
+          "stored": 0.6086059792840348
+        },
+        "greedy (stddev)": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": 0.13894714601934943,
+          "stored": 0.1389471460193494
+        }
+      },
+      "total_return": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.4934945707184146,
+          "stored": 0.4934945707184146
+        },
+        "greedy (mean)": {
+          "abs_diff": 4.440892098500626e-16,
+          "recomputed": 2.1570508133435276,
+          "stored": 2.157050813343528
+        },
+        "greedy (stddev)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.7993901338137569,
+          "stored": 0.7993901338137569
+        }
+      },
+      "volatility": {
+        "average_ensemble": {
+          "abs_diff": 1.3877787807814457e-17,
+          "recomputed": 0.10558278748435071,
+          "stored": 0.1055827874843507
+        },
+        "greedy (mean)": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": 0.11937147081302893,
+          "stored": 0.1193714708130289
+        },
+        "greedy (stddev)": {
+          "abs_diff": 8.370040771588094e-17,
+          "recomputed": 0.0014279586393776836,
+          "stored": 0.0014279586393776
+        }
+      }
+    },
+    "n_seeds": 25,
+    "pred_dir": "experiments_cluster/CNN-true_EPOCHS-10_MLP-true_MODEL_EMBEDDING-15_N_SEEDS_PER_ARCH-20_RNN-true_START_DATE-2000-01-01_TICKER-GC=F_WINDOW_SIZE-252"
+  },
+  "GC=F__thompson__homo": {
+    "bandit_dir": "experiments_cluster/BANDIT_EMBEDDING-15_EPISODES-100_METRIC-l1_N_ARMS-50_POLICY-thompson_START_DATE-2000-01-01_TICKER-GC=F_WINDOW_SIZE-252",
+    "best_seed": "seed_3",
+    "bit_exact": true,
+    "max_abs_diff": 2.220446049250313e-16,
+    "metrics": {
+      "annualized_return": {
+        "average_ensemble": {
+          "abs_diff": 2.0816681711721685e-17,
+          "recomputed": 0.04046003840890622,
+          "stored": 0.0404600384089062
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.0568386746514715,
+          "stored": 0.0568386746514715
+        },
+        "greedy (stddev)": {
+          "abs_diff": 5.377642775528102e-17,
+          "recomputed": 0.012368344164658953,
+          "stored": 0.0123683441646589
+        }
+      },
+      "calmar_ratio": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.16913988453817036,
+          "stored": 0.1691398845381703
+        },
+        "greedy (mean)": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": 0.21868070511618531,
+          "stored": 0.2186807051161853
+        },
+        "greedy (stddev)": {
+          "abs_diff": 4.163336342344337e-17,
+          "recomputed": 0.07768914153024804,
+          "stored": 0.077689141530248
+        }
+      },
+      "hit_ratio": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.26884920634920634,
+          "stored": 0.2688492063492063
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.28387896825396824,
+          "stored": 0.2838789682539682
+        },
+        "greedy (stddev)": {
+          "abs_diff": 2.992397996059992e-17,
+          "recomputed": 0.0033708267873079297,
+          "stored": 0.0033708267873079
+        }
+      },
+      "max_drawdown": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": -0.23921051217092126,
+          "stored": -0.2392105121709212
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": -0.2772775930235849,
+          "stored": -0.2772775930235849
+        },
+        "greedy (stddev)": {
+          "abs_diff": 8.326672684688674e-17,
+          "recomputed": 0.058097921202187486,
+          "stored": 0.0580979212021874
+        }
+      },
+      "sharpe_ratio": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.3378673034938252,
+          "stored": 0.3378673034938252
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.4677466748216559,
+          "stored": 0.4677466748216559
+        },
+        "greedy (stddev)": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": 0.10374184276764263,
+          "stored": 0.1037418427676426
+        }
+      },
+      "total_return": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.8862813656690898,
+          "stored": 0.8862813656690898
+        },
+        "greedy (mean)": {
+          "abs_diff": 2.220446049250313e-16,
+          "recomputed": 1.4615406487503457,
+          "stored": 1.4615406487503455
+        },
+        "greedy (stddev)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.45592443674928895,
+          "stored": 0.4559244367492889
+        }
+      },
+      "volatility": {
+        "average_ensemble": {
+          "abs_diff": 6.938893903907228e-17,
+          "recomputed": 0.11975126918324507,
+          "stored": 0.119751269183245
+        },
+        "greedy (mean)": {
+          "abs_diff": 9.71445146547012e-17,
+          "recomputed": 0.12164562333920939,
+          "stored": 0.1216456233392093
+        },
+        "greedy (stddev)": {
+          "abs_diff": 1.734723475976807e-18,
+          "recomputed": 0.0015180819810775017,
+          "stored": 0.0015180819810775
+        }
+      }
+    },
+    "n_seeds": 25,
+    "pred_dir": "experiments_cluster/CNN-false_EPOCHS-10_MLP-true_MODEL_EMBEDDING-15_N_SEEDS_PER_ARCH-50_RNN-false_START_DATE-2000-01-01_TICKER-GC=F_WINDOW_SIZE-252"
+  },
+  "GC=F__ucb__hetero": {
+    "bandit_dir": "experiments_cluster/BANDIT_EMBEDDING-15_EPISODES-100_METRIC-l1_N_ARMS-60_POLICY-ucb_START_DATE-2000-01-01_TICKER-GC=F_WINDOW_SIZE-252",
+    "best_seed": "seed_7",
+    "bit_exact": true,
+    "max_abs_diff": 7.166576360129184e-17,
+    "metrics": {
+      "annualized_return": {
+        "average_ensemble": {
+          "abs_diff": 1.734723475976807e-17,
+          "recomputed": 0.025386813281476517,
+          "stored": 0.0253868132814765
+        },
+        "greedy (mean)": {
+          "abs_diff": 4.163336342344337e-17,
+          "recomputed": 0.07215943592367234,
+          "stored": 0.0721594359236723
+        },
+        "greedy (stddev)": {
+          "abs_diff": 2.168404344971009e-17,
+          "recomputed": 0.0026315642918977216,
+          "stored": 0.0026315642918977
+        }
+      },
+      "calmar_ratio": {
+        "average_ensemble": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": 0.08088453782322973,
+          "stored": 0.0808845378232297
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.2675785389722932,
+          "stored": 0.2675785389722932
+        },
+        "greedy (stddev)": {
+          "abs_diff": 4.5102810375396984e-17,
+          "recomputed": 0.018494650058190443,
+          "stored": 0.0184946500581904
+        }
+      },
+      "hit_ratio": {
+        "average_ensemble": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": 0.20932539682539683,
+          "stored": 0.2093253968253968
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.2781746031746032,
+          "stored": 0.2781746031746032
+        },
+        "greedy (stddev)": {
+          "abs_diff": 7.166576360129184e-17,
+          "recomputed": 0.0006908922756539717,
+          "stored": 0.0006908922756539
+        }
+      },
+      "max_drawdown": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": -0.31386484938516296,
+          "stored": -0.3138648493851629
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": -0.27044905606022457,
+          "stored": -0.2704490560602245
+        },
+        "greedy (stddev)": {
+          "abs_diff": 3.469446951953614e-18,
+          "recomputed": 0.012384886003147204,
+          "stored": 0.0123848860031472
+        }
+      },
+      "sharpe_ratio": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.2404446206275744,
+          "stored": 0.2404446206275744
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.6212020397237721,
+          "stored": 0.6212020397237721
+        },
+        "greedy (stddev)": {
+          "abs_diff": 1.734723475976807e-17,
+          "recomputed": 0.022839265919277717,
+          "stored": 0.0228392659192777
+        }
+      },
+      "total_return": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.4934945707184146,
+          "stored": 0.4934945707184146
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 2.051137540460539,
+          "stored": 2.051137540460539
+        },
+        "greedy (stddev)": {
+          "abs_diff": 6.938893903907228e-17,
+          "recomputed": 0.11855822259640157,
+          "stored": 0.1185582225964015
+        }
+      },
+      "volatility": {
+        "average_ensemble": {
+          "abs_diff": 1.3877787807814457e-17,
+          "recomputed": 0.10558278748435071,
+          "stored": 0.1055827874843507
+        },
+        "greedy (mean)": {
+          "abs_diff": 6.938893903907228e-17,
+          "recomputed": 0.11616245684748167,
+          "stored": 0.1161624568474816
+        },
+        "greedy (stddev)": {
+          "abs_diff": 3.3203691532368573e-17,
+          "recomputed": 0.0001961463331222332,
+          "stored": 0.0001961463331222
+        }
+      }
+    },
+    "n_seeds": 25,
+    "pred_dir": "experiments_cluster/CNN-true_EPOCHS-10_MLP-true_MODEL_EMBEDDING-15_N_SEEDS_PER_ARCH-20_RNN-true_START_DATE-2000-01-01_TICKER-GC=F_WINDOW_SIZE-252"
+  },
+  "GC=F__ucb__homo": {
+    "bandit_dir": "experiments_cluster/BANDIT_EMBEDDING-15_EPISODES-100_METRIC-l1_N_ARMS-50_POLICY-ucb_START_DATE-2000-01-01_TICKER-GC=F_WINDOW_SIZE-252",
+    "best_seed": "seed_5",
+    "bit_exact": true,
+    "max_abs_diff": 8.326672684688674e-17,
+    "metrics": {
+      "annualized_return": {
+        "average_ensemble": {
+          "abs_diff": 2.0816681711721685e-17,
+          "recomputed": 0.04046003840890622,
+          "stored": 0.0404600384089062
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.06491268429178296,
+          "stored": 0.0649126842917829
+        },
+        "greedy (stddev)": {
+          "abs_diff": 6.288372600415926e-18,
+          "recomputed": 0.0016361114901770064,
+          "stored": 0.001636111490177
+        }
+      },
+      "calmar_ratio": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.16913988453817036,
+          "stored": 0.1691398845381703
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.1888295608716132,
+          "stored": 0.1888295608716132
+        },
+        "greedy (stddev)": {
+          "abs_diff": 2.2551405187698492e-17,
+          "recomputed": 0.011102254754397623,
+          "stored": 0.0111022547543976
+        }
+      },
+      "hit_ratio": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.26884920634920634,
+          "stored": 0.2688492063492063
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.29048611111111117,
+          "stored": 0.2904861111111111
+        },
+        "greedy (stddev)": {
+          "abs_diff": 7.838781707070197e-17,
+          "recomputed": 0.00040468408838037836,
+          "stored": 0.0004046840883803
+        }
+      },
+      "max_drawdown": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": -0.23921051217092126,
+          "stored": -0.2392105121709212
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": -0.34448719396291394,
+          "stored": -0.3444871939629139
+        },
+        "greedy (stddev)": {
+          "abs_diff": 1.5612511283791264e-17,
+          "recomputed": 0.012946813464219815,
+          "stored": 0.0129468134642198
+        }
+      },
+      "sharpe_ratio": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.3378673034938252,
+          "stored": 0.3378673034938252
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.5437499185050004,
+          "stored": 0.5437499185050004
+        },
+        "greedy (stddev)": {
+          "abs_diff": 2.949029909160572e-17,
+          "recomputed": 0.01357896902155923,
+          "stored": 0.0135789690215592
+        }
+      },
+      "total_return": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.8862813656690898,
+          "stored": 0.8862813656690898
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 1.7361992368791193,
+          "stored": 1.7361992368791193
+        },
+        "greedy (stddev)": {
+          "abs_diff": 8.326672684688674e-17,
+          "recomputed": 0.06788158713727778,
+          "stored": 0.0678815871372777
+        }
+      },
+      "volatility": {
+        "average_ensemble": {
+          "abs_diff": 6.938893903907228e-17,
+          "recomputed": 0.11975126918324507,
+          "stored": 0.119751269183245
+        },
+        "greedy (mean)": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": 0.11937915823481653,
+          "stored": 0.1193791582348165
+        },
+        "greedy (stddev)": {
+          "abs_diff": 5.900770323752358e-17,
+          "recomputed": 0.000207212951217059,
+          "stored": 0.000207212951217
+        }
+      }
+    },
+    "n_seeds": 25,
+    "pred_dir": "experiments_cluster/CNN-false_EPOCHS-10_MLP-true_MODEL_EMBEDDING-15_N_SEEDS_PER_ARCH-50_RNN-false_START_DATE-2000-01-01_TICKER-GC=F_WINDOW_SIZE-252"
+  },
+  "SPY__softmax__hetero": {
+    "bandit_dir": "experiments_cluster/BANDIT_EMBEDDING-15_EPISODES-100_METRIC-l1_N_ARMS-60_POLICY-softmax_START_DATE-2000-01-01_TICKER-SPY_WINDOW_SIZE-252",
+    "best_seed": "seed_15",
+    "bit_exact": true,
+    "max_abs_diff": 4.440892098500626e-16,
+    "metrics": {
+      "annualized_return": {
+        "average_ensemble": {
+          "abs_diff": 1.3877787807814457e-17,
+          "recomputed": 0.07988442739772861,
+          "stored": 0.0798844273977286
+        },
+        "greedy (mean)": {
+          "abs_diff": 4.163336342344337e-17,
+          "recomputed": 0.07551595736059594,
+          "stored": 0.0755159573605959
+        },
+        "greedy (stddev)": {
+          "abs_diff": 1.9949319973733282e-17,
+          "recomputed": 0.00470580573271502,
+          "stored": 0.004705805732715
+        }
+      },
+      "calmar_ratio": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.2623941212088674,
+          "stored": 0.2623941212088674
+        },
+        "greedy (mean)": {
+          "abs_diff": 8.326672684688674e-17,
+          "recomputed": 0.24804513112706247,
+          "stored": 0.2480451311270624
+        },
+        "greedy (stddev)": {
+          "abs_diff": 1.5612511283791264e-17,
+          "recomputed": 0.015457027108271116,
+          "stored": 0.0154570271082711
+        }
+      },
+      "hit_ratio": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.12745098039215685,
+          "stored": 0.1274509803921568
+        },
+        "greedy (mean)": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": 0.17405228758169933,
+          "stored": 0.1740522875816993
+        },
+        "greedy (stddev)": {
+          "abs_diff": 7.19910242530375e-17,
+          "recomputed": 0.004523363847157872,
+          "stored": 0.0045233638471578
+        }
+      },
+      "max_drawdown": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": -0.3044444251635504,
+          "stored": -0.3044444251635504
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": -0.3044444251635501,
+          "stored": -0.3044444251635501
+        },
+        "greedy (stddev)": {
+          "abs_diff": 0.0,
+          "recomputed": 1.65419505046575e-16,
+          "stored": 1.65419505046575e-16
+        }
+      },
+      "sharpe_ratio": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.6101215117397892,
+          "stored": 0.6101215117397892
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.5591323720591427,
+          "stored": 0.5591323720591427
+        },
+        "greedy (stddev)": {
+          "abs_diff": 4.163336342344337e-17,
+          "recomputed": 0.03446116282176644,
+          "stored": 0.0344611628217664
+        }
+      },
+      "total_return": {
+        "average_ensemble": {
+          "abs_diff": 4.440892098500626e-16,
+          "recomputed": 2.6932927473294335,
+          "stored": 2.693292747329433
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 2.456366165319954,
+          "stored": 2.456366165319954
+        },
+        "greedy (stddev)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.25826963257423813,
+          "stored": 0.2582696325742381
+        }
+      },
+      "volatility": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.13093199610342296,
+          "stored": 0.1309319961034229
+        },
+        "greedy (mean)": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": 0.13505567929810203,
+          "stored": 0.135055679298102
+        },
+        "greedy (stddev)": {
+          "abs_diff": 4.716279450311944e-17,
+          "recomputed": 0.0008270710457828472,
+          "stored": 0.0008270710457828
+        }
+      }
+    },
+    "n_seeds": 25,
+    "pred_dir": "experiments_cluster/CNN-true_EPOCHS-10_MLP-true_MODEL_EMBEDDING-15_N_SEEDS_PER_ARCH-20_RNN-true_START_DATE-2000-01-01_TICKER-SPY_WINDOW_SIZE-252"
+  },
+  "SPY__softmax__homo": {
+    "bandit_dir": "experiments_cluster/BANDIT_EMBEDDING-15_EPISODES-100_METRIC-l1_N_ARMS-50_POLICY-softmax_START_DATE-2000-01-01_TICKER-SPY_WINDOW_SIZE-252",
+    "best_seed": "seed_21",
+    "bit_exact": true,
+    "max_abs_diff": 4.440892098500626e-16,
+    "metrics": {
+      "annualized_return": {
+        "average_ensemble": {
+          "abs_diff": 8.326672684688674e-17,
+          "recomputed": 0.09033324115092789,
+          "stored": 0.0903332411509278
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.09077845699249305,
+          "stored": 0.090778456992493
+        },
+        "greedy (stddev)": {
+          "abs_diff": 4.9439619065339e-17,
+          "recomputed": 0.007786770824106449,
+          "stored": 0.0077867708241064
+        }
+      },
+      "calmar_ratio": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.2511836757061264,
+          "stored": 0.2511836757061264
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.26959170553219775,
+          "stored": 0.2695917055321977
+        },
+        "greedy (stddev)": {
+          "abs_diff": 1.3877787807814457e-17,
+          "recomputed": 0.024817102633611515,
+          "stored": 0.0248171026336115
+        }
+      },
+      "hit_ratio": {
+        "average_ensemble": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": 0.21872082166199813,
+          "stored": 0.2187208216619981
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.19128851540616246,
+          "stored": 0.1912885154061624
+        },
+        "greedy (stddev)": {
+          "abs_diff": 6.591949208711867e-17,
+          "recomputed": 0.012319291073456366,
+          "stored": 0.0123192910734563
+        }
+      },
+      "max_drawdown": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": -0.35963022237405956,
+          "stored": -0.3596302223740595
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": -0.3373190553419201,
+          "stored": -0.3373190553419201
+        },
+        "greedy (stddev)": {
+          "abs_diff": 6.245004513516506e-17,
+          "recomputed": 0.016935526663330962,
+          "stored": 0.0169355266633309
+        }
+      },
+      "sharpe_ratio": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.6359060724312141,
+          "stored": 0.6359060724312141
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.6621067863409461,
+          "stored": 0.6621067863409461
+        },
+        "greedy (stddev)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.056450454751235356,
+          "stored": 0.0564504547512353
+        }
+      },
+      "total_return": {
+        "average_ensemble": {
+          "abs_diff": 4.440892098500626e-16,
+          "recomputed": 3.3501806841777597,
+          "stored": 3.35018068417776
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 3.410778922166902,
+          "stored": 3.410778922166902
+        },
+        "greedy (stddev)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.5322084887755205,
+          "stored": 0.5322084887755205
+        }
+      },
+      "volatility": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.1420543773163909,
+          "stored": 0.1420543773163909
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.13711666778307,
+          "stored": 0.13711666778307
+        },
+        "greedy (stddev)": {
+          "abs_diff": 1.214306433183765e-17,
+          "recomputed": 0.002228762230591812,
+          "stored": 0.0022287622305918
+        }
+      }
+    },
+    "n_seeds": 25,
+    "pred_dir": "experiments_cluster/CNN-false_EPOCHS-10_MLP-true_MODEL_EMBEDDING-15_N_SEEDS_PER_ARCH-50_RNN-false_START_DATE-2000-01-01_TICKER-SPY_WINDOW_SIZE-252"
+  },
+  "SPY__thompson__hetero": {
+    "bandit_dir": "experiments_cluster/BANDIT_EMBEDDING-15_EPISODES-100_METRIC-l1_N_ARMS-60_POLICY-thompson_START_DATE-2000-01-01_TICKER-SPY_WINDOW_SIZE-252",
+    "best_seed": "seed_21",
+    "bit_exact": true,
+    "max_abs_diff": 4.440892098500626e-16,
+    "metrics": {
+      "annualized_return": {
+        "average_ensemble": {
+          "abs_diff": 1.3877787807814457e-17,
+          "recomputed": 0.07988442739772861,
+          "stored": 0.0798844273977286
+        },
+        "greedy (mean)": {
+          "abs_diff": 6.938893903907228e-17,
+          "recomputed": 0.06908330466250708,
+          "stored": 0.069083304662507
+        },
+        "greedy (stddev)": {
+          "abs_diff": 6.938893903907228e-17,
+          "recomputed": 0.00902246070698357,
+          "stored": 0.0090224607069835
+        }
+      },
+      "calmar_ratio": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.2623941212088674,
+          "stored": 0.2623941212088674
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.2145727244074366,
+          "stored": 0.2145727244074366
+        },
+        "greedy (stddev)": {
+          "abs_diff": 5.204170427930421e-17,
+          "recomputed": 0.03005318543035695,
+          "stored": 0.0300531854303569
+        }
+      },
+      "hit_ratio": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.12745098039215685,
+          "stored": 0.1274509803921568
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.2793090569561158,
+          "stored": 0.2793090569561158
+        },
+        "greedy (stddev)": {
+          "abs_diff": 1.691355389077387e-17,
+          "recomputed": 0.002685993928747217,
+          "stored": 0.0026859939287472
+        }
+      },
+      "max_drawdown": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": -0.3044444251635504,
+          "stored": -0.3044444251635504
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": -0.3225533831911955,
+          "stored": -0.3225533831911955
+        },
+        "greedy (stddev)": {
+          "abs_diff": 6.938893903907228e-18,
+          "recomputed": 0.013932341648399807,
+          "stored": 0.0139323416483998
+        }
+      },
+      "sharpe_ratio": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.6101215117397892,
+          "stored": 0.6101215117397892
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.48474116581045057,
+          "stored": 0.4847411658104505
+        },
+        "greedy (stddev)": {
+          "abs_diff": 1.3877787807814457e-17,
+          "recomputed": 0.06442900370041882,
+          "stored": 0.0644290037004188
+        }
+      },
+      "total_return": {
+        "average_ensemble": {
+          "abs_diff": 4.440892098500626e-16,
+          "recomputed": 2.6932927473294335,
+          "stored": 2.693292747329433
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 2.143215945781013,
+          "stored": 2.143215945781013
+        },
+        "greedy (stddev)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.44865840246091293,
+          "stored": 0.4486584024609129
+        }
+      },
+      "volatility": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.13093199610342296,
+          "stored": 0.1309319961034229
+        },
+        "greedy (mean)": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": 0.14257130422809652,
+          "stored": 0.1425713042280965
+        },
+        "greedy (stddev)": {
+          "abs_diff": 6.136584296267955e-17,
+          "recomputed": 0.0012184895606684614,
+          "stored": 0.0012184895606684
+        }
+      }
+    },
+    "n_seeds": 25,
+    "pred_dir": "experiments_cluster/CNN-true_EPOCHS-10_MLP-true_MODEL_EMBEDDING-15_N_SEEDS_PER_ARCH-20_RNN-true_START_DATE-2000-01-01_TICKER-SPY_WINDOW_SIZE-252"
+  },
+  "SPY__thompson__homo": {
+    "bandit_dir": "experiments_cluster/BANDIT_EMBEDDING-15_EPISODES-100_METRIC-l1_N_ARMS-50_POLICY-thompson_START_DATE-2000-01-01_TICKER-SPY_WINDOW_SIZE-252",
+    "best_seed": "seed_2",
+    "bit_exact": true,
+    "max_abs_diff": 4.440892098500626e-16,
+    "metrics": {
+      "annualized_return": {
+        "average_ensemble": {
+          "abs_diff": 8.326672684688674e-17,
+          "recomputed": 0.09033324115092789,
+          "stored": 0.0903332411509278
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.0924316786066158,
+          "stored": 0.0924316786066158
+        },
+        "greedy (stddev)": {
+          "abs_diff": 5.0306980803327406e-17,
+          "recomputed": 0.01188539414272425,
+          "stored": 0.0118853941427242
+        }
+      },
+      "calmar_ratio": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.2511836757061264,
+          "stored": 0.2511836757061264
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.2704547839565112,
+          "stored": 0.2704547839565112
+        },
+        "greedy (stddev)": {
+          "abs_diff": 7.632783294297951e-17,
+          "recomputed": 0.042021266604413875,
+          "stored": 0.0420212666044138
+        }
+      },
+      "hit_ratio": {
+        "average_ensemble": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": 0.21872082166199813,
+          "stored": 0.2187208216619981
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.28012138188608776,
+          "stored": 0.2801213818860877
+        },
+        "greedy (stddev)": {
+          "abs_diff": 5.0306980803327406e-17,
+          "recomputed": 0.00361893006065575,
+          "stored": 0.0036189300606557
+        }
+      },
+      "max_drawdown": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": -0.35963022237405956,
+          "stored": -0.3596302223740595
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": -0.3435135777886493,
+          "stored": -0.3435135777886493
+        },
+        "greedy (stddev)": {
+          "abs_diff": 6.245004513516506e-17,
+          "recomputed": 0.017001555145424164,
+          "stored": 0.0170015551454241
+        }
+      },
+      "sharpe_ratio": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.6359060724312141,
+          "stored": 0.6359060724312141
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.6453409598308529,
+          "stored": 0.6453409598308529
+        },
+        "greedy (stddev)": {
+          "abs_diff": 6.938893903907228e-17,
+          "recomputed": 0.08407966811499767,
+          "stored": 0.0840796681149976
+        }
+      },
+      "total_return": {
+        "average_ensemble": {
+          "abs_diff": 4.440892098500626e-16,
+          "recomputed": 3.3501806841777597,
+          "stored": 3.35018068417776
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 3.5695275945099287,
+          "stored": 3.5695275945099287
+        },
+        "greedy (stddev)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.8846620648140775,
+          "stored": 0.8846620648140775
+        }
+      },
+      "volatility": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.1420543773163909,
+          "stored": 0.1420543773163909
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.1432649140547192,
+          "stored": 0.1432649140547192
+        },
+        "greedy (stddev)": {
+          "abs_diff": 1.0191500421363742e-17,
+          "recomputed": 0.00102010201389561,
+          "stored": 0.0010201020138956
+        }
+      }
+    },
+    "n_seeds": 25,
+    "pred_dir": "experiments_cluster/CNN-false_EPOCHS-10_MLP-true_MODEL_EMBEDDING-15_N_SEEDS_PER_ARCH-50_RNN-false_START_DATE-2000-01-01_TICKER-SPY_WINDOW_SIZE-252"
+  },
+  "SPY__ucb__hetero": {
+    "bandit_dir": "experiments_cluster/BANDIT_EMBEDDING-15_EPISODES-100_METRIC-l1_N_ARMS-60_POLICY-ucb_START_DATE-2000-01-01_TICKER-SPY_WINDOW_SIZE-252",
+    "best_seed": "seed_13",
+    "bit_exact": true,
+    "max_abs_diff": 4.440892098500626e-16,
+    "metrics": {
+      "annualized_return": {
+        "average_ensemble": {
+          "abs_diff": 1.3877787807814457e-17,
+          "recomputed": 0.07988442739772861,
+          "stored": 0.0798844273977286
+        },
+        "greedy (mean)": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": 0.09206009105191593,
+          "stored": 0.0920600910519159
+        },
+        "greedy (stddev)": {
+          "abs_diff": 4.85722573273506e-17,
+          "recomputed": 0.0027244118976015486,
+          "stored": 0.0027244118976015
+        }
+      },
+      "calmar_ratio": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.2623941212088674,
+          "stored": 0.2623941212088674
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.3023871795401097,
+          "stored": 0.3023871795401097
+        },
+        "greedy (stddev)": {
+          "abs_diff": 5.898059818321144e-17,
+          "recomputed": 0.008948798770540658,
+          "stored": 0.0089487987705406
+        }
+      },
+      "hit_ratio": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.12745098039215685,
+          "stored": 0.1274509803921568
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.26139122315592905,
+          "stored": 0.261391223155929
+        },
+        "greedy (stddev)": {
+          "abs_diff": 4.0440741033709315e-17,
+          "recomputed": 0.0009052623449890405,
+          "stored": 0.000905262344989
+        }
+      },
+      "max_drawdown": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": -0.3044444251635504,
+          "stored": -0.3044444251635504
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": -0.30444442516355014,
+          "stored": -0.3044444251635501
+        },
+        "greedy (stddev)": {
+          "abs_diff": 1.232595164407831e-32,
+          "recomputed": 9.550499576785472e-17,
+          "stored": 9.550499576785471e-17
+        }
+      },
+      "sharpe_ratio": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.6101215117397892,
+          "stored": 0.6101215117397892
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.6628341463957335,
+          "stored": 0.6628341463957335
+        },
+        "greedy (stddev)": {
+          "abs_diff": 3.8163916471489756e-17,
+          "recomputed": 0.02018733962741954,
+          "stored": 0.0201873396274195
+        }
+      },
+      "total_return": {
+        "average_ensemble": {
+          "abs_diff": 4.440892098500626e-16,
+          "recomputed": 2.6932927473294335,
+          "stored": 2.693292747329433
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 3.4726150558095936,
+          "stored": 3.4726150558095936
+        },
+        "greedy (stddev)": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": 0.19211925491601833,
+          "stored": 0.1921192549160183
+        }
+      },
+      "volatility": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.13093199610342296,
+          "stored": 0.1309319961034229
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.13889253431407106,
+          "stored": 0.138892534314071
+        },
+        "greedy (stddev)": {
+          "abs_diff": 2.0003530082357557e-17,
+          "recomputed": 0.00028595347471292,
+          "stored": 0.0002859534747129
+        }
+      }
+    },
+    "n_seeds": 25,
+    "pred_dir": "experiments_cluster/CNN-true_EPOCHS-10_MLP-true_MODEL_EMBEDDING-15_N_SEEDS_PER_ARCH-20_RNN-true_START_DATE-2000-01-01_TICKER-SPY_WINDOW_SIZE-252"
+  },
+  "SPY__ucb__homo": {
+    "bandit_dir": "experiments_cluster/BANDIT_EMBEDDING-15_EPISODES-100_METRIC-l1_N_ARMS-50_POLICY-ucb_START_DATE-2000-01-01_TICKER-SPY_WINDOW_SIZE-252",
+    "best_seed": "seed_7",
+    "bit_exact": true,
+    "max_abs_diff": 4.440892098500626e-16,
+    "metrics": {
+      "annualized_return": {
+        "average_ensemble": {
+          "abs_diff": 8.326672684688674e-17,
+          "recomputed": 0.09033324115092789,
+          "stored": 0.0903332411509278
+        },
+        "greedy (mean)": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": 0.09783346747725183,
+          "stored": 0.0978334674772518
+        },
+        "greedy (stddev)": {
+          "abs_diff": 1.734723475976807e-18,
+          "recomputed": 0.002967460439435802,
+          "stored": 0.0029674604394358
+        }
+      },
+      "calmar_ratio": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.2511836757061264,
+          "stored": 0.2511836757061264
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.3122159053958825,
+          "stored": 0.3122159053958825
+        },
+        "greedy (stddev)": {
+          "abs_diff": 4.163336342344337e-17,
+          "recomputed": 0.010290303803997742,
+          "stored": 0.0102903038039977
+        }
+      },
+      "hit_ratio": {
+        "average_ensemble": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": 0.21872082166199813,
+          "stored": 0.2187208216619981
+        },
+        "greedy (mean)": {
+          "abs_diff": 8.326672684688674e-17,
+          "recomputed": 0.24819794584500468,
+          "stored": 0.2481979458450046
+        },
+        "greedy (stddev)": {
+          "abs_diff": 8.673617379884035e-17,
+          "recomputed": 0.0007126819659107867,
+          "stored": 0.0007126819659107
+        }
+      },
+      "max_drawdown": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": -0.35963022237405956,
+          "stored": -0.3596302223740595
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": -0.31338563152419696,
+          "stored": -0.3133856315241969
+        },
+        "greedy (stddev)": {
+          "abs_diff": 1.0842021724855044e-17,
+          "recomputed": 0.0021775003741101107,
+          "stored": 0.0021775003741101
+        }
+      },
+      "sharpe_ratio": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.6359060724312141,
+          "stored": 0.6359060724312141
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.6870890672757994,
+          "stored": 0.6870890672757994
+        },
+        "greedy (stddev)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.0211204806728634,
+          "stored": 0.0211204806728634
+        }
+      },
+      "total_return": {
+        "average_ensemble": {
+          "abs_diff": 4.440892098500626e-16,
+          "recomputed": 3.3501806841777597,
+          "stored": 3.35018068417776
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 3.8927115076081087,
+          "stored": 3.8927115076081087
+        },
+        "greedy (stddev)": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": 0.22337016747629193,
+          "stored": 0.2233701674762919
+        }
+      },
+      "volatility": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.1420543773163909,
+          "stored": 0.1420543773163909
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.14239024164808345,
+          "stored": 0.1423902416480834
+        },
+        "greedy (stddev)": {
+          "abs_diff": 3.344763702117781e-17,
+          "recomputed": 0.00014908092152703345,
+          "stored": 0.000149080921527
+        }
+      }
+    },
+    "n_seeds": 25,
+    "pred_dir": "experiments_cluster/CNN-false_EPOCHS-10_MLP-true_MODEL_EMBEDDING-15_N_SEEDS_PER_ARCH-50_RNN-false_START_DATE-2000-01-01_TICKER-SPY_WINDOW_SIZE-252"
+  },
+  "TLT__softmax__hetero": {
+    "bandit_dir": "experiments_cluster/BANDIT_EMBEDDING-15_EPISODES-100_METRIC-l1_N_ARMS-60_POLICY-softmax_START_DATE-2000-01-01_TICKER-TLT_WINDOW_SIZE-252",
+    "best_seed": "seed_9",
+    "bit_exact": true,
+    "max_abs_diff": 8.326672684688674e-17,
+    "metrics": {
+      "annualized_return": {
+        "average_ensemble": {
+          "abs_diff": 2.0816681711721685e-17,
+          "recomputed": 0.04059877007426982,
+          "stored": 0.0405987700742698
+        },
+        "greedy (mean)": {
+          "abs_diff": 8.153200337090993e-17,
+          "recomputed": 0.011780389515938081,
+          "stored": 0.011780389515938
+        },
+        "greedy (stddev)": {
+          "abs_diff": 6.678685382510707e-17,
+          "recomputed": 0.005627597159093567,
+          "stored": 0.0056275971590935
+        }
+      },
+      "calmar_ratio": {
+        "average_ensemble": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": 0.14192038543662863,
+          "stored": 0.1419203854366286
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.03952177256278336,
+          "stored": 0.0395217725627833
+        },
+        "greedy (stddev)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.019063927666169555,
+          "stored": 0.0190639276661695
+        }
+      },
+      "hit_ratio": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.2684240362811791,
+          "stored": 0.2684240362811791
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.2574716553287982,
+          "stored": 0.2574716553287982
+        },
+        "greedy (stddev)": {
+          "abs_diff": 2.42861286636753e-17,
+          "recomputed": 0.003647447093647124,
+          "stored": 0.0036474470936471
+        }
+      },
+      "max_drawdown": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": -0.28606721965533477,
+          "stored": -0.2860672196553347
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": -0.299978746320136,
+          "stored": -0.299978746320136
+        },
+        "greedy (stddev)": {
+          "abs_diff": 3.642919299551295e-17,
+          "recomputed": 0.013097339449389036,
+          "stored": 0.013097339449389
+        }
+      },
+      "sharpe_ratio": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.38172643244853044,
+          "stored": 0.3817264324485304
+        },
+        "greedy (mean)": {
+          "abs_diff": 4.163336342344337e-17,
+          "recomputed": 0.10999506732380744,
+          "stored": 0.1099950673238074
+        },
+        "greedy (stddev)": {
+          "abs_diff": 4.163336342344337e-17,
+          "recomputed": 0.05223732958307394,
+          "stored": 0.0522373295830739
+        }
+      },
+      "total_return": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.7456867497202377,
+          "stored": 0.7456867497202377
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.18148310999639766,
+          "stored": 0.1814831099963976
+        },
+        "greedy (stddev)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.09176915432674175,
+          "stored": 0.0917691543267417
+        }
+      },
+      "volatility": {
+        "average_ensemble": {
+          "abs_diff": 8.326672684688674e-17,
+          "recomputed": 0.10635566893771209,
+          "stored": 0.106355668937712
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.10701805313631996,
+          "stored": 0.1070180531363199
+        },
+        "greedy (stddev)": {
+          "abs_diff": 5.0415401020575956e-17,
+          "recomputed": 0.0007951422615836504,
+          "stored": 0.0007951422615836
+        }
+      }
+    },
+    "n_seeds": 25,
+    "pred_dir": "experiments_cluster/CNN-true_EPOCHS-10_MLP-true_MODEL_EMBEDDING-15_N_SEEDS_PER_ARCH-20_RNN-true_START_DATE-2000-01-01_TICKER-TLT_WINDOW_SIZE-252"
+  },
+  "TLT__softmax__homo": {
+    "bandit_dir": "experiments_cluster/BANDIT_EMBEDDING-15_EPISODES-100_METRIC-l1_N_ARMS-50_POLICY-softmax_START_DATE-2000-01-01_TICKER-TLT_WINDOW_SIZE-252",
+    "best_seed": "seed_10",
+    "bit_exact": true,
+    "max_abs_diff": 9.71445146547012e-17,
+    "metrics": {
+      "annualized_return": {
+        "average_ensemble": {
+          "abs_diff": 5.204170427930421e-17,
+          "recomputed": 0.028919932895449252,
+          "stored": 0.0289199328954492
+        },
+        "greedy (mean)": {
+          "abs_diff": 3.469446951953614e-18,
+          "recomputed": 0.009727259649723603,
+          "stored": 0.0097272596497236
+        },
+        "greedy (stddev)": {
+          "abs_diff": 3.122502256758253e-17,
+          "recomputed": 0.00807145086722643,
+          "stored": 0.0080714508672264
+        }
+      },
+      "calmar_ratio": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.1055562312194918,
+          "stored": 0.1055562312194918
+        },
+        "greedy (mean)": {
+          "abs_diff": 7.632783294297951e-17,
+          "recomputed": 0.03432489446786258,
+          "stored": 0.0343248944678625
+        },
+        "greedy (stddev)": {
+          "abs_diff": 9.367506770274758e-17,
+          "recomputed": 0.028567014311516793,
+          "stored": 0.0285670143115167
+        }
+      },
+      "hit_ratio": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.2684240362811791,
+          "stored": 0.2684240362811791
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.26482993197278915,
+          "stored": 0.2648299319727891
+        },
+        "greedy (stddev)": {
+          "abs_diff": 6.591949208711867e-17,
+          "recomputed": 0.013692728320929666,
+          "stored": 0.0136927283209296
+        }
+      },
+      "max_drawdown": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": -0.2739765579098182,
+          "stored": -0.2739765579098182
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": -0.29769275537087847,
+          "stored": -0.2976927553708784
+        },
+        "greedy (stddev)": {
+          "abs_diff": 9.020562075079397e-17,
+          "recomputed": 0.02676917139693959,
+          "stored": 0.0267691713969395
+        }
+      },
+      "sharpe_ratio": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.26680899994968554,
+          "stored": 0.2668089999496855
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.09027151404753435,
+          "stored": 0.0902715140475343
+        },
+        "greedy (stddev)": {
+          "abs_diff": 6.938893903907228e-17,
+          "recomputed": 0.07438527190506437,
+          "stored": 0.0743852719050643
+        }
+      },
+      "total_return": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.4905348349510197,
+          "stored": 0.4905348349510197
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.15171800433539476,
+          "stored": 0.1517180043353947
+        },
+        "greedy (stddev)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.1262139279118166,
+          "stored": 0.1262139279118166
+        }
+      },
+      "volatility": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.10839189420485415,
+          "stored": 0.1083918942048541
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.10716097905521516,
+          "stored": 0.1071609790552151
+        },
+        "greedy (stddev)": {
+          "abs_diff": 9.71445146547012e-17,
+          "recomputed": 0.003699923815578697,
+          "stored": 0.0036999238155786
+        }
+      }
+    },
+    "n_seeds": 25,
+    "pred_dir": "experiments_cluster/CNN-false_EPOCHS-10_MLP-true_MODEL_EMBEDDING-15_N_SEEDS_PER_ARCH-50_RNN-false_START_DATE-2000-01-01_TICKER-TLT_WINDOW_SIZE-252"
+  },
+  "TLT__thompson__hetero": {
+    "bandit_dir": "experiments_cluster/BANDIT_EMBEDDING-15_EPISODES-100_METRIC-l1_N_ARMS-60_POLICY-thompson_START_DATE-2000-01-01_TICKER-TLT_WINDOW_SIZE-252",
+    "best_seed": "seed_2",
+    "bit_exact": true,
+    "max_abs_diff": 8.326672684688674e-17,
+    "metrics": {
+      "annualized_return": {
+        "average_ensemble": {
+          "abs_diff": 2.0816681711721685e-17,
+          "recomputed": 0.04059877007426982,
+          "stored": 0.0405987700742698
+        },
+        "greedy (mean)": {
+          "abs_diff": 8.326672684688674e-17,
+          "recomputed": 0.035873212582336285,
+          "stored": 0.0358732125823362
+        },
+        "greedy (stddev)": {
+          "abs_diff": 6.938893903907228e-17,
+          "recomputed": 0.01389890754084997,
+          "stored": 0.0138989075408499
+        }
+      },
+      "calmar_ratio": {
+        "average_ensemble": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": 0.14192038543662863,
+          "stored": 0.1419203854366286
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.1642522796935731,
+          "stored": 0.1642522796935731
+        },
+        "greedy (stddev)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.0749373843739776,
+          "stored": 0.0749373843739776
+        }
+      },
+      "hit_ratio": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.2684240362811791,
+          "stored": 0.2684240362811791
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.2823809523809524,
+          "stored": 0.2823809523809524
+        },
+        "greedy (stddev)": {
+          "abs_diff": 2.6020852139652106e-17,
+          "recomputed": 0.004278659804866826,
+          "stored": 0.0042786598048668
+        }
+      },
+      "max_drawdown": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": -0.28606721965533477,
+          "stored": -0.2860672196553347
+        },
+        "greedy (mean)": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": -0.22959217716944472,
+          "stored": -0.2295921771694447
+        },
+        "greedy (stddev)": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": 0.03595518233837783,
+          "stored": 0.0359551823383778
+        }
+      },
+      "sharpe_ratio": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.38172643244853044,
+          "stored": 0.3817264324485304
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.3283150517567096,
+          "stored": 0.3283150517567096
+        },
+        "greedy (stddev)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.12685636303040956,
+          "stored": 0.1268563630304095
+        }
+      },
+      "total_return": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.7456867497202377,
+          "stored": 0.7456867497202377
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.6641765565815095,
+          "stored": 0.6641765565815095
+        },
+        "greedy (stddev)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.29975198800181635,
+          "stored": 0.2997519880018163
+        }
+      },
+      "volatility": {
+        "average_ensemble": {
+          "abs_diff": 8.326672684688674e-17,
+          "recomputed": 0.10635566893771209,
+          "stored": 0.106355668937712
+        },
+        "greedy (mean)": {
+          "abs_diff": 4.163336342344337e-17,
+          "recomputed": 0.10922472107431724,
+          "stored": 0.1092247210743172
+        },
+        "greedy (stddev)": {
+          "abs_diff": 3.968179951296946e-17,
+          "recomputed": 0.0013870764906954397,
+          "stored": 0.0013870764906954
+        }
+      }
+    },
+    "n_seeds": 25,
+    "pred_dir": "experiments_cluster/CNN-true_EPOCHS-10_MLP-true_MODEL_EMBEDDING-15_N_SEEDS_PER_ARCH-20_RNN-true_START_DATE-2000-01-01_TICKER-TLT_WINDOW_SIZE-252"
+  },
+  "TLT__thompson__homo": {
+    "bandit_dir": "experiments_cluster/BANDIT_EMBEDDING-15_EPISODES-100_METRIC-l1_N_ARMS-50_POLICY-thompson_START_DATE-2000-01-01_TICKER-TLT_WINDOW_SIZE-252",
+    "best_seed": "seed_18",
+    "bit_exact": true,
+    "max_abs_diff": 9.367506770274758e-17,
+    "metrics": {
+      "annualized_return": {
+        "average_ensemble": {
+          "abs_diff": 5.204170427930421e-17,
+          "recomputed": 0.028919932895449252,
+          "stored": 0.0289199328954492
+        },
+        "greedy (mean)": {
+          "abs_diff": 9.367506770274758e-17,
+          "recomputed": 0.028854834861824295,
+          "stored": 0.0288548348618242
+        },
+        "greedy (stddev)": {
+          "abs_diff": 6.071532165918825e-17,
+          "recomputed": 0.012872007726849061,
+          "stored": 0.012872007726849
+        }
+      },
+      "calmar_ratio": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.1055562312194918,
+          "stored": 0.1055562312194918
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.1195069368865779,
+          "stored": 0.1195069368865779
+        },
+        "greedy (stddev)": {
+          "abs_diff": 4.85722573273506e-17,
+          "recomputed": 0.054539326296452646,
+          "stored": 0.0545393262964526
+        }
+      },
+      "hit_ratio": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.2684240362811791,
+          "stored": 0.2684240362811791
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.2754761904761905,
+          "stored": 0.2754761904761905
+        },
+        "greedy (stddev)": {
+          "abs_diff": 2.168404344971009e-17,
+          "recomputed": 0.0031607244405685215,
+          "stored": 0.0031607244405685
+        }
+      },
+      "max_drawdown": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": -0.2739765579098182,
+          "stored": -0.2739765579098182
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": -0.25246996765672974,
+          "stored": -0.2524699676567297
+        },
+        "greedy (stddev)": {
+          "abs_diff": 6.938893903907228e-18,
+          "recomputed": 0.041238965989918004,
+          "stored": 0.041238965989918
+        }
+      },
+      "sharpe_ratio": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.26680899994968554,
+          "stored": 0.2668089999496855
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.2670197608504881,
+          "stored": 0.2670197608504881
+        },
+        "greedy (stddev)": {
+          "abs_diff": 4.163336342344337e-17,
+          "recomputed": 0.11986422650548634,
+          "stored": 0.1198642265054863
+        }
+      },
+      "total_return": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.4905348349510197,
+          "stored": 0.4905348349510197
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.5092457161011624,
+          "stored": 0.5092457161011624
+        },
+        "greedy (stddev)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.2407266157337672,
+          "stored": 0.2407266157337672
+        }
+      },
+      "volatility": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.10839189420485415,
+          "stored": 0.1083918942048541
+        },
+        "greedy (mean)": {
+          "abs_diff": 6.938893903907228e-17,
+          "recomputed": 0.10793901317951267,
+          "stored": 0.1079390131795126
+        },
+        "greedy (stddev)": {
+          "abs_diff": 3.838075690598686e-17,
+          "recomputed": 0.0012488098658379385,
+          "stored": 0.0012488098658379
+        }
+      }
+    },
+    "n_seeds": 25,
+    "pred_dir": "experiments_cluster/CNN-false_EPOCHS-10_MLP-true_MODEL_EMBEDDING-15_N_SEEDS_PER_ARCH-50_RNN-false_START_DATE-2000-01-01_TICKER-TLT_WINDOW_SIZE-252"
+  },
+  "TLT__ucb__hetero": {
+    "bandit_dir": "experiments_cluster/BANDIT_EMBEDDING-15_EPISODES-100_METRIC-l1_N_ARMS-60_POLICY-ucb_START_DATE-2000-01-01_TICKER-TLT_WINDOW_SIZE-252",
+    "best_seed": "seed_12",
+    "bit_exact": true,
+    "max_abs_diff": 9.71445146547012e-17,
+    "metrics": {
+      "annualized_return": {
+        "average_ensemble": {
+          "abs_diff": 2.0816681711721685e-17,
+          "recomputed": 0.04059877007426982,
+          "stored": 0.0405987700742698
+        },
+        "greedy (mean)": {
+          "abs_diff": 3.469446951953614e-17,
+          "recomputed": 0.021158086468345536,
+          "stored": 0.0211580864683455
+        },
+        "greedy (stddev)": {
+          "abs_diff": 1.734723475976807e-17,
+          "recomputed": 0.0019374865575549174,
+          "stored": 0.0019374865575549
+        }
+      },
+      "calmar_ratio": {
+        "average_ensemble": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": 0.14192038543662863,
+          "stored": 0.1419203854366286
+        },
+        "greedy (mean)": {
+          "abs_diff": 9.71445146547012e-17,
+          "recomputed": 0.059137457133666596,
+          "stored": 0.0591374571336665
+        },
+        "greedy (stddev)": {
+          "abs_diff": 2.949029909160572e-17,
+          "recomputed": 0.00728692190179653,
+          "stored": 0.0072869219017965
+        }
+      },
+      "hit_ratio": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.2684240362811791,
+          "stored": 0.2684240362811791
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.2778231292517007,
+          "stored": 0.2778231292517007
+        },
+        "greedy (stddev)": {
+          "abs_diff": 5.561957144850638e-17,
+          "recomputed": 0.0005298558478706556,
+          "stored": 0.0005298558478706
+        }
+      },
+      "max_drawdown": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": -0.28606721965533477,
+          "stored": -0.2860672196553347
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": -0.35917041644421516,
+          "stored": -0.3591704164442151
+        },
+        "greedy (stddev)": {
+          "abs_diff": 5.0306980803327406e-17,
+          "recomputed": 0.01239768672865175,
+          "stored": 0.0123976867286517
+        }
+      },
+      "sharpe_ratio": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.38172643244853044,
+          "stored": 0.3817264324485304
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.19830677277472966,
+          "stored": 0.1983067727747296
+        },
+        "greedy (stddev)": {
+          "abs_diff": 6.938893903907228e-18,
+          "recomputed": 0.01800205940971661,
+          "stored": 0.0180020594097166
+        }
+      },
+      "total_return": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.7456867497202377,
+          "stored": 0.7456867497202377
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.34104742083149775,
+          "stored": 0.3410474208314977
+        },
+        "greedy (stddev)": {
+          "abs_diff": 8.326672684688674e-17,
+          "recomputed": 0.03568211459938638,
+          "stored": 0.0356821145993863
+        }
+      },
+      "volatility": {
+        "average_ensemble": {
+          "abs_diff": 8.326672684688674e-17,
+          "recomputed": 0.10635566893771209,
+          "stored": 0.106355668937712
+        },
+        "greedy (mean)": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": 0.10668559284622693,
+          "stored": 0.1066855928462269
+        },
+        "greedy (stddev)": {
+          "abs_diff": 3.642919299551295e-17,
+          "recomputed": 0.00016951262507773642,
+          "stored": 0.0001695126250777
+        }
+      }
+    },
+    "n_seeds": 25,
+    "pred_dir": "experiments_cluster/CNN-true_EPOCHS-10_MLP-true_MODEL_EMBEDDING-15_N_SEEDS_PER_ARCH-20_RNN-true_START_DATE-2000-01-01_TICKER-TLT_WINDOW_SIZE-252"
+  },
+  "TLT__ucb__homo": {
+    "bandit_dir": "experiments_cluster/BANDIT_EMBEDDING-15_EPISODES-100_METRIC-l1_N_ARMS-50_POLICY-ucb_START_DATE-2000-01-01_TICKER-TLT_WINDOW_SIZE-252",
+    "best_seed": "seed_8",
+    "bit_exact": true,
+    "max_abs_diff": 9.71445146547012e-17,
+    "metrics": {
+      "annualized_return": {
+        "average_ensemble": {
+          "abs_diff": 5.204170427930421e-17,
+          "recomputed": 0.028919932895449252,
+          "stored": 0.0289199328954492
+        },
+        "greedy (mean)": {
+          "abs_diff": 8.326672684688674e-17,
+          "recomputed": 0.022519156202718483,
+          "stored": 0.0225191562027184
+        },
+        "greedy (stddev)": {
+          "abs_diff": 5.117434254131581e-17,
+          "recomputed": 0.0010429906098567512,
+          "stored": 0.0010429906098567
+        }
+      },
+      "calmar_ratio": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.1055562312194918,
+          "stored": 0.1055562312194918
+        },
+        "greedy (mean)": {
+          "abs_diff": 1.3877787807814457e-17,
+          "recomputed": 0.08335387777547482,
+          "stored": 0.0833538777754748
+        },
+        "greedy (stddev)": {
+          "abs_diff": 8.673617379884035e-18,
+          "recomputed": 0.004355914940259708,
+          "stored": 0.0043559149402597
+        }
+      },
+      "hit_ratio": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.2684240362811791,
+          "stored": 0.2684240362811791
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.28858276643990927,
+          "stored": 0.2885827664399092
+        },
+        "greedy (stddev)": {
+          "abs_diff": 1.5395670849294163e-17,
+          "recomputed": 0.0003787594804646154,
+          "stored": 0.0003787594804646
+        }
+      },
+      "max_drawdown": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": -0.2739765579098182,
+          "stored": -0.2739765579098182
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": -0.2702767201980933,
+          "stored": -0.2702767201980933
+        },
+        "greedy (stddev)": {
+          "abs_diff": 8.500145032286355e-17,
+          "recomputed": 0.003963579172454685,
+          "stored": 0.0039635791724546
+        }
+      },
+      "sharpe_ratio": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.26680899994968554,
+          "stored": 0.2668089999496855
+        },
+        "greedy (mean)": {
+          "abs_diff": 2.7755575615628914e-17,
+          "recomputed": 0.20052423760247012,
+          "stored": 0.2005242376024701
+        },
+        "greedy (stddev)": {
+          "abs_diff": 9.71445146547012e-17,
+          "recomputed": 0.009274306849160698,
+          "stored": 0.0092743068491606
+        }
+      },
+      "total_return": {
+        "average_ensemble": {
+          "abs_diff": 0.0,
+          "recomputed": 0.4905348349510197,
+          "stored": 0.4905348349510197
+        },
+        "greedy (mean)": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.36597067070735206,
+          "stored": 0.365970670707352
+        },
+        "greedy (stddev)": {
+          "abs_diff": 7.632783294297951e-17,
+          "recomputed": 0.019441488036943375,
+          "stored": 0.0194414880369433
+        }
+      },
+      "volatility": {
+        "average_ensemble": {
+          "abs_diff": 5.551115123125783e-17,
+          "recomputed": 0.10839189420485415,
+          "stored": 0.1083918942048541
+        },
+        "greedy (mean)": {
+          "abs_diff": 0.0,
+          "recomputed": 0.1123012089863291,
+          "stored": 0.1123012089863291
+        },
+        "greedy (stddev)": {
+          "abs_diff": 0.0,
+          "recomputed": 5.761526860556684e-05,
+          "stored": 5.761526860556684e-05
+        }
+      }
+    },
+    "n_seeds": 25,
+    "pred_dir": "experiments_cluster/CNN-false_EPOCHS-10_MLP-true_MODEL_EMBEDDING-15_N_SEEDS_PER_ARCH-50_RNN-false_START_DATE-2000-01-01_TICKER-TLT_WINDOW_SIZE-252"
+  }
+}

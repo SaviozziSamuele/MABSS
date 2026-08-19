@@ -879,6 +879,12 @@ def run_bandit_seed(seed: int, contexts: np.ndarray, X_data: np.ndarray,
     """Single bandit run for one seed."""
     np.random.seed(seed)
     
+    # FIX (plan Phase 2): WalkForwardEnvCMAB.__init__ takes a required `config`
+    # positional (used internally via config.get("ALPHA", ...)/config.get("GAMMA",
+    # ...)), not `alpha=`/`gamma=` keyword arguments -- the original call here
+    # passed the latter, so run_bandit_parallel raised unconditionally (masked
+    # because the notebook loads cached multirun_results.pkl instead of calling
+    # this function on a cache miss).
     env = WalkForwardEnvCMAB(
         context=contexts,
         X_data=X_data,
@@ -887,8 +893,7 @@ def run_bandit_seed(seed: int, contexts: np.ndarray, X_data: np.ndarray,
         reward_metric=config["METRIC"],
         k=config["N_ARMS"],
         d=config["BANDIT_EMBEDDING"],
-        alpha=config["ALPHA"],
-        gamma=config["GAMMA"],
+        config=config,
         window_size=config["WINDOW_SIZE"],
         policy_type=config["POLICY"],
         shuffle=True,
@@ -1463,7 +1468,7 @@ def plot_representative_cum_return(pct_change_preds, ticker='QQQ', save_dir=None
         plt.savefig(os.path.join(save_dir, "mean_cum_return_rep.png"), dpi=300, bbox_inches='tight')
     plt.show()
 
-    def plot_variance_comparison(rewards_df_homo, rewards_df_hetero, ticker='QQQ', window=21, save_dir=None):
+def plot_variance_comparison(rewards_df_homo, rewards_df_hetero, ticker='QQQ', window=21, save_dir=None):
     """
     Figure 4: Compares the prediction variance (reward standard deviation) of a
     homogeneous model pool (MLP only) vs a heterogeneous pool (MLP+CNN+RNN).
@@ -1622,7 +1627,7 @@ def plot_multiticker_grid_plot1(ticker_data_dict, save_dir=None):
 
     plt.show()
 
-  def plot_bandit_strategy_comparison(results, pct_change_preds, save_dir=None):
+def plot_bandit_strategy_comparison(results, pct_change_preds, save_dir=None):
     """
     Plots a streamlined comparison of the CMAB Greedy strategy vs the Ensemble Mean baseline.
     """
@@ -1659,4 +1664,101 @@ def plot_multiticker_grid_plot1(ticker_data_dict, save_dir=None):
 
     plt.show()
 
+
+# =============================================================================
+# Phase 1 migration: compatibility overrides
+# =============================================================================
+# The functions/classes below have been ported into the `mabss` package (see
+# mabss/rewards.py, mabss/policies/, mabss/env.py, mabss/models.py,
+# mabss/data.py, mabss/training.py, mabss/experiments/) with real bug fixes and
+# a real test suite (see tests/unit, tests/regression). Re-binding these names
+# HERE, at module scope, means every function ABOVE this point in the file --
+# including the plotting/stats functions that have NOT been migrated yet
+# (plot_prediction_analysis, plot_rewards_stats, plot_single_run_bandit,
+# plot_multi_run_bandit, compute_and_highlight_stats, the "Plots for the Paper"
+# section, run_bandit_parallel) -- picks up the fixed implementations too: a
+# Python function looks up module-level globals (like `WalkForwardEnvCMAB` or
+# `reward_function`) at CALL time, not at def time, so rebinding the name here
+# retroactively "patches" every earlier call site in this same module.
+#
+# This is a deliberate mid-point, not a finished migration: the plotting/stats
+# section above still lives here rather than in mabss/plots.py, because
+# migrating and testing ~700 lines of plotting code (each with its own
+# hardcoded-filename, column-order, and CONFIG-typo bugs -- see the plan) was
+# out of scope for this pass. What's below is safe to depend on; what's above
+# this line (other than the fixes already applied in place, e.g.
+# run_bandit_seed's constructor call) is the original, not-yet-hardened code.
+from mabss.data import (  # noqa: E402
+    compute_returns_from_preds,
+    load_price_series,
+    window_time_series,
+)
+from mabss.env import WalkForwardEnv  # noqa: E402
+from mabss.experiments import ExperimentStore as ExperimentLoader  # noqa: E402, F811
+from mabss.experiments import make_experiment_id  # noqa: E402, F811
+from mabss.models import create_model  # noqa: E402, F811
+from mabss.policies import LinUCBPolicy as UCBPolicyCMAB  # noqa: E402, F811
+from mabss.policies import SoftmaxPolicy as SoftmaxPolicyCMAB  # noqa: E402, F811
+from mabss.policies import ThompsonSamplingPolicy as ThompsonSamplingPolicyCMAB  # noqa: E402, F811
+from mabss.rewards import build_rewards_and_contexts, reward_function  # noqa: E402, F811
+from mabss.training import walk_forward_training  # noqa: E402, F811
+
+
+class WalkForwardEnvCMAB(WalkForwardEnv):  # noqa: F811
+    """
+    Compat wrapper: `mabss.env.WalkForwardEnv.run()` returns a `BanditRunResult`
+    dataclass (cleaner for new code -- see mabss/env.py), but every
+    not-yet-migrated plotting/stats function in this module (plot_single_run_bandit,
+    plot_multi_run_bandit, compute_and_highlight_stats, run_bandit_seed's
+    callers, ...) still expects `.run()` to return the original 10-key dict
+    (`results['best arms greedy']`, `results['total return']`, etc.) -- exactly
+    the shape every cached results.pkl/multirun_results.pkl on disk already has.
+    This subclass exists purely to bridge that gap without touching
+    mabss.env.WalkForwardEnv's own return type. New code should use
+    `mabss.env.WalkForwardEnv` directly and consume the dataclass.
+    """
+
+    def run(self, episodes):
+        return super().run(episodes).to_legacy_dict()
+
+
+def create_dense_model(random_seed: int, input_dim: int):  # noqa: F811
+    """DEPRECATED: identical to create_model('mlp', ...) since MABSS_utility.py's
+    original create_dense_model was byte-for-byte the same as create_model's
+    'mlp' branch. Kept only so old call sites don't break; prefer create_model."""
+    import warnings
+
+    warnings.warn(
+        "create_dense_model is deprecated and identical to "
+        "create_model('mlp', random_seed, input_dim); call that instead.",
+        DeprecationWarning,
+        stacklevel=2,
+    )
+    return create_model("mlp", random_seed, input_dim)
+
+
+def get_experiment_paths(config: dict, base_dir):
+    """DEPRECATED and DEAD in the original: declared filenames
+    (rewards_matrix.npy, contexts_matrix.npy, bandit_results.pkl) that exist
+    NOWHERE in experiments/ or experiments_cluster/ -- ExperimentLoader/
+    ExperimentStore's actual filenames (rewards.npy, contexts.npy, results.pkl)
+    are what every real artifact on disk uses. Reviving this function's old
+    behavior would report every one of the 63 committed experiment directories
+    as uncached. Raising here rather than "fixing" it silently, since anyone
+    calling it almost certainly wants ExperimentStore/ExperimentLoader instead."""
+    raise NotImplementedError(
+        "get_experiment_paths is dead code from the original module: it declares "
+        "artifact filenames that don't match anything ExperimentLoader/"
+        "ExperimentStore actually writes or that exist on disk. Use "
+        "ExperimentLoader(config, base_dir).paths instead."
+    )
+
+
+def experiment_in_memory(paths: dict) -> bool:
+    """DEPRECATED and DEAD in the original -- see get_experiment_paths."""
+    raise NotImplementedError(
+        "experiment_in_memory is dead code paired with get_experiment_paths "
+        "(see that function's docstring). Use "
+        "ExperimentLoader(config, base_dir).is_fully_cached() instead."
+    )
 

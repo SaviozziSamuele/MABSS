@@ -1,0 +1,21 @@
+[project]
+name = "mabss"
+version = "0.1.0"
+description = "Dynamic Predictor Selection for Financial Time Series Using Contextual Multi-Armed Bandits"
+requires-python = ">=3.10,<3.13"
+readme = "README.md"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "slow: end-to-end tests that train real models (deselect with -m 'not slow')",
+    "needs_artifacts: requires experiments/ or experiments_cluster/ on disk",
+    "needs_network: requires a live yfinance download",
+]
+
+[tool.ruff]
+line-length = 110
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]

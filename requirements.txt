@@ -1,25 +1,31 @@
 # Data Manipulation & Math
-numpy
-pandas
-scipy
+numpy==2.2.6
+pandas==2.3.3
+scipy==1.15.3
 
 # Financial Data
-yfinance
+yfinance==1.6.0
 
 # Machine Learning & Deep Learning
-scikit-learn
-keras
-tensorflow  # Usually required as the backend for Keras
+scikit-learn==1.7.2
+keras==3.12.4
+tensorflow==2.21.0  # Usually required as the backend for Keras
 
 # Statistical Modeling
-statsmodels
+statsmodels==0.14.6
 
 # Plotting & Visualization
-matplotlib
+matplotlib==3.10.9  # >=3.8 required: fig.get_suptitle() is used in save_current_plot
 
 # Progress Bars
-tqdm
+tqdm==4.70.0
 
-# Table Exporting Utilities (added for the styled dataframes)
-openpyxl  # Required for pandas to export to .xlsx
-jinja2    # Required for pandas Styler (.style) formatting
+# Table Exporting Utilities (styled dataframes)
+openpyxl==3.1.5  # Required for pandas to export to .xlsx
+jinja2==3.1.6    # Required for pandas Styler (.style) formatting
+
+# Parallel execution (bandit multi-seed runs; replaces raw multiprocessing.Pool)
+joblib==1.5.3
+
+# Config files
+pyyaml==6.0.3
