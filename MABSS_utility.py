@@ -1762,3 +1762,84 @@ def experiment_in_memory(paths: dict) -> bool:
         "ExperimentLoader(config, base_dir).is_fully_cached() instead."
     )
 
+
+# -----------------------------------------------------------------------------
+# Phase 1 migration (session 2, 2026-08-20): plotting + runner overrides
+# -----------------------------------------------------------------------------
+# The plotting/stats section above (plot_prediction_analysis, plot_rewards_stats,
+# plot_single_run_bandit, plot_multi_run_bandit, compute_and_highlight_stats, and
+# the "Plots for the Paper" section: plot_multiticker_reward_std,
+# plot_global_reward_acf, plot_representative_cum_return, plot_variance_comparison,
+# plot_multiticker_grid_plot1, plot_bandit_strategy_comparison) plus
+# run_bandit_seed/run_bandit_parallel have now been ported to mabss/plots/ and
+# mabss/runner.py, with real fixes:
+#   - NARMS typo (mabss/plots/diagnostics.py:plot_multi_run_bandit)
+#   - ACF target-leak (mabss/plots/diagnostics.py:plot_rewards_stats)
+#   - Styler.format-on-wrong-axis + highlight-direction bugs
+#     (mabss/plots/tables.py, replacing compute_and_highlight_stats)
+#   - save_current_plot's title-derived filename collisions
+#     (mabss/plots/style.py:save_figure, explicit filenames everywhere)
+#   - plot_bandit_strategy_comparison's greedy/weighted mislabeling
+#   - run_bandit_parallel's mp.Pool -> joblib.Parallel (mabss/runner.py)
+# Same rebind-at-module-scope mechanism as the Phase 1 overrides above: these
+# names are looked up fresh at call time, so nothing earlier in this file needs
+# to change to pick up the fixes.
+from mabss.plots import (  # noqa: E402
+    build_stats_table,
+    plot_bandit_strategy_comparison,
+    plot_global_reward_acf,
+    plot_multi_run_bandit,
+    plot_multiticker_grid_plot1,
+    plot_multiticker_reward_std,
+    plot_prediction_analysis,
+    plot_representative_cum_return,
+    plot_single_run_bandit,
+    plot_variance_comparison,
+    save_stats_table,
+    style_stats_table,
+)
+from mabss.plots import plot_rewards_stats as _mabss_plot_rewards_stats  # noqa: E402
+from mabss.runner import run_bandit_multi as run_bandit_parallel  # noqa: E402, F811
+from mabss.runner import run_bandit_seed  # noqa: E402, F811
+
+
+def plot_rewards_stats(rewards_df, pct_change_preds=None, CONFIG=None, save_dir=None):  # noqa: F811, N803
+    """
+    Compat wrapper preserving the original 4-positional-argument signature
+    (`rewards_df, pct_change_preds, CONFIG, save_dir=None`) -- `pct_change_preds`
+    was accepted but never read in the original body either, so it's dropped
+    silently here too; kept as a parameter purely so existing positional call
+    sites (e.g. the notebook's `plot_rewards_stats(rewards_df, pct_change_preds,
+    CONFIG=CONFIG, save_dir=...)`) keep working unchanged.
+    """
+    return _mabss_plot_rewards_stats(rewards_df, CONFIG, save_dir=save_dir)
+
+
+def compute_and_highlight_stats(strategies, strategies_greedy_cols=None, save_dir=None):  # noqa: F811
+    """
+    Compat wrapper around mabss.plots.build_stats_table/style_stats_table,
+    preserving the original's call signature and return shape
+    (`{'stats_df': df, 'stats_list': [stats_avg, stats_greedy_mean,
+    stats_greedy_std]}`). Unlike the original, this does NOT call the
+    un-imported `display()` (MABSS_utility.py:1319 above -- a real `NameError`
+    outside IPython); instead it tries `IPython.display.display` when available
+    (i.e. inside a live notebook/IPython kernel) and otherwise prints the plain
+    DataFrame, so this works in both environments instead of only one.
+    """
+    df = build_stats_table(strategies, strategies_greedy_cols=strategies_greedy_cols)
+    styled = style_stats_table(df)
+    if save_dir:
+        save_stats_table(df, styled, save_dir)
+
+    try:
+        from IPython.display import display as _ipy_display
+
+        _ipy_display(styled)
+    except ImportError:
+        print(df)
+
+    stats_avg = df["average_ensemble"].to_dict()
+    stats_greedy_mean = df["greedy (mean)"].to_dict()
+    stats_greedy_std = df["greedy (stddev)"].to_dict()
+    return {"stats_df": df, "stats_list": [stats_avg, stats_greedy_mean, stats_greedy_std]}
+

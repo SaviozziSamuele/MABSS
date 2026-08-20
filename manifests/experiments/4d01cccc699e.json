@@ -1,0 +1,22 @@
+{
+  "content_facts": {
+    "n_arms_actual": 45
+  },
+  "dir_name": "CNN-true_EPOCHS-10_MLP-true_MODEL_EMBEDDING-15_N_SEEDS_PER_ARCH-20_RNN-true_START_DATE-2000-01-01_TICKER-EGARCH_WINDOW_SIZE-252",
+  "files_present": [
+    "pctchange_preds.csv",
+    "preds.csv"
+  ],
+  "kind": "pred",
+  "mismatches": [
+    "name implies 3 archs x N_SEEDS_PER_ARCH-20 = 60 models, but preds.csv has 45 model_* columns"
+  ],
+  "name_fields": {
+    "CNN": "true",
+    "MLP": "true",
+    "N_SEEDS_PER_ARCH": "20",
+    "RNN": "true",
+    "TICKER": "EGARCH"
+  },
+  "root": "experiments"
+}

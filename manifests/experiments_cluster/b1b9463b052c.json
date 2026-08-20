@@ -1,0 +1,31 @@
+{
+  "content_facts": {
+    "contexts_shape": [
+      4772,
+      50,
+      15
+    ],
+    "n_arms_actual": 50,
+    "n_windows_actual": 4772,
+    "rewards_shape": [
+      4772,
+      50
+    ]
+  },
+  "dir_name": "BANDIT_EMBEDDING-15_EPISODES-100_METRIC-l1_N_ARMS-50_POLICY-ucb_START_DATE-2000-01-01_TICKER-TLT_WINDOW_SIZE-252",
+  "files_present": [
+    "contexts.npy",
+    "multirun_results.pkl",
+    "results.pkl",
+    "rewards.npy",
+    "rewards_df.csv"
+  ],
+  "kind": "bandit",
+  "mismatches": [],
+  "name_fields": {
+    "N_ARMS": "50",
+    "POLICY": "ucb",
+    "TICKER": "TLT"
+  },
+  "root": "experiments_cluster"
+}

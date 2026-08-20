@@ -1,0 +1,20 @@
+{
+  "content_facts": {
+    "n_arms_actual": 60
+  },
+  "dir_name": "CNN-true_EPOCHS-10_MLP-true_MODEL_EMBEDDING-15_N_SEEDS_PER_ARCH-20_RNN-true_START_DATE-2000-01-01_TICKER-GC=F_WINDOW_SIZE-252",
+  "files_present": [
+    "pctchange_preds.csv",
+    "preds.csv"
+  ],
+  "kind": "pred",
+  "mismatches": [],
+  "name_fields": {
+    "CNN": "true",
+    "MLP": "true",
+    "N_SEEDS_PER_ARCH": "20",
+    "RNN": "true",
+    "TICKER": "GC=F"
+  },
+  "root": "experiments_cluster"
+}

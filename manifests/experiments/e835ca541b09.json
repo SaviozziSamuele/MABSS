@@ -1,0 +1,30 @@
+{
+  "content_facts": {
+    "contexts_shape": [
+      4772,
+      45,
+      15
+    ],
+    "n_arms_actual": 45,
+    "n_windows_actual": 4772,
+    "rewards_shape": [
+      4772,
+      45
+    ]
+  },
+  "dir_name": "ALPHA-1_BANDIT_EMBEDDING-15_EPISODES-75_GAMMA-null_METRIC-l1_N_ARMS-45_POLICY-ucb_START_DATE-2000-01-01_TICKER-EGARCH_WINDOW_SIZE-252",
+  "files_present": [
+    "contexts.npy",
+    "results.pkl",
+    "rewards.npy",
+    "rewards_df.csv"
+  ],
+  "kind": "bandit",
+  "mismatches": [],
+  "name_fields": {
+    "N_ARMS": "45",
+    "POLICY": "ucb",
+    "TICKER": "EGARCH"
+  },
+  "root": "experiments"
+}

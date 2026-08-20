@@ -1,0 +1,30 @@
+{
+  "content_facts": {
+    "contexts_shape": [
+      5528,
+      45,
+      15
+    ],
+    "n_arms_actual": 45,
+    "n_windows_actual": 5528,
+    "rewards_shape": [
+      5528,
+      45
+    ]
+  },
+  "dir_name": "ALPHA-0p01_BANDIT_EMBEDDING-15_EPOCHS-10_GAMMA-null_METRIC-l1_N_ARMS-45_START_DATE-2000-01-01_TICKER-QQQ_WINDOW_SIZE-252",
+  "files_present": [
+    "contexts.npy",
+    "multirun_results.pkl",
+    "results.pkl",
+    "rewards.npy",
+    "rewards_df.csv"
+  ],
+  "kind": "bandit",
+  "mismatches": [],
+  "name_fields": {
+    "N_ARMS": "45",
+    "TICKER": "QQQ"
+  },
+  "root": "experiments"
+}

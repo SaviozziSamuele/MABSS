@@ -1,0 +1,31 @@
+{
+  "content_facts": {
+    "contexts_shape": [
+      4520,
+      60,
+      15
+    ],
+    "n_arms_actual": 60,
+    "n_windows_actual": 4520,
+    "rewards_shape": [
+      4520,
+      60
+    ]
+  },
+  "dir_name": "BANDIT_EMBEDDING-15_EPISODES-100_METRIC-l1_N_ARMS-60_POLICY-thompson_START_DATE-2000-01-01_TICKER-EURUSD=X_WINDOW_SIZE-252",
+  "files_present": [
+    "contexts.npy",
+    "multirun_results.pkl",
+    "results.pkl",
+    "rewards.npy",
+    "rewards_df.csv"
+  ],
+  "kind": "bandit",
+  "mismatches": [],
+  "name_fields": {
+    "N_ARMS": "60",
+    "POLICY": "thompson",
+    "TICKER": "EURUSD=X"
+  },
+  "root": "experiments_cluster"
+}

@@ -6,6 +6,32 @@ import hashlib
 import json
 
 
+def _sanitize(raw: str) -> str:
+    return (
+        raw.replace(" ", "")
+        .replace("{", "")
+        .replace("}", "")
+        .replace('"', "")
+        .replace(":", "-")
+        .replace(",", "_")
+        .replace(".", "p")
+    )
+
+
+def _render_id(config: dict, key_fields: list[str]) -> str:
+    """
+    The `{k: config[k] for k in key_fields if k in config}` -> `json.dumps(sort_keys=True)`
+    -> sanitize pipeline shared by `make_experiment_id` and by
+    `mabss.experiments.legacy`'s schema table. Parameterized by field list so
+    every legacy schema variant found on disk (different field subsets, see
+    `legacy.py`) renders through the exact same sanitize rules that produced
+    the real directory names, instead of each schema needing its own copy.
+    """
+    compact = {k: config[k] for k in key_fields if k in config}
+    raw = json.dumps(compact, sort_keys=True)
+    return _sanitize(raw)
+
+
 def make_experiment_id(config: dict) -> tuple[str, str]:
     """
     Ported verbatim from MABSS_utility.py:191-241 (`make_experiment_id`). Kept
@@ -22,6 +48,12 @@ def make_experiment_id(config: dict) -> tuple[str, str]:
     e.g. `key_fields_bandit` includes N_ARMS but not MLP/RNN/CNN/
     N_SEEDS_PER_ARCH, so a homogeneous 45-model pool and a heterogeneous 15x3
     pool both resolve to `N_ARMS-45` and collide on the same bandit directory.
+
+    This is also the schema `mabss.experiments.legacy.BANDIT_SCHEMAS["B2_current"]`
+    /`PRED_SCHEMAS["P2_heterogeneous"]` mirror -- it can only render the
+    *current* directory-naming convention, which cannot address the ~41
+    experiments_cluster/ directories (a different, older field subset with no
+    ALPHA/GAMMA at all -- see `legacy.py` for the full six-schema resolver).
     """
     key_fields_pred = [
         "TICKER",
@@ -46,23 +78,7 @@ def make_experiment_id(config: dict) -> tuple[str, str]:
         "EPISODES",
         "POLICY",
     ]
-    compact_pred = {k: config[k] for k in key_fields_pred if k in config}
-    compact_bandit = {k: config[k] for k in key_fields_bandit if k in config}
-    raw_pred = json.dumps(compact_pred, sort_keys=True)
-    raw_bandit = json.dumps(compact_bandit, sort_keys=True)
-
-    def _sanitize(raw: str) -> str:
-        return (
-            raw.replace(" ", "")
-            .replace("{", "")
-            .replace("}", "")
-            .replace('"', "")
-            .replace(":", "-")
-            .replace(",", "_")
-            .replace(".", "p")
-        )
-
-    return _sanitize(raw_pred), _sanitize(raw_bandit)
+    return _render_id(config, key_fields_pred), _render_id(config, key_fields_bandit)
 
 
 # Fields that are execution metadata, not experiment identity -- excluded from

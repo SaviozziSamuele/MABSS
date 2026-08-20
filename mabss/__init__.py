@@ -14,13 +14,22 @@ the first call to `create_model`/`walk_forward_training`, not before `import
 mabss` itself.
 """
 
-from . import metrics, seeding, strategies
+from . import metrics, plots, seeding, strategies
 from .data import compute_returns_from_preds, load_price_series, window_time_series
 from .env import BanditRunResult, WalkForwardEnv
-from .experiments import ExperimentStore, experiment_id, make_experiment_id
+from .experiments import (
+    AmbiguousExperimentError,
+    ExperimentNotFoundError,
+    ExperimentStore,
+    LegacyIndex,
+    LegacyMatch,
+    experiment_id,
+    make_experiment_id,
+)
 from .models import create_model
 from .policies import LinUCBPolicy, POLICY_REGISTRY, Policy, SoftmaxPolicy, ThompsonSamplingPolicy, make_policy
 from .rewards import build_rewards_and_contexts, reward_function
+from .runner import run_bandit_multi, run_bandit_seed
 from .training import WalkForwardPlan, walk_forward_training
 
 __version__ = "0.1.0"
@@ -30,6 +39,9 @@ __all__ = [
     "metrics",
     "seeding",
     "strategies",
+    "plots",
+    "run_bandit_seed",
+    "run_bandit_multi",
     "load_price_series",
     "window_time_series",
     "compute_returns_from_preds",
@@ -49,4 +61,8 @@ __all__ = [
     "ExperimentStore",
     "make_experiment_id",
     "experiment_id",
+    "LegacyIndex",
+    "LegacyMatch",
+    "AmbiguousExperimentError",
+    "ExperimentNotFoundError",
 ]
