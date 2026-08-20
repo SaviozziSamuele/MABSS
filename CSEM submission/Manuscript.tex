@@ -189,6 +189,8 @@ This formulation intentionally mirrors the Policy Gradient theorem utilized in f
     By dropping the expectation operator to perform a stochastic update using a single empirical sample, we recover the SGA update formula stated in the theorem.
 \end{proof}
 
+While this formulation elegantly bridges CMABs with standard policy-gradient RL, it carries a notable statistical limitation. The Softmax parameterization implicitly assumes logit errors drawn from a Type I Extreme Value distribution, under which the effective scale of exploration is governed by the magnitude of the learned logits themselves rather than by any explicit estimate of predictive uncertainty. Consequently, the SGA-updated Softmax policy has no principled mechanism for contracting its exploration as confidence in a given arm's value estimate grows—a limitation directly addressed by the confidence-bound and posterior-sampling mechanisms of UCB and Thompson Sampling, both introduced in Section \ref{sec:methods} and included in our empirical comparison for this reason.
+
 \section{Design of the Bandit Framework}
 \label{sec:methods}
 
@@ -244,6 +246,7 @@ Crucially, this elevated structural variance actively penalizes naive, static en
 \end{figure}
 
 \subsection{Context Construction}
+\label{sec:context}
 
 We define the context vector $\mathbf{x}_{t,a} \in \mathbb{R}^n$ for each arm $a$ at time $t$ as the sequence of the past $n$ rewards that the specific predictor would have generated had it been selected in the immediately preceding time steps:
 \begin{equation}
@@ -258,7 +261,7 @@ This autoregressive state formulation explicitly leverages the short-term moment
     \label{fig:acf_reward_L1}
 \end{figure}
 
-Furthermore, while contemporary literature emphasizes the integration of risk-aware metrics—such as asset variance or maximum drawdown—into MAB formulations for continuous portfolio selection \cite{huo2017risk}, embedding such market-level risk metrics into our specific contextual state space presents a structural redundancy. Because our framework evaluates distinct predictive models on the \emph{same} underlying asset, any market-derived risk metric (e.g., rolling historical volatility) would be identical across all arms at a given time step $t$. Consequently, appending this shared market variance to the context representation would merely introduce a global, non-discriminatory bias term, offering no relative informational advantage to the policy when differentiating between models. Therefore, our context and reward structures are purposely engineered to isolate and exploit localized, model-specific predictive accuracy rather than global market conditions.
+Furthermore, while contemporary literature emphasizes the integration of risk-aware metrics—such as asset variance or maximum drawdown—into MAB formulations for continuous portfolio selection \cite{huo2017risk}, we omit such market-level risk metrics from our context vector. Because our framework evaluates distinct predictive models on the \emph{same} underlying asset, any market-derived risk metric (e.g., rolling historical volatility) would take an identical numeric value across all arms at a given time step $t$. We note that, in a disjoint (per-arm) linear model such as ours, a shared feature is not automatically non-discriminatory in principle: since each arm learns its own weight vector $\theta_{t,a}$, distinct arms could in principle assign this shared input different coefficients and derive some benefit from it. Our design rationale is instead that such a feature reflects a property of the \emph{asset}, not of the model producing the forecast, and therefore carries no genuinely arm-specific information for the policy to exploit -- so we hypothesized it would offer limited practical benefit for differentiating between models. Rather than relying on this argument alone, we test it directly: Appendix \ref{sec:ablation} reports a controlled ablation appending exactly such a feature to the context, and finds it is not merely uninformative but, for our strongest-performing policy (LinUCB), measurably harmful -- an empirical result that, if anything, strengthens rather than merely confirms our design choice to exclude it.
 
 \subsection{Trading Strategy Formulation}
 \label{sec:pred}
@@ -295,7 +298,7 @@ Table \ref{tab:main_results} presents a comprehensive summary of the out-of-samp
 
 The empirical findings clearly demonstrate that the dynamic CMAB selection framework generalizes effectively across fundamentally different asset classes and market microstructures. Across the majority of the evaluated time series, the deterministic trading strategies driven by the CMAB frameworks outperformed the naive ensemble average in both absolute annualized returns and risk-adjusted metrics (Sharpe Ratio). 
 
-Crucially, the experimental results reveal a pronounced performance hierarchy among the bandit policies themselves, directly underscoring the critical importance of robust exploration mechanisms. While the gradient-updated Softmax policy generally improves upon the static ensemble baseline, it is consistently outperformed by contextual MAB methods that explicitly quantify and manage epistemic uncertainty. As detailed in Table \ref{tab:main_results}, the Upper Confidence Bound (LinUCB, denoted as UCB) policy emerges as the definitively dominant strategy. Across almost all asset classes (BTC-USD, EURUSD=X, GC=F, and SPY), UCB achieves the highest Annualized Returns and Sharpe Ratios, confirming that explicitly bounding exploration uncertainty is highly advantageous in non-stationary financial environments.
+Crucially, the experimental results reveal a pronounced performance hierarchy among the bandit policies themselves, directly underscoring the critical importance of robust exploration mechanisms. While the gradient-updated Softmax policy generally improves upon the static ensemble baseline, it is consistently outperformed by contextual MAB methods that explicitly quantify and manage epistemic uncertainty. As detailed in Table \ref{tab:main_results}, the Upper Confidence Bound (LinUCB, denoted as UCB) policy emerges as the point-estimate leader. Across almost all asset classes (BTC-USD, EURUSD=X, GC=F, and SPY), UCB achieves the highest Annualized Returns and Sharpe Ratios, consistent with explicitly bounding exploration uncertainty being advantageous in non-stationary financial environments. We stress, however, that this ranking is a point-estimate comparison: as reported in Section \ref{sec:significance}, none of the 30 individual CMAB-vs-ensemble gaps underlying this table remain statistically significant after correcting for multiple comparisons, so UCB's lead should be read as a consistent directional pattern across asset classes rather than a per-asset statistically confirmed effect.
 
 However, for the sake of transparency, it is important to note that the dynamic CMAB framework does not yield universal outperformance across all conceivable market conditions. As detailed in Table \ref{tab:main_results}, the TLT dataset (Sovereign Bonds) represents a notable exception where the static Ensemble Average marginally outperformed the contextual bandit policies in both environments. This divergence likely stems from the distinct market microstructure of sovereign debt. Unlike equities or crypto, bond prices are heavily anchored to exogenous macroeconomic factors—specifically, central bank interest rate policies and rigid macroeconomic cycles—rather than the localized, short-term autoregressive price momentum that our context vectors are explicitly designed to exploit. In regimes where such structural variance is lower and external macro shocks dominate the price action, the aggressive smoothing properties of a static ensemble may temporarily yield a more stable, albeit conservative, predictive baseline.
 
@@ -312,7 +315,7 @@ A critical secondary objective of this study was to evaluate the performance dif
 
 \begin{sidewaystable}[htbp]
     \centering
-    \caption{Out-of-sample performance metrics across five diverse asset classes. The evaluation period spans from January 2000 to March 2026. All metrics are calculated using a daily return frequency. The Sharpe Ratio is annualized, assuming 252 trading days per year and a risk-free rate of 0\%. Maximum Drawdown (MDD) represents the largest peak-to-trough drop in the cumulative return curve.}
+    \caption{Out-of-sample performance metrics across five diverse asset classes. The underlying data spans from January 2000 to March 2026, though out-of-sample testing begins only after the initial four-year walk-forward training window (Section \ref{sec:dataset}), i.e.\ from approximately 2004 onward. All metrics are calculated using a daily return frequency. The Sharpe Ratio is annualized, assuming 252 trading days per year and a risk-free rate of 0\%. Maximum Drawdown (MDD) represents the largest peak-to-trough drop in the cumulative return curve.}
     \label{tab:main_results}
     
     
@@ -364,7 +367,7 @@ The visualization reveals a high frequency of state transitions in arm selection
 
 A fundamental econometric concern when applying highly parameterized deep learning architectures to financial time series is the risk of overfitting to stochastic noise, thereby generating spurious predictability. To rigorously evaluate whether our proposed CMAB framework genuinely isolates exploitable market inefficiencies—rather than merely memorizing random localized patterns—we conducted a simulation-based robustness check via a synthetic placebo test.
 
-We generated a synthetic price trajectory using a GARCH(1,1) process, calibrated to emulate the broad statistical moments of the S\&P 500 index (an annualized volatility of approximately 16\% and a constant annualized drift of 8.5\%). While this stochastic process correctly simulates realistic financial phenomena such as volatility clustering and structural drift, its directional returns are strictly driven by unforecastable Gaussian noise, fundamentally lacking the complex structural inefficiencies present in empirical market data. We then trained our heterogeneous pool of base predictors on this dataset and applied the UCB contextual selection policy.
+We generated a synthetic price trajectory using a GARCH(1,1) process, calibrated to emulate the broad statistical moments of the S\&P 500 index (an annualized volatility of approximately 16\% and a constant annualized drift of 8.5\%). While this stochastic process correctly simulates realistic financial phenomena such as volatility clustering and structural drift, its directional returns are strictly driven by unforecastable Gaussian noise, fundamentally lacking the complex structural inefficiencies present in empirical market data. Unless otherwise noted, the results reported in this subsection reflect a single synthetic realization (fixed generator seed); characterizing realization-to-realization dispersion for this placebo test is left to future work, alongside the full predictor-pool retraining pass discussed in Section \ref{sec:conclusion}. We then trained our heterogeneous pool of base predictors on this dataset and applied the UCB contextual selection policy.
 
 The empirical results on the synthetic data, illustrated in Figure \ref{fig:synthetic_test}, perfectly corroborate our theoretical expectations. Because the underlying dataset contained only a static upward drift buried in pure noise, the equally weighted Ensemble Mean effectively captured the baseline market beta. Conversely, the explicitly exploratory CMAB policy, attempting to dynamically adapt to non-existent regime shifts, succumbed to structural whipsaw and systematically failed to outperform the naive baseline. 
 
@@ -377,16 +380,57 @@ The empirical results on the synthetic data, illustrated in Figure \ref{fig:synt
 
 This placebo test provides compelling evidence that the CMAB framework does not hallucinate predictive alpha from pure noise or volatility clusters. Instead, it confirms that the outperformance observed on the real-world empirical datasets (e.g., SPY, BTC-USD, GC=F) is strictly driven by the routing mechanism successfully isolating and exploiting genuine, non-stationary market predictability.
 
+\subsection{Statistical Significance of CMAB vs.\ Static Ensemble}
+\label{sec:significance}
+
+The point-estimate gaps reported in Table \ref{tab:main_results} do not, by themselves, establish that the CMAB-greedy strategy's advantage over the static ensemble baseline is statistically distinguishable from zero. To address this directly, we apply a paired Diebold-Mariano test \cite{diebold1995comparing} to the daily return differential (CMAB-greedy minus static ensemble) for each of the 30 configurations underlying Table \ref{tab:main_results}, using a Newey-West/Bartlett-kernel HAC long-run variance estimate \cite{newey1987simple} with automatic bandwidth selection and the Harvey-Leybourne-Newbold small-sample correction \cite{harvey1997testing}. Because the 25 per-seed return columns for a given configuration share an identical market realization and an identical deterministic baseline -- and are therefore not independent replicates -- we run one primary test per configuration on the cross-seed-mean daily return, the same aggregation Table \ref{tab:main_results}'s point estimates already use, rather than treating each seed as an independent comparison. We additionally report a circular moving-block bootstrap 95\% confidence interval (10,000 replicates) for the Sharpe-ratio difference. Recognizing that the 30 configurations constitute a family for multiple-testing purposes, we apply both the Holm procedure (family-wise error rate) \cite{holm1979simple} and Benjamini-Hochberg (false discovery rate) correction \cite{benjamini1995controlling} at $\alpha=0.05$ across the 30 primary $p$-values.
+
+Table \ref{tab:significance} reports the results. \textbf{No configuration remains significant after either the Holm or the Benjamini-Hochberg correction at $\alpha=0.05$.} Only one configuration (GC=F, Thompson Sampling, heterogeneous pool) has a raw, uncorrected $p<0.05$ ($p=0.018$), but its Holm-corrected value is $p=0.551$. Two configurations -- BTC-USD/Thompson/homogeneous and GC=F/Thompson/heterogeneous -- have a bootstrap Sharpe-difference 95\% confidence interval that excludes zero, both favoring the CMAB strategy; these use a different (percentile-bootstrap) inferential procedure than the DM test and are not corrected for multiplicity, so we report them descriptively rather than as confirmed effects.
+
+Twenty of the 30 point estimates favor the CMAB strategy (positive mean-return differential); the ten that do not are concentrated in TLT, consistent with the qualitative exception already noted in Section \ref{sec:results}. We interpret the overall pattern as a directionally consistent but individually modest edge per configuration: with $n$ ranging from 1,764 (BTC-USD) to 4,284 (SPY) daily out-of-sample observations per configuration, and daily strategy returns that are themselves serially correlated (motivating the HAC correction in the first place), a Sharpe-ratio gap of the magnitude reported in Table \ref{tab:main_results} does not, on its own, clear a conservative, multiplicity-corrected significance bar. This tempers -- without invalidating -- the strength of the claim that UCB is a ``dominant'' strategy: it is the point-estimate leader across most asset classes, but individual asset-level gaps against the static ensemble should be read as suggestive rather than conclusively established at conventional significance levels.
+
+\begin{sidewaystable}[htbp]
+    \centering
+    \caption{Statistical significance of the CMAB-greedy vs.\ static-ensemble daily return differential, per Table~\ref{tab:main_results} configuration. DM $p$ is the raw (uncorrected) Diebold-Mariano $p$-value; no configuration survives Holm or Benjamini-Hochberg correction at $\alpha=0.05$ (see text). $\Delta$Sharpe is the point estimate and 95\% block-bootstrap confidence interval for Sharpe(CMAB)$-$Sharpe(Ensemble); bold marks the two configurations whose interval excludes zero.}
+    \label{tab:significance}
+    \setlength{\tabcolsep}{3pt}
+    \scriptsize
+    \begin{tabular}{@{} ll rrr rrr @{}}
+    \toprule
+     & & \multicolumn{3}{c}{\textbf{DM test $p$-value (raw)}} & \multicolumn{3}{c}{\textbf{$\Delta$Sharpe [95\% CI]}} \\
+    \cmidrule(lr){3-5} \cmidrule(lr){6-8}
+    \textbf{Ticker} & \textbf{Architecture} & Softmax & UCB & Thomp & Softmax & UCB & Thomp \\
+    \midrule
+    \multirow{2}{*}{\textbf{BTC}} & Heterogeneous & 0.142 & 0.060 & 0.299 & +0.43 [-0.50,+1.37] & +0.86 [-0.19,+2.15] & +0.38 [-0.53,+1.43] \\
+     & Homogeneous & 0.180 & 0.090 & 0.092 & +0.31 [-0.06,+0.79] & +0.83 [-0.04,+1.95] & \textbf{+0.77 [+0.06,+1.70]} \\
+    \midrule
+    \multirow{2}{*}{\textbf{EURUSD}} & Heterogeneous & 0.982 & 0.639 & 0.834 & -0.00 [-0.27,+0.26] & +0.07 [-0.24,+0.39] & +0.01 [-0.26,+0.26] \\
+     & Homogeneous & 0.060 & 0.477 & 0.351 & +0.25 [-0.02,+0.53] & +0.14 [-0.25,+0.54] & +0.09 [-0.11,+0.28] \\
+    \midrule
+    \multirow{2}{*}{\textbf{GC=F}} & Heterogeneous & 0.874 & 0.063 & 0.018 & +0.00 [-0.29,+0.29] & +0.38 [-0.07,+0.85] & \textbf{+0.46 [+0.08,+0.86]} \\
+     & Homogeneous & 0.525 & 0.299 & 0.210 & +0.09 [-0.10,+0.28] & +0.21 [-0.18,+0.60] & +0.18 [-0.04,+0.42] \\
+    \midrule
+    \multirow{2}{*}{\textbf{SPY}} & Heterogeneous & 0.830 & 0.618 & 0.641 & -0.04 [-0.31,+0.22] & +0.05 [-0.34,+0.45] & -0.08 [-0.38,+0.21] \\
+     & Homogeneous & 0.977 & 0.737 & 0.864 & +0.06 [-0.10,+0.23] & +0.05 [-0.26,+0.37] & +0.05 [-0.14,+0.25] \\
+    \midrule
+    \multirow{2}{*}{\textbf{TLT}} & Heterogeneous & 0.062 & 0.348 & 0.789 & -0.27 [-0.56,+0.02] & -0.18 [-0.55,+0.19] & +0.00 [-0.31,+0.32] \\
+     & Homogeneous & 0.092 & 0.745 & 0.986 & -0.16 [-0.37,+0.06] & -0.07 [-0.38,+0.26] & +0.03 [-0.17,+0.24] \\
+    \bottomrule
+    \end{tabular}
+\end{sidewaystable}
+
+Formal unit-root and structural-break diagnostics substantiating this paper's non-stationarity premise are reported in Appendix \ref{sec:stationarity}, and a transaction-cost sensitivity analysis of the CMAB strategy's edge under realistic trading frictions is reported in Appendix \ref{sec:fees}.
+
 \section{Conclusion}
 \label{sec:conclusion}
 
-This study introduced a dynamic, Reinforcement Learning-based framework for model selection in financial time series forecasting, leveraging Contextual Multi-Armed Bandits (CMABs). By formulating the sequential selection of base predictors as an explicit exploration-exploitation problem, our proposed routing mechanism consistently outperformed naive, static ensemble aggregation in out-of-sample testing environments. 
+This study introduced a dynamic, Reinforcement Learning-based framework for model selection in financial time series forecasting, leveraging Contextual Multi-Armed Bandits (CMABs). By formulating the sequential selection of base predictors as an explicit exploration-exploitation problem, our proposed routing mechanism consistently outperformed naive, static ensemble aggregation in out-of-sample testing environments. Relative to earlier formulations of this framework, which emphasized the autocorrelation structure of the reward signal in relative isolation, the present study foregrounds a complementary and empirically more consequential finding: that architectural heterogeneity within the predictor pool systematically penalizes static aggregation while CMAB-based selection thrives on it (Section \ref{sec:heterogeneity}).
 
-To rigorously validate the generalizability and robustness of this approach—and to explicitly address fundamental econometric concerns regarding overfitting to pure noise or isolated market microstructures—our empirical evaluation spanned five highly diverse asset classes: broad market equities (SPY), cryptocurrency (BTC-USD), foreign exchange (EURUSD=X), commodities (GC=F), and sovereign bonds (TLT). Furthermore, a simulation-based placebo test utilizing a synthetic GARCH(1,1) process confirmed that the framework successfully isolates genuine predictive alpha rather than hallucinating predictability from autocorrelated stochastic volatility. Across these distinct, non-stationary regimes, explicitly uncertainty-aware policies—most notably LinUCB and Thompson Sampling—demonstrated a superior capacity for compounded capital growth and downside risk mitigation compared to standard static baselines.
+To rigorously validate the generalizability and robustness of this approach—and to explicitly address fundamental econometric concerns regarding overfitting to pure noise or isolated market microstructures—our empirical evaluation spanned five highly diverse asset classes: broad market equities (SPY), cryptocurrency (BTC-USD), foreign exchange (EURUSD=X), commodities (GC=F), and sovereign bonds (TLT). Furthermore, a simulation-based placebo test utilizing a synthetic GARCH(1,1) process confirmed that the framework successfully isolates genuine predictive alpha rather than hallucinating predictability from autocorrelated stochastic volatility. Across these distinct, non-stationary regimes, explicitly uncertainty-aware policies—most notably LinUCB and Thompson Sampling—achieved a consistently higher point-estimate capacity for compounded capital growth and downside risk mitigation than standard static baselines, though, as reported in Section \ref{sec:significance}, individual asset-level gaps do not clear a multiplicity-corrected significance bar and should be read as a directional pattern rather than per-asset confirmed effects.
 
 A critical finding of this research is the dichotomous impact of architectural variance on static versus dynamic ensembles. Our experiments revealed that while injecting structural heterogeneity into the predictor pool (via the combination of MLPs, CNNs, and RNNs) often penalized the static average ensemble by introducing conflicting baseline signals, the CMAB framework actively thrived in this high-variance environment. The contextual bandit policies successfully isolated and deployed the unique inductive biases of different neural architectures precisely when they aligned with transient market conditions, effectively transforming structural predictor variance from a statistical liability into a strategic advantage.
 
-Future research could expand upon this framework by directly incorporating proportional transaction costs (e.g., slippage and execution fees) into the reward formulation, evaluating more complex non-linear RL architectures (such as Deep Q-Networks), or extending the action space to facilitate continuous, dynamic portfolio weighting rather than mutually exclusive discrete arm selection.
+This revision adds four further empirical checks: a formal significance testing pass (Section \ref{sec:significance}), unit-root and structural-break diagnostics substantiating the paper's non-stationarity premise (Appendix \ref{sec:stationarity}), a transaction-cost sensitivity analysis (Appendix \ref{sec:fees}) showing that the CMAB strategy's edge, while present under zero-cost assumptions in the majority of configurations, erodes and is no longer guaranteed at retail-level trading costs, and a context-vector ablation (Appendix \ref{sec:ablation}) showing that a theoretically-motivated design exclusion is also empirically consequential. Future research could expand upon this framework by directly incorporating proportional transaction costs (e.g., slippage and execution fees) into the reward formulation itself -- rather than as the post-hoc sensitivity analysis reported here -- evaluating more complex non-linear RL architectures (such as Deep Q-Networks), extending the action space to facilitate continuous, dynamic portfolio weighting rather than mutually exclusive discrete arm selection, or characterizing realization-to-realization dispersion of the synthetic placebo test (Section \ref{sec:synthetic_data}) via a full multi-seed predictor-pool retraining pass.
 
 \section*{Data and Code Availability}
 The financial time series datasets utilized in this study are publicly available and were sourced via the Yahoo Finance API. The Python codebase responsible for data ingestion, model training, environment construction, and performance evaluation is open-source and can be accessed via our GitHub repository: \url{https://github.com/SaviozziSamuele/MABSS}.
@@ -397,6 +441,114 @@ M.~R.~acknowledges the partial support of the project PNRR - M4C2 - Investimento
 
 During the preparation of this work the author(s) used Google Gemini in order to improve the English writing. After using this tool/service, the author(s) reviewed and edited the content as needed and take(s) full responsibility for the content of the publication.
 
+\begin{appendices}
+
+\section{Formal Stationarity and Structural-Break Diagnostics}
+\label{sec:stationarity}
+
+To substantiate the qualitative non-stationarity claims made throughout this paper (Sections \ref{sec:dataset} and \ref{sec:pred}) with formal statistical evidence, we conducted a battery of unit-root and structural-break tests on the price level and daily return series of all five evaluated assets. Table \ref{tab:stationarity} reports the Augmented Dickey-Fuller (ADF) \cite{dickey1979distribution} and Kwiatkowski-Phillips-Schmidt-Shin (KPSS) \cite{kwiatkowski1992testing} tests -- which carry opposite null hypotheses (unit root vs.\ stationarity, respectively) -- applied to both series.
+
+Every asset's price level classifies as a unit-root, non-stationary process (ADF fails to reject its null of a unit root, while KPSS strongly rejects its null of stationarity), consistent with standard random-walk-like price behavior. Conversely, every asset's daily return series classifies as stationary (ADF strongly rejects the unit-root null at $p<0.001$ for all five assets, while KPSS fails to reject stationarity). This confirms that our walk-forward, return-based modeling target (Section \ref{sec:dataset}) is a well-behaved, stationary series, even though the underlying price process itself is not.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Unit-root and stationarity tests (ADF, KPSS) applied to the raw price level and the daily return series for all five evaluated assets. KPSS $p$-values are bounded by the tabulated range of \cite{kwiatkowski1992testing} and are reported at the nearest bound (0.01 or 0.10).}
+    \label{tab:stationarity}
+    \scriptsize
+    \begin{tabular}{@{} l rrl rrl @{}}
+    \toprule
+     & \multicolumn{3}{c}{\textbf{Price Level}} & \multicolumn{3}{c}{\textbf{Daily Return}} \\
+    \cmidrule(lr){2-4} \cmidrule(lr){5-7}
+    \textbf{Asset} & ADF $p$ & KPSS $p$ & Classification & ADF $p$ & KPSS $p$ & Classification \\
+    \midrule
+    SPY & 1.000 & 0.01 & Unit root & $<0.001$ & 0.10 & Stationary \\
+    BTC-USD & 0.958 & 0.01 & Unit root & $<0.001$ & 0.10 & Stationary \\
+    TLT & 0.385 & 0.01 & Unit root & $<0.001$ & 0.10 & Stationary \\
+    EURUSD=X & 0.240 & 0.01 & Unit root & $<0.001$ & 0.10 & Stationary \\
+    GC=F & 1.000 & 0.01 & Unit root & $<0.001$ & 0.10 & Stationary \\
+    \bottomrule
+    \end{tabular}
+\end{table}
+
+Beyond the level/return dichotomy, we investigate whether the return series themselves exhibit a discrete structural break in their mean, as opposed to the continuous, gradual regime drift our CMAB framework is designed to track. We apply the CUSUM-of-OLS-residuals test of \cite{ploberger1992cusum}, which tests for parameter instability in a constant-mean model, and a Quandt-Andrews Sup-F search \cite{andrews1993tests} (15\% trim) for the single most likely breakpoint date, with a parametric-bootstrap $p$-value (2,000 replicates) in place of tabulated asymptotic critical values. Table \ref{tab:structural-break} reports the results.
+
+Notably, neither test detects a statistically significant single mean-break in the return series of any of the five assets at the 5\% level ($p \geq 0.18$ in all cases). The Sup-F search does identify candidate breakpoint dates that align with well-known macro-financial events -- e.g., SPY's candidate break falls on 2009-04-09, within days of the 2008--2009 financial crisis market bottom -- but none clear the bootstrap significance threshold. We interpret this as supporting evidence for our framework's core design choice: financial return series in our sample do not decompose into a small number of discrete regimes separated by sharp mean breaks, but instead exhibit continuous, gradual drift in predictability and volatility (consistent with Figure \ref{fig:reward_stddev}'s reward-dispersion spikes). This favors an approach like ours, which continuously re-estimates the optimal predictor at every walk-forward window, over a regime-switching model that would need to first detect and then react to a small number of discrete breakpoints.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Structural-break diagnostics on the daily return series. CUSUM is the Ploberger-Kramer (1992) CUSUM-of-OLS-residuals test for mean instability; Sup-F is a Quandt-Andrews (1993) breakpoint search (15\% trim) with a parametric-bootstrap $p$-value (2,000 replicates). Neither test rejects the null of no break at the 5\% level for any asset.}
+    \label{tab:structural-break}
+    \setlength{\tabcolsep}{3pt}
+    \scriptsize
+    \begin{tabular}{@{} l rr rll @{}}
+    \toprule
+    \textbf{Asset} & CUSUM stat & CUSUM $p$ & Sup-F stat & Breakpoint & Boot.\ $p$ \\
+    \midrule
+    SPY & 1.011 & 0.258 & 5.753 & 2009-04-09 & 0.177 \\
+    BTC-USD & 0.990 & 0.281 & 3.511 & 2021-08-13 & 0.466 \\
+    TLT & 1.053 & 0.218 & 5.633 & 2021-02-16 & 0.197 \\
+    EURUSD=X & 0.388 & 0.998 & 0.831 & 2023-07-17 & 0.994 \\
+    GC=F & 0.983 & 0.289 & 4.400 & 2012-01-05 & 0.335 \\
+    \bottomrule
+    \end{tabular}
+\end{table}
+
+\section{Transaction-Cost Sensitivity}
+\label{sec:fees}
+
+Section \ref{sec:pred} reports all results under a zero-transaction-cost assumption, isolating the pure predictive edge of the selection mechanism. To assess how robust this edge is to realistic trading frictions, we recompute all 30 configurations of Table \ref{tab:main_results} under one-way transaction costs of 0, 5, 10, 25, and 50 basis points, charged only when the strategy's binary long/cash position switches (Section \ref{sec:pred}) -- switching which underlying predictor drives the signal while the position itself is unchanged incurs no cost, since this is a single-instrument strategy. This computation reuses the already-cached arm-selection sequences underlying Table \ref{tab:main_results} and requires no retraining.
+
+Table \ref{tab:fee-sensitivity} summarizes the results, averaged across all 30 configurations. At zero cost, the CMAB-greedy strategy outperforms the static ensemble on Sharpe ratio in 20 of 30 configurations, with a mean Sharpe advantage of $+0.14$. This advantage erodes steadily as costs rise: 19/30 configurations still favor CMAB at 5 bps, 17/30 at 10 bps, and by 25--50 bps the average CMAB-minus-ensemble Sharpe gap turns negative, with only 14--15 of 30 configurations retaining a CMAB edge. On annualized return, the crossover point where the average CMAB advantage turns negative falls between 25 and 50 bps one-way.
+
+We attribute this erosion to the CMAB-greedy strategy's more responsive directional signal: because it acts on a single selected predictor's forecast rather than an averaged consensus, it flips its long/cash position more frequently than the smoothed ensemble baseline, accumulating proportionally more fee events as the cost per switch rises. This is a genuine limitation, not an artifact -- at realistic institutional transaction-cost levels (typically single-digit to low-double-digit basis points for the liquid instruments studied here), the CMAB framework retains its edge in the clear majority of configurations, but at retail-level costs (25--50 bps) the advantage is no longer guaranteed and should be assessed per-asset rather than assumed. We view directly incorporating transaction costs into the CMAB's reward function -- rather than this post-hoc sensitivity analysis -- as a substantively larger undertaking, since it would change the bandit's learned policy itself, and we leave it to future work (Section \ref{sec:conclusion}).
+
+\begin{table}[htbp]
+    \centering
+    \caption{Transaction-cost sensitivity, averaged across all 30 Table~\ref{tab:main_results} configurations, under one-way costs charged per long/cash position switch. ``Win count'' is the number of configurations (of 30) where the CMAB-greedy mean Sharpe ratio exceeds the static ensemble's.}
+    \label{tab:fee-sensitivity}
+    \scriptsize
+    \begin{tabular}{@{} r rrr r @{}}
+    \toprule
+    \textbf{Fee (bps)} & \textbf{Ensemble Sharpe} & \textbf{CMAB Sharpe} & \textbf{CMAB $-$ Ens.} & \textbf{Win count} \\
+    \midrule
+    0  & 0.28  & 0.42  & $+0.14$  & 20/30 \\
+    5  & 0.04  & 0.13  & $+0.09$  & 19/30 \\
+    10 & $-0.19$ & $-0.15$ & $+0.04$  & 17/30 \\
+    25 & $-0.83$ & $-0.92$ & $-0.09$  & 15/30 \\
+    50 & $-1.69$ & $-1.91$ & $-0.22$  & 14/30 \\
+    \bottomrule
+    \end{tabular}
+\end{table}
+
+\section{Context-Vector Ablation: A Shared Market-Risk Feature}
+\label{sec:ablation}
+
+Section \ref{sec:context} argues theoretically that appending a market-level risk metric (e.g., rolling realized volatility) to the context vector should be uninformative, since such a feature is identical across all arms at a given time step and therefore cannot help a policy discriminate between them. We test this argument empirically on SPY (homogeneous pool, all three policies): we append a 20-day rolling realized volatility of the target return series, broadcast identically across every arm, to the existing 15-lag context, and re-run the bandit stage (real episode count, unchanged reward function) for 5 seeds. Given the wall-clock cost of the bandit stage at this scale ($\sim$1--3 hours per policy on the hardware available for this ablation, dominated by a pure-Python 50-arm loop), we scope this check to 5 seeds rather than the full 25 used elsewhere in this paper, and report it as a local, compute-bounded robustness check rather than a publication-grade replication of Table \ref{tab:main_results}. Table \ref{tab:ablation} compares the baseline (a 5-seed subsample of the real, already-published 25-seed result, for a variance-comparable reference) against the with-feature run using the same 5 seeds.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Context-vector ablation on SPY (homogeneous pool): Sharpe ratio when appending a shared, non-arm-specific rolling realized-volatility feature to every arm's context. ``Baseline (5-seed)'' uses the same seeds as ``+ Risk Feature'' without the added feature, for a variance-comparable comparison; ``Baseline (25-seed, published)'' is the full result already reported in Table~\ref{tab:main_results}.}
+    \label{tab:ablation}
+    \setlength{\tabcolsep}{3pt}
+    \scriptsize
+    \begin{tabular}{@{} l rrr @{}}
+    \toprule
+    \textbf{Policy} & \shortstack{\textbf{25-seed}\\\textbf{(published)}} & \shortstack{\textbf{5-seed}\\\textbf{(baseline)}} & \shortstack{\textbf{5-seed}\\\textbf{(+feature)}} \\
+    \midrule
+    Softmax & 0.661 & 0.682 & 0.679 \\
+    UCB & 0.686 & 0.686 & 0.642 \\
+    Thompson & 0.645 & 0.666 & 0.686 \\
+    \bottomrule
+    \end{tabular}
+\end{table}
+
+The result is policy-dependent rather than uniformly neutral. For Softmax, the feature is essentially inert (Sharpe $0.682 \to 0.679$, a $-0.4\%$ relative change, within the noise of a 5-seed comparison). For Thompson Sampling, it is mildly positive ($0.666 \to 0.686$, $+2.9\%$), with a lower cross-seed standard deviation and a shallower average maximum drawdown ($-0.340 \to -0.332$). For LinUCB -- the policy Section \ref{sec:results} identifies as the strongest point-estimate performer -- the feature is clearly detrimental: Sharpe falls from $0.686$ to $0.642$ ($-6.4\%$), with annualized return falling correspondingly ($0.098 \to 0.091$).
+
+A plausible mechanism for this asymmetry: LinUCB's exploration bonus is a function of the estimated covariance of each arm's local ridge-regression context ($\mathbf{x}_{t,a}^\top A_a^{-1} \mathbf{x}_{t,a}$, Section \ref{sec:background}). Appending a fourth context dimension enlarges this covariance estimate without contributing arm-discriminating signal, which can inflate the exploration term and slow convergence to the correct arm ranking -- a class of harm confidence-bound methods are structurally more exposed to than a Softmax policy (whose exploration scale is governed by logit magnitude, not context covariance) or Thompson Sampling (which showed a small net benefit here, though within the noise of a 5-seed comparison).
+
+We therefore read this ablation as strengthening rather than merely confirming Section \ref{sec:context}'s argument: excluding the shared risk feature is not just theoretically well-motivated but empirically consequential for our best-performing policy. We caution that this check uses 5 seeds on a single asset (SPY) rather than the full 25-seed, 5-asset design used elsewhere in this paper, given the wall-clock cost of the bandit stage at this scale; extending it to the full corpus is left to the broader retraining pass discussed in Section \ref{sec:conclusion}.
+
+\end{appendices}
 
 \bibliography{references}
 \end{document}

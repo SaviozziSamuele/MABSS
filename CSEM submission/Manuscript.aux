@@ -1,0 +1,119 @@
+\relax 
+\bibstyle{sn-mathphys-num}
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{tsay2005analysis}
+\citation{krollner2010financial}
+\citation{sezer2020financial}
+\providecommand \oddpage@label [2]{}
+\Newlabel{1}{1}
+\Newlabel{2}{2}
+\citation{mishkin2016all}
+\citation{perrone1995networks}
+\citation{pandian2025enhancing,wilson2024multi}
+\citation{zhu2019adaptive,zeng2023multi}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{2}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}Background}{3}{section.2}\protected@file@percent }
+\newlabel{sec:background}{{2}{3}{Background}{section.2}{}}
+\citation{bouneffouf2020survey}
+\citation{cortes2018adapting}
+\citation{li2010contextual}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Contextual Multi-Armed Bandits}{4}{subsection.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.1}Action-Value Methods}{4}{subsubsection.2.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.2}Policy Learning Methods}{5}{subsubsection.2.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}Design of the Bandit Framework}{7}{section.3}\protected@file@percent }
+\newlabel{sec:methods}{{3}{7}{Design of the Bandit Framework}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Environment Construction}{7}{subsection.3.1}\protected@file@percent }
+\newlabel{sec:dataset}{{3.1}{7}{Environment Construction}{subsection.3.1}{}}
+\citation{bergmeir2018note}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Reward Signal}{8}{subsection.3.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Cross-sectional standard deviation of the reward signals across the pool of base models for four diverse asset classes (Equities, Cryptocurrency, Sovereign Bonds, and Foreign Exchange). The cumulative return of the underlying asset is overlaid in gray. Across all datasets, periods of market stress or significant drawdowns consistently coincide with a spike in reward standard deviation, indicating heightened disagreement among predictors during highly volatile, non-stationary regimes.}}{9}{figure.caption.2}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:reward_stddev}{{1}{9}{Cross-sectional standard deviation of the reward signals across the pool of base models for four diverse asset classes (Equities, Cryptocurrency, Sovereign Bonds, and Foreign Exchange). The cumulative return of the underlying asset is overlaid in gray. Across all datasets, periods of market stress or significant drawdowns consistently coincide with a spike in reward standard deviation, indicating heightened disagreement among predictors during highly volatile, non-stationary regimes}{figure.caption.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Impact of Architectural Heterogeneity}{9}{subsection.3.3}\protected@file@percent }
+\newlabel{sec:heterogeneity}{{3.3}{9}{Impact of Architectural Heterogeneity}{subsection.3.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Comparison of predictive dispersion (represented by the 21-day moving average of the reward standard deviation) between a homogeneous predictor pool (MLPs only) and a heterogeneous pool (MLPs, CNNs, and RNNs) on the SPY dataset. The heterogeneous pool consistently exhibits higher cross-sectional disagreement, reflecting the diverse inductive biases of the constituent architectures. This structural variance actively degrades static ensembling methods, highlighting the necessity for dynamic model selection.}}{10}{figure.caption.3}\protected@file@percent }
+\newlabel{fig:variance_comparison}{{2}{10}{Comparison of predictive dispersion (represented by the 21-day moving average of the reward standard deviation) between a homogeneous predictor pool (MLPs only) and a heterogeneous pool (MLPs, CNNs, and RNNs) on the SPY dataset. The heterogeneous pool consistently exhibits higher cross-sectional disagreement, reflecting the diverse inductive biases of the constituent architectures. This structural variance actively degrades static ensembling methods, highlighting the necessity for dynamic model selection}{figure.caption.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Context Construction}{10}{subsection.3.4}\protected@file@percent }
+\newlabel{sec:context}{{3.4}{10}{Context Construction}{subsection.3.4}{}}
+\citation{huo2017risk}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Global mean autocorrelation function (ACF) of the reward signals, aggregated across all base predictors and all evaluated datasets. The shaded region represents a one-standard-deviation confidence interval. The pronounced positive autocorrelation at early lags demonstrates a short-term persistence in model performance (epistemic momentum) across different asset classes, empirically justifying our autoregressive context construction.}}{11}{figure.caption.4}\protected@file@percent }
+\newlabel{fig:acf_reward_L1}{{3}{11}{Global mean autocorrelation function (ACF) of the reward signals, aggregated across all base predictors and all evaluated datasets. The shaded region represents a one-standard-deviation confidence interval. The pronounced positive autocorrelation at early lags demonstrates a short-term persistence in model performance (epistemic momentum) across different asset classes, empirically justifying our autoregressive context construction}{figure.caption.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Trading Strategy Formulation}{12}{subsection.3.5}\protected@file@percent }
+\newlabel{sec:pred}{{3.5}{12}{Trading Strategy Formulation}{subsection.3.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Results and Performance Analysis}{12}{section.4}\protected@file@percent }
+\newlabel{sec:results}{{4}{12}{Results and Performance Analysis}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Generalizability and Multi-Policy Comparison}{12}{subsection.4.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Cumulative returns of the directional trading strategies derived from individual base predictors (gray) compared to the naive, equally weighted ensemble average (orange) and the underlying buy-and-hold asset return (dashed black). This representative plot (evaluated on the QQQ dataset) highlights the extreme variance in individual model performance. By smoothing this variance, the ensemble average provides a stabilized comparative baseline for our subsequent CMAB evaluations.}}{13}{figure.caption.5}\protected@file@percent }
+\newlabel{fig:mean_cum_return}{{4}{13}{Cumulative returns of the directional trading strategies derived from individual base predictors (gray) compared to the naive, equally weighted ensemble average (orange) and the underlying buy-and-hold asset return (dashed black). This representative plot (evaluated on the QQQ dataset) highlights the extreme variance in individual model performance. By smoothing this variance, the ensemble average provides a stabilized comparative baseline for our subsequent CMAB evaluations}{figure.caption.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Mechanics of Dynamic Selection}{14}{subsection.4.2}\protected@file@percent }
+\newlabel{sec:dynamic}{{4.2}{14}{Mechanics of Dynamic Selection}{subsection.4.2}{}}
+\newlabel{RF1}{15}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Out-of-sample performance metrics across five diverse asset classes. The underlying data spans from January 2000 to March 2026, though out-of-sample testing begins only after the initial four-year walk-forward training window (Section \ref {sec:dataset}), i.e.\ from approximately 2004 onward. All metrics are calculated using a daily return frequency. The Sharpe Ratio is annualized, assuming 252 trading days per year and a risk-free rate of 0\%. Maximum Drawdown (MDD) represents the largest peak-to-trough drop in the cumulative return curve.}}{15}{table.caption.8}\protected@file@percent }
+\newlabel{tab:main_results}{{1}{15}{Out-of-sample performance metrics across five diverse asset classes. The underlying data spans from January 2000 to March 2026, though out-of-sample testing begins only after the initial four-year walk-forward training window (Section \ref {sec:dataset}), i.e.\ from approximately 2004 onward. All metrics are calculated using a daily return frequency. The Sharpe Ratio is annualized, assuming 252 trading days per year and a risk-free rate of 0\%. Maximum Drawdown (MDD) represents the largest peak-to-trough drop in the cumulative return curve}{table.caption.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Out-of-sample cumulative returns of the deterministic CMAB strategy compared to the average ensemble baseline across four distinct asset classes. The solid lines represent the mean cumulative Net Asset Value (NAV) across multiple training seeds, while the shaded regions denote a $\pm 1$ standard deviation confidence interval. The results consistently demonstrate the CMAB framework's ability to achieve superior compounded returns while effectively managing the structural variance introduced by the diverse predictor pool.}}{16}{figure.caption.6}\protected@file@percent }
+\newlabel{fig:performance_grid}{{5}{16}{Out-of-sample cumulative returns of the deterministic CMAB strategy compared to the average ensemble baseline across four distinct asset classes. The solid lines represent the mean cumulative Net Asset Value (NAV) across multiple training seeds, while the shaded regions denote a $\pm 1$ standard deviation confidence interval. The results consistently demonstrate the CMAB framework's ability to achieve superior compounded returns while effectively managing the structural variance introduced by the diverse predictor pool}{figure.caption.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Robustness Analysis: Synthetic Placebo Test}{16}{subsection.4.3}\protected@file@percent }
+\newlabel{sec:synthetic_data}{{4.3}{16}{Robustness Analysis: Synthetic Placebo Test}{subsection.4.3}{}}
+\citation{diebold1995comparing}
+\citation{newey1987simple}
+\citation{harvey1997testing}
+\citation{holm1979simple}
+\citation{benjamini1995controlling}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Cumulative return trajectory of the CMAB strategy on the SPY dataset, color-coded by the active base predictor. Each distinct color segment corresponds to the specific arm selected by the greedy exploitation policy at time $t$. The high frequency of color transitions visually demonstrates the bandit's continuous adaptation to shifting, localized market regimes.}}{17}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:color-by-arm}{{6}{17}{Cumulative return trajectory of the CMAB strategy on the SPY dataset, color-coded by the active base predictor. Each distinct color segment corresponds to the specific arm selected by the greedy exploitation policy at time $t$. The high frequency of color transitions visually demonstrates the bandit's continuous adaptation to shifting, localized market regimes}{figure.caption.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Statistical Significance of CMAB vs.\ Static Ensemble}{17}{subsection.4.4}\protected@file@percent }
+\newlabel{sec:significance}{{4.4}{17}{Statistical Significance of CMAB vs.\ Static Ensemble}{subsection.4.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Out-of-sample cumulative returns of the deterministic CMAB strategy (UCB) compared to the average ensemble baseline on a synthetic GARCH(1,1) price series. The underlying asset features realistic volatility clustering and constant upward drift but strictly lacks exploitable directional predictability. Consequently, the dynamic CMAB policy is penalized by the noise, failing to outperform the static ensemble mean.}}{18}{figure.caption.10}\protected@file@percent }
+\newlabel{fig:synthetic_test}{{7}{18}{Out-of-sample cumulative returns of the deterministic CMAB strategy (UCB) compared to the average ensemble baseline on a synthetic GARCH(1,1) price series. The underlying asset features realistic volatility clustering and constant upward drift but strictly lacks exploitable directional predictability. Consequently, the dynamic CMAB policy is penalized by the noise, failing to outperform the static ensemble mean}{figure.caption.10}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Conclusion}{19}{section.5}\protected@file@percent }
+\newlabel{sec:conclusion}{{5}{19}{Conclusion}{section.5}{}}
+\newlabel{RF2}{20}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Statistical significance of the CMAB-greedy vs.\ static-ensemble daily return differential, per Table~\ref {tab:main_results} configuration. DM $p$ is the raw (uncorrected) Diebold-Mariano $p$-value; no configuration survives Holm or Benjamini-Hochberg correction at $\alpha =0.05$ (see text). $\Delta $Sharpe is the point estimate and 95\% block-bootstrap confidence interval for Sharpe(CMAB)$-$Sharpe(Ensemble); bold marks the two configurations whose interval excludes zero.}}{20}{table.caption.12}\protected@file@percent }
+\newlabel{tab:significance}{{2}{20}{Statistical significance of the CMAB-greedy vs.\ static-ensemble daily return differential, per Table~\ref {tab:main_results} configuration. DM $p$ is the raw (uncorrected) Diebold-Mariano $p$-value; no configuration survives Holm or Benjamini-Hochberg correction at $\alpha =0.05$ (see text). $\Delta $Sharpe is the point estimate and 95\% block-bootstrap confidence interval for Sharpe(CMAB)$-$Sharpe(Ensemble); bold marks the two configurations whose interval excludes zero}{table.caption.12}{}}
+\citation{dickey1979distribution}
+\citation{kwiatkowski1992testing}
+\citation{kwiatkowski1992testing}
+\citation{kwiatkowski1992testing}
+\citation{ploberger1992cusum}
+\citation{andrews1993tests}
+\@writefile{toc}{\contentsline {section}{\numberline {A}Formal Stationarity and Structural-Break Diagnostics}{22}{appendix.a.A}\protected@file@percent }
+\newlabel{sec:stationarity}{{A}{22}{Formal Stationarity and Structural-Break Diagnostics}{appendix.a.A}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {A1}{\ignorespaces Unit-root and stationarity tests (ADF, KPSS) applied to the raw price level and the daily return series for all five evaluated assets. KPSS $p$-values are bounded by the tabulated range of \cite  {kwiatkowski1992testing} and are reported at the nearest bound (0.01 or 0.10).}}{22}{table.caption.16}\protected@file@percent }
+\newlabel{tab:stationarity}{{A1}{22}{Unit-root and stationarity tests (ADF, KPSS) applied to the raw price level and the daily return series for all five evaluated assets. KPSS $p$-values are bounded by the tabulated range of \cite {kwiatkowski1992testing} and are reported at the nearest bound (0.01 or 0.10)}{table.caption.16}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {A2}{\ignorespaces Structural-break diagnostics on the daily return series. CUSUM is the Ploberger-Kramer (1992) CUSUM-of-OLS-residuals test for mean instability; Sup-F is a Quandt-Andrews (1993) breakpoint search (15\% trim) with a parametric-bootstrap $p$-value (2,000 replicates). Neither test rejects the null of no break at the 5\% level for any asset.}}{23}{table.caption.18}\protected@file@percent }
+\newlabel{tab:structural-break}{{A2}{23}{Structural-break diagnostics on the daily return series. CUSUM is the Ploberger-Kramer (1992) CUSUM-of-OLS-residuals test for mean instability; Sup-F is a Quandt-Andrews (1993) breakpoint search (15\% trim) with a parametric-bootstrap $p$-value (2,000 replicates). Neither test rejects the null of no break at the 5\% level for any asset}{table.caption.18}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {B}Transaction-Cost Sensitivity}{23}{appendix.a.B}\protected@file@percent }
+\newlabel{sec:fees}{{B}{23}{Transaction-Cost Sensitivity}{appendix.a.B}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {B3}{\ignorespaces Transaction-cost sensitivity, averaged across all 30 Table~\ref {tab:main_results} configurations, under one-way costs charged per long/cash position switch. ``Win count'' is the number of configurations (of 30) where the CMAB-greedy mean Sharpe ratio exceeds the static ensemble's.}}{24}{table.caption.20}\protected@file@percent }
+\newlabel{tab:fee-sensitivity}{{B3}{24}{Transaction-cost sensitivity, averaged across all 30 Table~\ref {tab:main_results} configurations, under one-way costs charged per long/cash position switch. ``Win count'' is the number of configurations (of 30) where the CMAB-greedy mean Sharpe ratio exceeds the static ensemble's}{table.caption.20}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {C}Context-Vector Ablation: A Shared Market-Risk Feature}{24}{appendix.a.C}\protected@file@percent }
+\newlabel{sec:ablation}{{C}{24}{Context-Vector Ablation: A Shared Market-Risk Feature}{appendix.a.C}{}}
+\bibdata{references}
+\bibcite{tsay2005analysis}{{1}{2005}{{Tsay}}{{}}}
+\bibcite{krollner2010financial}{{2}{2010}{{Krollner et~al.}}{{}}}
+\bibcite{sezer2020financial}{{3}{2020}{{Sezer et~al.}}{{}}}
+\@writefile{lot}{\contentsline {table}{\numberline {C4}{\ignorespaces Context-vector ablation on SPY (homogeneous pool): Sharpe ratio when appending a shared, non-arm-specific rolling realized-volatility feature to every arm's context. ``Baseline (5-seed)'' uses the same seeds as ``+ Risk Feature'' without the added feature, for a variance-comparable comparison; ``Baseline (25-seed, published)'' is the full result already reported in Table~\ref {tab:main_results}.}}{25}{table.caption.22}\protected@file@percent }
+\newlabel{tab:ablation}{{C4}{25}{Context-vector ablation on SPY (homogeneous pool): Sharpe ratio when appending a shared, non-arm-specific rolling realized-volatility feature to every arm's context. ``Baseline (5-seed)'' uses the same seeds as ``+ Risk Feature'' without the added feature, for a variance-comparable comparison; ``Baseline (25-seed, published)'' is the full result already reported in Table~\ref {tab:main_results}}{table.caption.22}{}}
+\bibcite{mishkin2016all}{{4}{2016}{{Mishkin and Matas}}{{}}}
+\bibcite{perrone1995networks}{{5}{1995}{{Perrone and Cooper}}{{}}}
+\bibcite{pandian2025enhancing}{{6}{2025}{{Pandian et~al.}}{{}}}
+\bibcite{wilson2024multi}{{7}{2024}{{Wilson et~al.}}{{}}}
+\bibcite{zhu2019adaptive}{{8}{2019}{{Zhu et~al.}}{{}}}
+\bibcite{zeng2023multi}{{9}{2023}{{Zeng et~al.}}{{}}}
+\bibcite{bouneffouf2020survey}{{10}{2020}{{Bouneffouf et~al.}}{{}}}
+\bibcite{cortes2018adapting}{{11}{2018}{{Cortes}}{{}}}
+\bibcite{li2010contextual}{{12}{2010}{{Li et~al.}}{{}}}
+\bibcite{bergmeir2018note}{{13}{2018}{{Bergmeir et~al.}}{{}}}
+\bibcite{huo2017risk}{{14}{2017}{{Huo and Fu}}{{}}}
+\bibcite{diebold1995comparing}{{15}{1995}{{Diebold and Mariano}}{{}}}
+\bibcite{newey1987simple}{{16}{1987}{{Newey and West}}{{}}}
+\bibcite{harvey1997testing}{{17}{1997}{{Harvey et~al.}}{{}}}
+\bibcite{holm1979simple}{{18}{1979}{{Holm}}{{}}}
+\bibcite{benjamini1995controlling}{{19}{1995}{{Benjamini and Hochberg}}{{}}}
+\bibcite{dickey1979distribution}{{20}{1979}{{Dickey and Fuller}}{{}}}
+\bibcite{kwiatkowski1992testing}{{21}{1992}{{Kwiatkowski et~al.}}{{}}}
+\bibcite{ploberger1992cusum}{{22}{1992}{{Ploberger and Kr{\"a}mer}}{{}}}
+\bibcite{andrews1993tests}{{23}{1993}{{Andrews}}{{}}}
+\gdef \@abspage@last{27}

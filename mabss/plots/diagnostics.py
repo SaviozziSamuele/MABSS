@@ -8,7 +8,7 @@ import pandas as pd
 from statsmodels.graphics.tsaplots import plot_acf
 from statsmodels.tsa.stattools import acf
 
-from mabss.strategies import ensemble_signal, greedy_predictions, long_cash_returns, nav
+from mabss.strategies import build_multirun_strategies, greedy_predictions, long_cash_returns, nav
 
 from .style import save_figure
 
@@ -183,54 +183,31 @@ def plot_multi_run_bandit(results_multi: dict, pct_change_preds: pd.DataFrame, c
     2. Uses `mabss.strategies.greedy_predictions`/`long_cash_returns` instead
        of the original's positional `arm + 1` column indexing.
 
-    Returns `(best_seed, strategies)`, same contract as the original.
+    The `strategies`-DataFrame-building half of this function (per-seed greedy
+    returns + the static average-ensemble baseline) is now
+    `mabss.strategies.build_multirun_strategies` -- this function is a thin
+    plotting wrapper around it, so new (non-plotting) analysis code can reuse
+    that builder directly. Returns `(best_seed, strategies)`, same contract as
+    the original.
     """
-    if not results_multi:
-        print("No results to plot.")
+    best_seed, strategies = build_multirun_strategies(results_multi, pct_change_preds)
+    if strategies is None:
+        print("No results to plot." if not results_multi else "No valid seeds.")
         return None, None
 
-    first_seed = next(iter(results_multi))
-    T = len(results_multi[first_seed]["best arms greedy"])
+    T = len(strategies)
     print(f"Plotting over horizon T={T}")
+    seed_list = [s for s in results_multi if len(results_multi[s]["best arms greedy"]) == T]
+    best_total_return = strategies[f"nav_greedy_{best_seed}"].iloc[-1] - 1
+    print(f"Best seed: {best_seed} (total return: {best_total_return:.2%})")
 
     data_slice = pct_change_preds.iloc[-T:].copy()
     target_slice = data_slice["target"].values
     model_cols = [c for c in data_slice.columns if c.startswith("model_")]
 
-    strategies = pd.DataFrame({"target": target_slice}, index=data_slice.index)
-
-    tot_returns = []
-    for seed in results_multi:
-        arms_greedy = results_multi[seed]["best arms greedy"]
-        if len(arms_greedy) != T:
-            print(f"Warning: seed {seed} has mismatched length {len(arms_greedy)} vs {T}")
-            continue
-
-        greedy_preds = greedy_predictions(data_slice, arms_greedy, model_cols)
-        strategies[f"greedy_{seed}"] = greedy_preds
-
-        strat_ret = long_cash_returns(np.array(greedy_preds), target_slice)
-        strategies[f"returns_greedy_{seed}"] = strat_ret
-        strategies[f"nav_greedy_{seed}"] = nav(strat_ret).values
-
-        tot_returns.append(np.prod(1 + strat_ret) - 1)
-
-    if not tot_returns:
-        print("No valid seeds.")
-        return None, None
-
-    seed_list = [s for s in results_multi if len(results_multi[s]["best arms greedy"]) == T]
-    best_seed = seed_list[np.argmax(tot_returns)]
-    print(f"Best seed: {best_seed} (total return: {max(tot_returns):.2%})")
-
     nav_cols = [f"nav_greedy_{s}" for s in seed_list if f"nav_greedy_{s}" in strategies.columns]
     mean_nav_greedy = strategies[nav_cols].mean(axis=1)
     stddev_nav_greedy = strategies[nav_cols].std(axis=1)
-
-    mean_signal = ensemble_signal(data_slice, model_cols)
-    ensemble_ret = long_cash_returns(mean_signal, target_slice)
-    strategies["returns_average_ensemble"] = ensemble_ret
-    strategies["nav_average_ensemble"] = nav(ensemble_ret).values
 
     fig1, ax = plt.subplots(figsize=(10, 5))
     ax.plot(mean_nav_greedy, c="tab:blue", label="greedy CMAB (mean)")

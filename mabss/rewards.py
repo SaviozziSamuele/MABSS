@@ -57,15 +57,22 @@ def reward_function(
 
 
 def build_rewards_and_contexts(
-    pct_change_preds: pd.DataFrame, metric: str, bandit_embedding: int, n_arms: int
+    pct_change_preds: pd.DataFrame,
+    metric: str,
+    bandit_embedding: int,
+    n_arms: int,
+    include_market_risk_feature: bool = False,
+    risk_feature_window: int = 20,
 ):
     """
     Returns:
         rewards_df: DataFrame with columns ['target', 'model_0', ..., 'model_{K-1}', 'mean']
-        contexts_matrix: np.ndarray, shape (T_ctx, K, bandit_embedding)
+        contexts_matrix: np.ndarray, shape (T_ctx, K, bandit_embedding) -- or
+            (T_ctx, K, bandit_embedding + 1) if `include_market_risk_feature`
         rewards_matrix: np.ndarray, shape (T_ctx, K)
 
-    Ported from MABSS_utility.py:410-449, logic unchanged. Requires a 'mean'
+    Ported from MABSS_utility.py:410-449, logic unchanged when
+    `include_market_risk_feature=False` (the default). Requires a 'mean'
     column in `pct_change_preds` (added by the caller, e.g. the notebook's
     `pct_change_preds['mean'] = pct_change_preds[model_cols].mean(axis=1)`) --
     this is not created by `compute_returns_from_preds` itself; a missing 'mean'
@@ -75,6 +82,16 @@ def build_rewards_and_contexts(
     j + bandit_embedding (via window_time_series). Contexts are windows of each
     arm's own *reward* series (not of its returns) -- deliberate, per the reward
     function feeding the bandit's context.
+
+    `include_market_risk_feature`: appends one extra, SHARED (identical across
+    every arm) feature to each arm's context window -- the trailing
+    `risk_feature_window`-period rolling realized volatility (std) of the
+    target's own return series. This is the empirical counterpart to
+    `Manuscript.tex:261`'s theoretical argument for excluding "rolling
+    historical volatility" from the context (see `tools/build_context_ablation.py`).
+    Default `False` preserves the exact original context shape/values for every
+    existing caller -- this flag is never set by the 30 published-Table-1
+    configs' pipeline.
     """
     target = pct_change_preds["target"].values
     model_cols = [f"model_{n}" for n in range(n_arms)]
@@ -98,5 +115,17 @@ def build_rewards_and_contexts(
 
     contexts_matrix = np.stack(context_list, axis=1)
     rewards_matrix = np.stack(reward_list, axis=1)
+
+    if include_market_risk_feature:
+        target_series = pd.Series(target, index=pct_change_preds.index)
+        realized_vol = target_series.rolling(risk_feature_window, min_periods=risk_feature_window).std()
+        # Align to the same T_ctx rows contexts_matrix already uses: row j of
+        # contexts_matrix corresponds to pct_change_preds row j + bandit_embedding.
+        vol_aligned = realized_vol.iloc[bandit_embedding : bandit_embedding + contexts_matrix.shape[0]]
+        vol_feature = vol_aligned.bfill().values.astype(contexts_matrix.dtype)
+        # Broadcast the single shared scalar-per-timestep feature onto every
+        # arm's window as one extra trailing dimension: (T_ctx, K, d) -> (T_ctx, K, d+1).
+        vol_broadcast = np.broadcast_to(vol_feature[:, None, None], (contexts_matrix.shape[0], n_arms, 1))
+        contexts_matrix = np.concatenate([contexts_matrix, vol_broadcast], axis=2)
 
     return rewards_df, contexts_matrix, rewards_matrix

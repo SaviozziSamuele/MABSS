@@ -1,0 +1,368 @@
+%% BioMed_Central_Bib_Style_v1.01
+
+\begin{thebibliography}{23}
+% BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
+\ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
+\ifx \binits  \undefined \def \binits#1{#1}\fi
+\ifx \bauthor  \undefined \def \bauthor#1{#1}\fi
+\ifx \batitle  \undefined \def \batitle#1{#1}\fi
+\ifx \bjtitle  \undefined \def \bjtitle#1{#1}\fi
+\ifx \bvolume  \undefined \def \bvolume#1{\textbf{#1}}\fi
+\ifx \byear  \undefined \def \byear#1{#1}\fi
+\ifx \bissue  \undefined \def \bissue#1{#1}\fi
+\ifx \bfpage  \undefined \def \bfpage#1{#1}\fi
+\ifx \blpage  \undefined \def \blpage #1{#1}\fi
+\ifx \burl  \undefined \def \burl#1{\textsf{#1}}\fi
+\ifx \doiurl  \undefined \def \doiurl#1{\url{https://doi.org/#1}}\fi
+\ifx \betal  \undefined \def \betal{\textit{et al.}}\fi
+\ifx \binstitute  \undefined \def \binstitute#1{#1}\fi
+\ifx \binstitutionaled  \undefined \def \binstitutionaled#1{#1}\fi
+\ifx \bctitle  \undefined \def \bctitle#1{#1}\fi
+\ifx \beditor  \undefined \def \beditor#1{#1}\fi
+\ifx \bpublisher  \undefined \def \bpublisher#1{#1}\fi
+\ifx \bbtitle  \undefined \def \bbtitle#1{#1}\fi
+\ifx \bedition  \undefined \def \bedition#1{#1}\fi
+\ifx \bseriesno  \undefined \def \bseriesno#1{#1}\fi
+\ifx \blocation  \undefined \def \blocation#1{#1}\fi
+\ifx \bsertitle  \undefined \def \bsertitle#1{#1}\fi
+\ifx \bsnm \undefined \def \bsnm#1{#1}\fi
+\ifx \bsuffix \undefined \def \bsuffix#1{#1}\fi
+\ifx \bparticle \undefined \def \bparticle#1{#1}\fi
+\ifx \barticle \undefined \def \barticle#1{#1}\fi
+\bibcommenthead
+\ifx \bconfdate \undefined \def \bconfdate #1{#1}\fi
+\ifx \botherref \undefined \def \botherref #1{#1}\fi
+\ifx \url \undefined \def \url#1{\textsf{#1}}\fi
+\ifx \bchapter \undefined \def \bchapter#1{#1}\fi
+\ifx \bbook \undefined \def \bbook#1{#1}\fi
+\ifx \bcomment \undefined \def \bcomment#1{#1}\fi
+\ifx \oauthor \undefined \def \oauthor#1{#1}\fi
+\ifx \citeauthoryear \undefined \def \citeauthoryear#1{#1}\fi
+\ifx \endbibitem  \undefined \def \endbibitem {}\fi
+\ifx \bconflocation  \undefined \def \bconflocation#1{#1}\fi
+\ifx \arxivurl  \undefined \def \arxivurl#1{\textsf{#1}}\fi
+\csname PreBibitemsHook\endcsname
+
+%%% 1
+\bibitem[\protect\citeauthoryear{Tsay}{2005}]{tsay2005analysis}
+\begin{botherref}
+\oauthor{\bsnm{Tsay}, \binits{R.S.}}:
+Analysis of financial time series.
+John Wiley and Sons
+(2005)
+\end{botherref}
+\endbibitem
+
+%%% 2
+\bibitem[\protect\citeauthoryear{Krollner et~al.}{2010}]{krollner2010financial}
+\begin{bchapter}
+\bauthor{\bsnm{Krollner}, \binits{B.}},
+\bauthor{\bsnm{Vanstone}, \binits{B.}},
+\bauthor{\bsnm{Finnie}, \binits{G.}}:
+\bctitle{Financial time series forecasting with machine learning techniques: A
+  survey}.
+In: \bbtitle{European Symposium on Artificial Neural Networks: Computational
+  Intelligence and Machine Learning},
+pp. \bfpage{25}--\blpage{30}
+(\byear{2010})
+\end{bchapter}
+\endbibitem
+
+%%% 3
+\bibitem[\protect\citeauthoryear{Sezer et~al.}{2020}]{sezer2020financial}
+\begin{barticle}
+\bauthor{\bsnm{Sezer}, \binits{O.B.}},
+\bauthor{\bsnm{Gudelek}, \binits{M.U.}},
+\bauthor{\bsnm{Ozbayoglu}, \binits{A.M.}}:
+\batitle{Financial time series forecasting with deep learning: A systematic
+  literature review: 2005--2019}.
+\bjtitle{Applied soft computing}
+\bvolume{90},
+\bfpage{106181}
+(\byear{2020})
+\end{barticle}
+\endbibitem
+
+%%% 4
+\bibitem[\protect\citeauthoryear{Mishkin and Matas}{2016}]{mishkin2016all}
+\begin{bchapter}
+\bauthor{\bsnm{Mishkin}, \binits{D.}},
+\bauthor{\bsnm{Matas}, \binits{J.}}:
+\bctitle{All you need is a good init}.
+In: \bbtitle{ICLR}
+(\byear{2016})
+\end{bchapter}
+\endbibitem
+
+%%% 5
+\bibitem[\protect\citeauthoryear{Perrone and
+  Cooper}{1995}]{perrone1995networks}
+\begin{bchapter}
+\bauthor{\bsnm{Perrone}, \binits{M.P.}},
+\bauthor{\bsnm{Cooper}, \binits{L.N.}}:
+\bctitle{When networks disagree: Ensemble methods for hybrid neural networks}.
+In: \bbtitle{How We Learn; How We Remember: Toward an Understanding of Brain
+  and Neural Systems: Selected Papers of Leon N Cooper},
+pp. \bfpage{342}--\blpage{358}.
+\bpublisher{World Scientific}, \blocation{???}
+(\byear{1995})
+\end{bchapter}
+\endbibitem
+
+%%% 6
+\bibitem[\protect\citeauthoryear{Pandian et~al.}{2025}]{pandian2025enhancing}
+\begin{barticle}
+\bauthor{\bsnm{Pandian}, \binits{J.A.}},
+\bauthor{\bsnm{Thirunavukarasu}, \binits{R.}},
+\bauthor{\bsnm{Mariappan}, \binits{L.T.}}:
+\batitle{Enhancing lane detection in autonomous vehicles with multi-armed
+  bandit ensemble learning}.
+\bjtitle{Scientific Reports}
+\bvolume{15}(\bissue{1}),
+\bfpage{3198}
+(\byear{2025})
+\end{barticle}
+\endbibitem
+
+%%% 7
+\bibitem[\protect\citeauthoryear{Wilson et~al.}{2024}]{wilson2024multi}
+\begin{barticle}
+\bauthor{\bsnm{Wilson}, \binits{J.}},
+\bauthor{\bsnm{Chaudhury}, \binits{S.}},
+\bauthor{\bsnm{Lall}, \binits{B.}}:
+\batitle{Multi-armed bandit based online model selection for concept-drift
+  adaptation}.
+\bjtitle{Expert Systems}
+\bvolume{41}(\bissue{9}),
+\bfpage{13626}
+(\byear{2024})
+\end{barticle}
+\endbibitem
+
+%%% 8
+\bibitem[\protect\citeauthoryear{Zhu et~al.}{2019}]{zhu2019adaptive}
+\begin{botherref}
+\oauthor{\bsnm{Zhu}, \binits{M.}},
+\oauthor{\bsnm{Zheng}, \binits{X.}},
+\oauthor{\bsnm{Wang}, \binits{Y.}},
+\oauthor{\bsnm{Li}, \binits{Y.}},
+\oauthor{\bsnm{Liang}, \binits{Q.}}:
+Adaptive portfolio by solving multi-armed bandit via thompson sampling.
+arXiv preprint arXiv:1911.05309
+(2019)
+\end{botherref}
+\endbibitem
+
+%%% 9
+\bibitem[\protect\citeauthoryear{Zeng et~al.}{2023}]{zeng2023multi}
+\begin{barticle}
+\bauthor{\bsnm{Zeng}, \binits{Z.}},
+\bauthor{\bsnm{Ma}, \binits{C.}},
+\bauthor{\bsnm{Chang}, \binits{X.}}:
+\batitle{Multi-step reward ensemble methods for adaptive stock trading}.
+\bjtitle{Expert Systems with Applications}
+\bvolume{230},
+\bfpage{120547}
+(\byear{2023})
+\end{barticle}
+\endbibitem
+
+%%% 10
+\bibitem[\protect\citeauthoryear{Bouneffouf
+  et~al.}{2020}]{bouneffouf2020survey}
+\begin{bchapter}
+\bauthor{\bsnm{Bouneffouf}, \binits{D.}},
+\bauthor{\bsnm{Rish}, \binits{I.}},
+\bauthor{\bsnm{Aggarwal}, \binits{C.}}:
+\bctitle{Survey on applications of multi-armed and contextual bandits}.
+In: \bbtitle{2020 IEEE Congress on Evolutionary Computation (CEC)},
+pp. \bfpage{1}--\blpage{8}
+(\byear{2020}).
+\bcomment{IEEE}
+\end{bchapter}
+\endbibitem
+
+%%% 11
+\bibitem[\protect\citeauthoryear{Cortes}{2018}]{cortes2018adapting}
+\begin{botherref}
+\oauthor{\bsnm{Cortes}, \binits{D.}}:
+Adapting multi-armed bandits policies to contextual bandits scenarios.
+arXiv preprint arXiv:1811.04383
+(2018)
+\end{botherref}
+\endbibitem
+
+%%% 12
+\bibitem[\protect\citeauthoryear{Li et~al.}{2010}]{li2010contextual}
+\begin{bchapter}
+\bauthor{\bsnm{Li}, \binits{L.}},
+\bauthor{\bsnm{Chu}, \binits{W.}},
+\bauthor{\bsnm{Langford}, \binits{J.}},
+\bauthor{\bsnm{Schapire}, \binits{R.E.}}:
+\bctitle{A contextual-bandit approach to personalized news article
+  recommendation}.
+In: \bbtitle{Proceedings of the 19th International Conference on World Wide
+  Web},
+pp. \bfpage{661}--\blpage{670}
+(\byear{2010})
+\end{bchapter}
+\endbibitem
+
+%%% 13
+\bibitem[\protect\citeauthoryear{Bergmeir et~al.}{2018}]{bergmeir2018note}
+\begin{barticle}
+\bauthor{\bsnm{Bergmeir}, \binits{C.}},
+\bauthor{\bsnm{Hyndman}, \binits{R.J.}},
+\bauthor{\bsnm{Koo}, \binits{B.}}:
+\batitle{A note on the validity of cross-validation for evaluating
+  autoregressive time series prediction}.
+\bjtitle{Computational Statistics \& Data Analysis}
+\bvolume{120},
+\bfpage{70}--\blpage{83}
+(\byear{2018})
+\end{barticle}
+\endbibitem
+
+%%% 14
+\bibitem[\protect\citeauthoryear{Huo and Fu}{2017}]{huo2017risk}
+\begin{barticle}
+\bauthor{\bsnm{Huo}, \binits{X.}},
+\bauthor{\bsnm{Fu}, \binits{F.}}:
+\batitle{Risk-aware multi-armed bandit problem with application to portfolio
+  selection}.
+\bjtitle{Royal Society open science}
+\bvolume{4}(\bissue{11}),
+\bfpage{171377}
+(\byear{2017})
+\end{barticle}
+\endbibitem
+
+%%% 15
+\bibitem[\protect\citeauthoryear{Diebold and
+  Mariano}{1995}]{diebold1995comparing}
+\begin{barticle}
+\bauthor{\bsnm{Diebold}, \binits{F.X.}},
+\bauthor{\bsnm{Mariano}, \binits{R.S.}}:
+\batitle{Comparing predictive accuracy}.
+\bjtitle{Journal of Business \& Economic Statistics}
+\bvolume{13}(\bissue{3}),
+\bfpage{253}--\blpage{263}
+(\byear{1995})
+\end{barticle}
+\endbibitem
+
+%%% 16
+\bibitem[\protect\citeauthoryear{Newey and West}{1987}]{newey1987simple}
+\begin{barticle}
+\bauthor{\bsnm{Newey}, \binits{W.K.}},
+\bauthor{\bsnm{West}, \binits{K.D.}}:
+\batitle{A simple, positive semi-definite, heteroskedasticity and
+  autocorrelation consistent covariance matrix}.
+\bjtitle{Econometrica}
+\bvolume{55}(\bissue{3}),
+\bfpage{703}--\blpage{708}
+(\byear{1987})
+\end{barticle}
+\endbibitem
+
+%%% 17
+\bibitem[\protect\citeauthoryear{Harvey et~al.}{1997}]{harvey1997testing}
+\begin{barticle}
+\bauthor{\bsnm{Harvey}, \binits{D.}},
+\bauthor{\bsnm{Leybourne}, \binits{S.}},
+\bauthor{\bsnm{Newbold}, \binits{P.}}:
+\batitle{Testing the equality of prediction mean squared errors}.
+\bjtitle{International Journal of Forecasting}
+\bvolume{13}(\bissue{2}),
+\bfpage{281}--\blpage{291}
+(\byear{1997})
+\end{barticle}
+\endbibitem
+
+%%% 18
+\bibitem[\protect\citeauthoryear{Holm}{1979}]{holm1979simple}
+\begin{barticle}
+\bauthor{\bsnm{Holm}, \binits{S.}}:
+\batitle{A simple sequentially rejective multiple test procedure}.
+\bjtitle{Scandinavian Journal of Statistics}
+\bvolume{6}(\bissue{2}),
+\bfpage{65}--\blpage{70}
+(\byear{1979})
+\end{barticle}
+\endbibitem
+
+%%% 19
+\bibitem[\protect\citeauthoryear{Benjamini and
+  Hochberg}{1995}]{benjamini1995controlling}
+\begin{barticle}
+\bauthor{\bsnm{Benjamini}, \binits{Y.}},
+\bauthor{\bsnm{Hochberg}, \binits{Y.}}:
+\batitle{Controlling the false discovery rate: a practical and powerful
+  approach to multiple testing}.
+\bjtitle{Journal of the Royal Statistical Society: Series B}
+\bvolume{57}(\bissue{1}),
+\bfpage{289}--\blpage{300}
+(\byear{1995})
+\end{barticle}
+\endbibitem
+
+%%% 20
+\bibitem[\protect\citeauthoryear{Dickey and
+  Fuller}{1979}]{dickey1979distribution}
+\begin{barticle}
+\bauthor{\bsnm{Dickey}, \binits{D.A.}},
+\bauthor{\bsnm{Fuller}, \binits{W.A.}}:
+\batitle{Distribution of the estimators for autoregressive time series with a
+  unit root}.
+\bjtitle{Journal of the American Statistical Association}
+\bvolume{74}(\bissue{366a}),
+\bfpage{427}--\blpage{431}
+(\byear{1979})
+\end{barticle}
+\endbibitem
+
+%%% 21
+\bibitem[\protect\citeauthoryear{Kwiatkowski
+  et~al.}{1992}]{kwiatkowski1992testing}
+\begin{barticle}
+\bauthor{\bsnm{Kwiatkowski}, \binits{D.}},
+\bauthor{\bsnm{Phillips}, \binits{P.C.}},
+\bauthor{\bsnm{Schmidt}, \binits{P.}},
+\bauthor{\bsnm{Shin}, \binits{Y.}}:
+\batitle{Testing the null hypothesis of stationarity against the alternative of
+  a unit root}.
+\bjtitle{Journal of Econometrics}
+\bvolume{54}(\bissue{1-3}),
+\bfpage{159}--\blpage{178}
+(\byear{1992})
+\end{barticle}
+\endbibitem
+
+%%% 22
+\bibitem[\protect\citeauthoryear{Ploberger and
+  Kr{\"a}mer}{1992}]{ploberger1992cusum}
+\begin{barticle}
+\bauthor{\bsnm{Ploberger}, \binits{W.}},
+\bauthor{\bsnm{Kr{\"a}mer}, \binits{W.}}:
+\batitle{The {CUSUM} test with {OLS} residuals}.
+\bjtitle{Econometrica}
+\bvolume{60}(\bissue{2}),
+\bfpage{271}--\blpage{285}
+(\byear{1992})
+\end{barticle}
+\endbibitem
+
+%%% 23
+\bibitem[\protect\citeauthoryear{Andrews}{1993}]{andrews1993tests}
+\begin{barticle}
+\bauthor{\bsnm{Andrews}, \binits{D.W.}}:
+\batitle{Tests for parameter instability and structural change with unknown
+  change point}.
+\bjtitle{Econometrica}
+\bvolume{61}(\bissue{4}),
+\bfpage{821}--\blpage{856}
+(\byear{1993})
+\end{barticle}
+\endbibitem
+
+\end{thebibliography}

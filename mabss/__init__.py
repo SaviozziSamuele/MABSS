@@ -14,7 +14,7 @@ the first call to `create_model`/`walk_forward_training`, not before `import
 mabss` itself.
 """
 
-from . import metrics, plots, seeding, strategies
+from . import metrics, plots, seeding, significance, stationarity, strategies
 from .data import compute_returns_from_preds, load_price_series, window_time_series
 from .env import BanditRunResult, WalkForwardEnv
 from .experiments import (
@@ -40,6 +40,8 @@ __all__ = [
     "seeding",
     "strategies",
     "plots",
+    "significance",
+    "stationarity",
     "run_bandit_seed",
     "run_bandit_multi",
     "load_price_series",

@@ -1,0 +1,402 @@
+{
+  "BTC-USD": {
+    "cusum_structural_break": {
+      "critical_values": {
+        "1": 1.63,
+        "10": 1.22,
+        "5": 1.36
+      },
+      "p_value": 0.28121532318945824,
+      "reject_at_5pct": false,
+      "sup_b": 0.9896905155699399
+    },
+    "n_obs": 3023,
+    "price_level": {
+      "adf": {
+        "adf_stat": -0.005755733197469642,
+        "critical_values": {
+          "1%": -3.4325330913621452,
+          "10%": -2.5672834546224057,
+          "5%": -2.862504548608965
+        },
+        "n_obs": 2998,
+        "p_value": 0.9580534946924448,
+        "stationary_at_5pct": false,
+        "used_lag": 25
+      },
+      "classification": "unit_root",
+      "kpss": {
+        "critical_values": {
+          "1%": 0.739,
+          "10%": 0.347,
+          "2.5%": 0.574,
+          "5%": 0.463
+        },
+        "kpss_stat": 6.272499320369786,
+        "n_lags": 32,
+        "p_value": 0.01,
+        "p_value_clamped": true,
+        "stationary_at_5pct": false
+      },
+      "series_name": "BTC-USD_price_level"
+    },
+    "quandt_andrews_breakpoint": {
+      "breakpoint_date": "2021-08-13 00:00:00+00:00",
+      "breakpoint_index": 1346,
+      "n_boot": 2000,
+      "p_value_bootstrap": 0.4655,
+      "sup_f": 3.5114844085113237,
+      "trim": 0.15
+    },
+    "return": {
+      "adf": {
+        "adf_stat": -38.129668791214996,
+        "critical_values": {
+          "1%": -3.4325164565183304,
+          "10%": -2.5672795431395437,
+          "5%": -2.8624972015590626
+        },
+        "n_obs": 3021,
+        "p_value": 0.0,
+        "stationary_at_5pct": true,
+        "used_lag": 1
+      },
+      "classification": "stationary",
+      "kpss": {
+        "critical_values": {
+          "1%": 0.739,
+          "10%": 0.347,
+          "2.5%": 0.574,
+          "5%": 0.463
+        },
+        "kpss_stat": 0.1308914104848093,
+        "n_lags": 8,
+        "p_value": 0.1,
+        "p_value_clamped": true,
+        "stationary_at_5pct": true
+      },
+      "series_name": "BTC-USD_return"
+    },
+    "ticker": "BTC-USD"
+  },
+  "EURUSD=X": {
+    "cusum_structural_break": {
+      "critical_values": {
+        "1": 1.63,
+        "10": 1.22,
+        "5": 1.36
+      },
+      "p_value": 0.9982242296003551,
+      "reject_at_5pct": false,
+      "sup_b": 0.3878926609925957
+    },
+    "n_obs": 4535,
+    "price_level": {
+      "adf": {
+        "adf_stat": -2.1106849885437438,
+        "critical_values": {
+          "1%": -3.431802715547306,
+          "10%": -2.5671117015248335,
+          "5%": -2.8621819276259015
+        },
+        "n_obs": 4504,
+        "p_value": 0.24023987680322467,
+        "stationary_at_5pct": false,
+        "used_lag": 31
+      },
+      "classification": "unit_root",
+      "kpss": {
+        "critical_values": {
+          "1%": 0.739,
+          "10%": 0.347,
+          "2.5%": 0.574,
+          "5%": 0.463
+        },
+        "kpss_stat": 7.936088788095464,
+        "n_lags": 41,
+        "p_value": 0.01,
+        "p_value_clamped": true,
+        "stationary_at_5pct": false
+      },
+      "series_name": "EURUSD=X_price_level"
+    },
+    "quandt_andrews_breakpoint": {
+      "breakpoint_date": "2023-07-17 23:00:00+00:00",
+      "breakpoint_index": 3845,
+      "n_boot": 2000,
+      "p_value_bootstrap": 0.994,
+      "sup_f": 0.8308763382273782,
+      "trim": 0.15
+    },
+    "return": {
+      "adf": {
+        "adf_stat": -12.186439419059788,
+        "critical_values": {
+          "1%": -3.431802715547306,
+          "10%": -2.5671117015248335,
+          "5%": -2.8621819276259015
+        },
+        "n_obs": 4504,
+        "p_value": 1.3154497299514754e-22,
+        "stationary_at_5pct": true,
+        "used_lag": 30
+      },
+      "classification": "stationary",
+      "kpss": {
+        "critical_values": {
+          "1%": 0.739,
+          "10%": 0.347,
+          "2.5%": 0.574,
+          "5%": 0.463
+        },
+        "kpss_stat": 0.03394827655890666,
+        "n_lags": 22,
+        "p_value": 0.1,
+        "p_value_clamped": true,
+        "stationary_at_5pct": true
+      },
+      "series_name": "EURUSD=X_return"
+    },
+    "ticker": "EURUSD=X"
+  },
+  "GC=F": {
+    "cusum_structural_break": {
+      "critical_values": {
+        "1": 1.63,
+        "10": 1.22,
+        "5": 1.36
+      },
+      "p_value": 0.2888894443961596,
+      "reject_at_5pct": false,
+      "sup_b": 0.9828053091074849
+    },
+    "n_obs": 5291,
+    "price_level": {
+      "adf": {
+        "adf_stat": 3.240796531152066,
+        "critical_values": {
+          "1%": -3.431588167979747,
+          "10%": -2.567061243679948,
+          "5%": -2.862087142831372
+        },
+        "n_obs": 5284,
+        "p_value": 1.0,
+        "stationary_at_5pct": false,
+        "used_lag": 7
+      },
+      "classification": "unit_root",
+      "kpss": {
+        "critical_values": {
+          "1%": 0.739,
+          "10%": 0.347,
+          "2.5%": 0.574,
+          "5%": 0.463
+        },
+        "kpss_stat": 8.020292051829944,
+        "n_lags": 43,
+        "p_value": 0.01,
+        "p_value_clamped": true,
+        "stationary_at_5pct": false
+      },
+      "series_name": "GC=F_price_level"
+    },
+    "quandt_andrews_breakpoint": {
+      "breakpoint_date": "2012-01-05 05:00:00+00:00",
+      "breakpoint_index": 1724,
+      "n_boot": 2000,
+      "p_value_bootstrap": 0.335,
+      "sup_f": 4.399964556432319,
+      "trim": 0.15
+    },
+    "return": {
+      "adf": {
+        "adf_stat": -28.896470719450157,
+        "critical_values": {
+          "1%": -3.431588167979747,
+          "10%": -2.567061243679948,
+          "5%": -2.862087142831372
+        },
+        "n_obs": 5284,
+        "p_value": 0.0,
+        "stationary_at_5pct": true,
+        "used_lag": 6
+      },
+      "classification": "stationary",
+      "kpss": {
+        "critical_values": {
+          "1%": 0.739,
+          "10%": 0.347,
+          "2.5%": 0.574,
+          "5%": 0.463
+        },
+        "kpss_stat": 0.19537398906699005,
+        "n_lags": 10,
+        "p_value": 0.1,
+        "p_value_clamped": true,
+        "stationary_at_5pct": true
+      },
+      "series_name": "GC=F_return"
+    },
+    "ticker": "GC=F"
+  },
+  "SPY": {
+    "cusum_structural_break": {
+      "critical_values": {
+        "1": 1.63,
+        "10": 1.22,
+        "5": 1.36
+      },
+      "p_value": 0.25788248813481135,
+      "reject_at_5pct": false,
+      "sup_b": 1.0114935748902023
+    },
+    "n_obs": 5543,
+    "price_level": {
+      "adf": {
+        "adf_stat": 2.998585460481014,
+        "critical_values": {
+          "1%": -3.4315364974362645,
+          "10%": -2.5670490913004245,
+          "5%": -2.862064314323639
+        },
+        "n_obs": 5514,
+        "p_value": 1.0,
+        "stationary_at_5pct": false,
+        "used_lag": 29
+      },
+      "classification": "unit_root",
+      "kpss": {
+        "critical_values": {
+          "1%": 0.739,
+          "10%": 0.347,
+          "2.5%": 0.574,
+          "5%": 0.463
+        },
+        "kpss_stat": 10.483261290858927,
+        "n_lags": 44,
+        "p_value": 0.01,
+        "p_value_clamped": true,
+        "stationary_at_5pct": false
+      },
+      "series_name": "SPY_price_level"
+    },
+    "quandt_andrews_breakpoint": {
+      "breakpoint_date": "2009-04-09 04:00:00+00:00",
+      "breakpoint_index": 1284,
+      "n_boot": 2000,
+      "p_value_bootstrap": 0.177,
+      "sup_f": 5.753282213531442,
+      "trim": 0.15
+    },
+    "return": {
+      "adf": {
+        "adf_stat": -18.663338175950372,
+        "critical_values": {
+          "1%": -3.4315341340800396,
+          "10%": -2.567048535459962,
+          "5%": -2.8620632701622672
+        },
+        "n_obs": 5525,
+        "p_value": 2.0469283367276745e-30,
+        "stationary_at_5pct": true,
+        "used_lag": 17
+      },
+      "classification": "stationary",
+      "kpss": {
+        "critical_values": {
+          "1%": 0.739,
+          "10%": 0.347,
+          "2.5%": 0.574,
+          "5%": 0.463
+        },
+        "kpss_stat": 0.18405356369157702,
+        "n_lags": 29,
+        "p_value": 0.1,
+        "p_value_clamped": true,
+        "stationary_at_5pct": true
+      },
+      "series_name": "SPY_return"
+    },
+    "ticker": "SPY"
+  },
+  "TLT": {
+    "cusum_structural_break": {
+      "critical_values": {
+        "1": 1.63,
+        "10": 1.22,
+        "5": 1.36
+      },
+      "p_value": 0.2176226442022428,
+      "reject_at_5pct": false,
+      "sup_b": 1.0528166369906191
+    },
+    "n_obs": 4787,
+    "price_level": {
+      "adf": {
+        "adf_stat": -1.7899978077830045,
+        "critical_values": {
+          "1%": -3.431723966504064,
+          "10%": -2.5670931814107942,
+          "5%": -2.8621471379437025
+        },
+        "n_obs": 4762,
+        "p_value": 0.3854386895461844,
+        "stationary_at_5pct": false,
+        "used_lag": 25
+      },
+      "classification": "unit_root",
+      "kpss": {
+        "critical_values": {
+          "1%": 0.739,
+          "10%": 0.347,
+          "2.5%": 0.574,
+          "5%": 0.463
+        },
+        "kpss_stat": 7.211945739099259,
+        "n_lags": 42,
+        "p_value": 0.01,
+        "p_value_clamped": true,
+        "stationary_at_5pct": false
+      },
+      "series_name": "TLT_price_level"
+    },
+    "quandt_andrews_breakpoint": {
+      "breakpoint_date": "2021-02-16 05:00:00+00:00",
+      "breakpoint_index": 3512,
+      "n_boot": 2000,
+      "p_value_bootstrap": 0.197,
+      "sup_f": 5.633171205242027,
+      "trim": 0.15
+    },
+    "return": {
+      "adf": {
+        "adf_stat": -13.505389046251345,
+        "critical_values": {
+          "1%": -3.431723966504064,
+          "10%": -2.5670931814107942,
+          "5%": -2.8621471379437025
+        },
+        "n_obs": 4762,
+        "p_value": 2.9222269879832983e-25,
+        "stationary_at_5pct": true,
+        "used_lag": 24
+      },
+      "classification": "stationary",
+      "kpss": {
+        "critical_values": {
+          "1%": 0.739,
+          "10%": 0.347,
+          "2.5%": 0.574,
+          "5%": 0.463
+        },
+        "kpss_stat": 0.3096975318597789,
+        "n_lags": 9,
+        "p_value": 0.1,
+        "p_value_clamped": true,
+        "stationary_at_5pct": true
+      },
+      "series_name": "TLT_return"
+    },
+    "ticker": "TLT"
+  }
+}
