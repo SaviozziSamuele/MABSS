@@ -11,13 +11,22 @@ We appreciate the reviewer pressing us for more specificity here, and we owe two
 
 **What we can and cannot reconstruct.** The correction from the original submission's SPY/UCB Sharpe
 ratio of 0.27 was made during an earlier revision pass, prior to the code refactor and audit trail we
-built for this round of review. We are not able to forensically recover the exact original bug from
-that snapshot — the repository's preserved history begins after that fix was already applied, so we
-cannot produce a diff against the pre-fix code the way we can for issues found during this round's
-audit (below). What we can say with confidence: the fix combined (a) a corrected return-computation
-step in the prediction pipeline, and (b) the introduction of the variance-aware UCB/Thompson Sampling
-policies described in our response to Comment 1, which materially changed the reported numbers
-because the original 0.27 figure was measured under a Softmax-only comparison.
+built for this round of review. The repository's preserved history begins after that fix was already
+applied, so we cannot produce a line-by-line diff against the pre-fix code the way we can for issues
+found during this round's audit (below). We can, however, describe the substance of the fix from the
+authors' direct recollection of the change, since one of us wrote both versions. The prediction-to-return
+conversion expresses each model's forecast as a return relative to the last *actual* observed price,
+$(\hat{y}_t - y_{t-1})/y_{t-1}$, exactly as implemented today (`compute_returns_from_preds` in our
+current codebase). In the pre-fix version, the reference point was instead the model's own *previous
+prediction* rather than the previous true price, i.e. effectively $(\hat{y}_t - \hat{y}_{t-1})/\hat{y}_{t-1}$.
+Because consecutive predictions from the same smoothly-trained model tend to sit close to one another,
+this framing suppressed the very signal the return was meant to capture, systematically understating the
+model pool's predictive edge relative to computing the return against the actual last price. Combined with
+(b) the introduction of the variance-aware UCB/Thompson Sampling policies described in our response to
+Comment 1, which materially changed the reported numbers because the original 0.27 figure was measured
+under a Softmax-only comparison, this return-computation fix accounts for the reported jump from 0.27 to
+the current values. We flag this as the authors' recollection rather than a recovered diff, since the
+pre-fix code itself no longer exists to verify against.
 
 **A separate, independently-found correction.** During this revision we also identified and fixed an
 unrelated bug: our annualization factor was hardcoded at 252 trading days/year for every asset. For
@@ -52,7 +61,7 @@ in the paper's central framing, not a residual of the pct-change bug).
 The reviewer is correct, and we apologize for the confusion: our previous response's language
 ("zero-beta Long/Short framework," "exploratory short positions," "Long/Short CMAB") was simply wrong
 and does not describe our actual implementation. The strategy has always been, and remains, long/cash
-exactly as defined in Section \ref{sec:pred} of the manuscript: $S_t \in \{0,1\}$, with $S_t=0$
+exactly as defined in Section 3.5 of the manuscript: $S_t \in \{0,1\}$, with $S_t=0$
 liquidating fully into a zero-return cash position — never a short position. We have not changed the
 manuscript's implementation description, since it was already correct; we retract the erroneous
 framing from our prior response letter. This also closes out the third candidate driver the reviewer
@@ -128,13 +137,19 @@ paragraph (see also our response to Reviewer #3, Comment 1, regarding the comput
 
 ### 1. Treatment of the original central claim
 
-We agree this shift in emphasis should be acknowledged explicitly rather than left implicit. We have
-added a sentence to the Conclusion noting that earlier versions of this work emphasized the
-autocorrelation structure of the reward signal in relative isolation, while the present study
-foregrounds the empirically more consequential finding that architectural heterogeneity penalizes
-static aggregation while benefiting CMAB-based selection. The L1/L2/BCE reward-function comparison
-table from the original submission was not affected by any calculation error — it was removed because
-the paper's focus shifted, not superseded by a corrected version of itself.
+We agree this shift in emphasis should be acknowledged explicitly rather than left implicit. Because
+the manuscript itself should read as a self-contained document rather than a diff against its own
+submission history, we have not phrased this shift as an explicit comparison to an earlier draft within
+the manuscript text. Instead, the Conclusion now states directly, on its own terms, that beyond the
+short-term autocorrelation structure of the reward signal that motivates our context construction
+(Section 3.4), a central empirical finding of this study is that architectural heterogeneity within the
+predictor pool systematically penalizes static aggregation while CMAB-based selection thrives on it
+(Section 3.3). For the reviewer's benefit here in this letter: the original submission's central claim
+emphasized the reward-signal autocorrelation finding in relative isolation, and this revision foregrounds
+the architectural-heterogeneity finding as the empirically more consequential result, without altering or
+superseding the original autocorrelation finding itself. The L1/L2/BCE reward-function comparison table
+from the original submission was not affected by any calculation error — it was removed because the
+paper's focus shifted, not superseded by a corrected version of itself.
 
 ### 2. Statistical significance
 
