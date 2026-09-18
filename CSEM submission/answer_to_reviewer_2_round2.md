@@ -29,12 +29,26 @@ the current values. We flag this as the authors' recollection rather than a reco
 pre-fix code itself no longer exists to verify against.
 
 **A separate, independently-found correction.** During this revision we also identified and fixed an
-unrelated bug: our annualization factor was hardcoded at 252 trading days/year for every asset. For
-SPY this makes negligible difference (SPY trades ~251.5 bars/year in our sample, essentially 252 —
-Sharpe changes by well under 0.1%), but it materially inflates the Sharpe ratio for BTC-USD (~365
-bars/year, no exchange holidays) and EURUSD=X (~260 bars/year). We disclose this separately because it
-is a distinct issue from the pct-change fix above, and because it is fully reproducible from our
-current codebase and test suite.
+unrelated bug: our annualization factor was hardcoded at 252 trading days/year for every asset. Table 1
+as it now stands in the manuscript reflects this fix throughout: both the Annualized Return and Sharpe
+Ratio columns use each asset's empirically inferred trading-day frequency rather than a uniform 252
+(see the revised Table 1 caption). At the two-decimal precision Table 1 reports, the correction is
+materially visible only for BTC-USD (~365 bars/year, no exchange holidays), where every cell moves:
+BTC-USD/UCB Sharpe goes from 0.80 (as computed under the old, uniform-252 formula) to 1.02
+(heterogeneous pool) and from 0.81 to 1.04 (homogeneous pool), with annualized return moving
+correspondingly (0.29→0.45 and 0.30→0.46). For completeness, two further cells change by one unit in
+the last displayed digit purely because they sit on a rounding boundary: EURUSD=X (~260 bars/year),
+heterogeneous, Softmax annualized return (0.0050→0.0051, displayed 0.00→0.01), and SPY, homogeneous,
+Thompson Sharpe (0.6453→0.6447, displayed 0.65→0.64). No other cell in Table 1 changes at two-decimal
+precision: SPY, GC=F, and TLT trade close enough to 252 bars/year (~251-252), and EURUSD=X's shift is
+under 2% relative, so the remaining values are unaffected at the reported precision. The full
+per-configuration delta between the old and corrected formulas is reproducible from our test suite.
+The formal significance tests (Section 4.4) and the transaction-cost
+sensitivity analysis (Appendix B) were built after this fix and already used the corrected,
+per-asset annualization from the start; this revision brings Table 1 into agreement with them, which an
+earlier draft of this response letter did not make explicit. We disclose the underlying bug separately
+from the pct-change fix above because it is a distinct issue, and because it is fully reproducible from
+our current codebase and test suite.
 
 **Resolving our own earlier inconsistency.** We also note, on re-reading our first-round response,
 that we stated two different "resolved" Sharpe values (0.65 and 0.60) in the same section — an error
@@ -90,14 +104,14 @@ already-published 25-seed baseline).
 
 The result is more informative than a simple confirmation: it is **policy-dependent, not uniformly
 neutral**. For Softmax the feature is essentially inert (Sharpe 0.682 -> 0.679, within 5-seed noise).
-For Thompson Sampling it is mildly positive (0.666 -> 0.686). For LinUCB -- the policy we identify as
+For Thompson Sampling it is mildly positive (0.666 -> 0.685). For LinUCB -- the policy we identify as
 the strongest point-estimate performer in Table 1 -- it is clearly detrimental (Sharpe 0.686 -> 0.642,
 a 6.4% relative decline, with annualized return falling correspondingly). We offer a plausible
 mechanism in the manuscript: LinUCB's exploration bonus is a function of each arm's estimated context
-covariance, and a fourth, non-discriminating dimension enlarges that estimate without contributing
-signal, inflating exploration noise -- a class of harm confidence-bound methods are structurally more
-exposed to than Softmax (whose exploration scale depends on logit magnitude, not context covariance)
-or Thompson Sampling.
+covariance, and appending a sixteenth, non-discriminating dimension to the existing 15-lag context
+enlarges that estimate without contributing signal, inflating exploration noise -- a class of harm
+confidence-bound methods are structurally more exposed to than Softmax (whose exploration scale
+depends on logit magnitude, not context covariance) or Thompson Sampling.
 
 We therefore read this ablation as **strengthening** rather than merely confirming our theoretical
 argument: excluding the shared risk feature is not just well-motivated in principle but empirically
@@ -142,14 +156,28 @@ the manuscript itself should read as a self-contained document rather than a dif
 submission history, we have not phrased this shift as an explicit comparison to an earlier draft within
 the manuscript text. Instead, the Conclusion now states directly, on its own terms, that beyond the
 short-term autocorrelation structure of the reward signal that motivates our context construction
-(Section 3.4), a central empirical finding of this study is that architectural heterogeneity within the
-predictor pool systematically penalizes static aggregation while CMAB-based selection thrives on it
-(Section 3.3). For the reviewer's benefit here in this letter: the original submission's central claim
-emphasized the reward-signal autocorrelation finding in relative isolation, and this revision foregrounds
-the architectural-heterogeneity finding as the empirically more consequential result, without altering or
-superseding the original autocorrelation finding itself. The L1/L2/BCE reward-function comparison table
-from the original submission was not affected by any calculation error — it was removed because the
-paper's focus shifted, not superseded by a corrected version of itself.
+(Section 3.4), a central empirical theme of this study is the differential effect of architectural
+heterogeneity on static versus dynamic aggregation (Section 3.3). For the reviewer's benefit here in
+this letter: the original submission's central claim emphasized the reward-signal autocorrelation
+finding in relative isolation, and this revision foregrounds the architectural-heterogeneity result,
+without altering or superseding the original autocorrelation finding itself.
+
+We should be candid about one further point here, since it emerged from our own re-tabulation of Table 1
+during this revision rather than from a reviewer comment. An earlier draft of this revision described the
+heterogeneity effect as a systematic dichotomy — heterogeneity penalizing static aggregation while CMAB
+selection thrives on it. On checking this against all five assets we found that claim to be stronger than
+our data supports. The dichotomy is clean only in GC=F (ensemble Sharpe 0.34→0.24, LinUCB 0.54→0.62); in
+BTC-USD and SPY heterogeneity mildly depresses both approaches, and in EURUSD=X and TLT the static
+ensemble actually gains more from heterogeneity than the bandit policies do. Averaged across the five
+assets, the static and dynamic strategies are affected comparably. We have accordingly rewritten the
+relevant passages in the Abstract, Section 4.1, and the Conclusion to present this as a mechanism the
+framework can exploit where the regime structure supports it, rather than as a general property, and we
+now flag identifying the conditions under which it holds as an open question. We would rather correct
+this ourselves than have it stand as an overclaim in the published version.
+
+The L1/L2/BCE reward-function comparison table from the original submission was not affected by any
+calculation error — it was removed because the paper's focus shifted, not superseded by a corrected
+version of itself.
 
 ### 2. Statistical significance
 
